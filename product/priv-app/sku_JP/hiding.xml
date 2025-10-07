@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2024 Sony Corporation -->
+<!-- Definition of hiding.xml
+     Defines the package name of the app to deactivate it in the common folder when SW Sku of
+     ProductConfig is JP.
+
+     Definition example
+     <hiding-app>
+         <package name="com.sony.dtv.xxx"/>
+         <package name="com.sony.dtv.yyy"/>
+     </hiding-app>
+-->
+<hiding-app>
+    <package name="com.sony.dtv.promos"/>
+    <package name="com.sony.dtv.tvinput.dvbtuner"/>
+    <package name="com.mediatek.dtv.tvinput.isdbtuner"/>
+    <package name="com.sony.dtv.tvinput.atsc3tuner"/>
+    <package name="tv.samba.ssm"/>
+</hiding-app>
