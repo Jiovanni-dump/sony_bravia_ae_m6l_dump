@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2022 Sony Corporation -->
+<!-- Definition of hiding.xml
+     Defines the package name of the app to deactivate it in the common folder when SW Sku of
+     ProductConfig is NA.
+
+     Definition example
+     <hiding-app>
+         <package name="com.sony.dtv.xxx"/>
+         <package name="com.sony.dtv.yyy"/>
+     </hiding-app>
+-->
+<hiding-app>
+    <package name="com.vewd.core.browser"/>
+</hiding-app>
