@@ -1,0 +1,5 @@
+# Copyright 2023 Sony Corporation
+service vendor.sony.hardware.infraredRemote@1.0-service /vendor/bin/hw/vendor.sony.hardware.infraredRemote@1.0-service
+    class hal
+    user system
+    group system input

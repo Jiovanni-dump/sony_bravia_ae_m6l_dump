@@ -1,0 +1,10 @@
+# Copyright 2022,2023 Sony Corporation
+
+on early-boot-sony
+    # Data directory for setting file
+    mkdir /mnt/vendor/tmp/sony/camerapqbridge 0770 system system
+
+service camerapqbridge-service /vendor/bin/hw/vendor.sony.hardware.camerapqbridge-service
+    class hal
+    user system
+    group system camera

@@ -1,0 +1,7 @@
+on property:init.svc.vendor.dtv-svc=stopped
+    start fingerprinter-service-1.0
+
+service fingerprinter-service-1.0 /vendor/bin/hw/vendor.sony.hardware.fingerprinter@1.0-service
+    class hal
+    user system
+    group system

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2022,2023 Sony Corporation -->
+
+<manifest version="1.0" type="device">
+    <hal format="hidl">
+        <name>vendor.sony.system.crashlog</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ICrashLog</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</manifest>

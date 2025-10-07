@@ -1,0 +1,3 @@
+on init
+    setprop ro.vendor.nrdp.modelgroup SONYANDROIDTV2023M6L
+

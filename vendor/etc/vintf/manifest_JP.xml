@@ -1,0 +1,474 @@
+<!--
+    Input:
+        sony_manifest_JP.xml
+        manifest.xml
+        manifest_kernel_s.xml
+        manifest_audio.xml
+        manifest_pq.xml
+-->
+<manifest version="4.0" type="device" target-level="6">
+    <hal format="hidl">
+        <name>android.hardware.audio</name>
+        <transport>hwbinder</transport>
+        <version>7.0</version>
+        <interface>
+            <name>IDevicesFactory</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@7.0::IDevicesFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.audio.effect</name>
+        <transport>hwbinder</transport>
+        <version>7.0</version>
+        <interface>
+            <name>IEffectsFactory</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@7.0::IEffectsFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.bluetooth</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IBluetoothHci</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IBluetoothHci/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.bluetooth.audio</name>
+        <transport>hwbinder</transport>
+        <version>2.1</version>
+        <interface>
+            <name>IBluetoothAudioProvidersFactory</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.1::IBluetoothAudioProvidersFactory/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.camera.provider</name>
+        <transport>hwbinder</transport>
+        <version>2.4</version>
+        <interface>
+            <name>ICameraProvider</name>
+            <instance>external/0</instance>
+        </interface>
+        <fqname>@2.4::ICameraProvider/external/0</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.drm</name>
+        <transport>hwbinder</transport>
+        <version>1.4</version>
+        <fqname>@1.4::ICryptoFactory/chinadrm</fqname>
+        <fqname>@1.4::ICryptoFactory/clearkey</fqname>
+        <fqname>@1.4::ICryptoFactory/dtcpip</fqname>
+        <fqname>@1.4::ICryptoFactory/playready</fqname>
+        <fqname>@1.4::IDrmFactory/chinadrm</fqname>
+        <fqname>@1.4::IDrmFactory/clearkey</fqname>
+        <fqname>@1.4::IDrmFactory/dtcpip</fqname>
+        <fqname>@1.4::IDrmFactory/playready</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.gatekeeper</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IGatekeeper</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IGatekeeper/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.graphics.allocator</name>
+        <transport>hwbinder</transport>
+        <version>4.0</version>
+        <interface>
+            <name>IAllocator</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@4.0::IAllocator/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.graphics.composer</name>
+        <transport>hwbinder</transport>
+        <version>2.4</version>
+        <interface>
+            <name>IComposer</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.4::IComposer/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.graphics.mapper</name>
+        <transport arch="32+64">passthrough</transport>
+        <version>4.0</version>
+        <interface>
+            <name>IMapper</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@4.0::IMapper/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.health</name>
+        <transport>hwbinder</transport>
+        <version>2.1</version>
+        <interface>
+            <name>IHealth</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.1::IHealth/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.media.c2</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>IComponentStore</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.1::IComponentStore/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.media.omx</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IOmx</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IOmxStore</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IOmx/default</fqname>
+        <fqname>@1.0::IOmxStore/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.tv.cec</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IHdmiCec</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IHdmiCec/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.tv.input</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ITvInput</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::ITvInput/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.ExternIn</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IExternIn</name>
+            <instance>ExternIn</instance>
+        </interface>
+        <fqname>@1.0::IExternIn/ExternIn</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.adecode</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IADecode</name>
+            <instance>adecode</instance>
+        </interface>
+        <fqname>@1.0::IADecode/adecode</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.astream</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IAStream</name>
+            <instance>astream</instance>
+        </interface>
+        <fqname>@1.0::IAStream/astream</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.audioext</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IAudioExt</name>
+            <instance>audioext</instance>
+        </interface>
+        <fqname>@1.0::IAudioExt/audioext</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.c2.info</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ICodec2InfoService</name>
+            <instance>c2.info</instance>
+        </interface>
+        <fqname>@1.0::ICodec2InfoService/c2.info</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.capture</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ICapture</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::ICapture/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.cmt</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ICmtInfoService</name>
+            <instance>HwcCmtInfoService</instance>
+            <instance>TpcCmtInfoService</instance>
+            <instance>c2.info</instance>
+            <instance>tunerCmtInfoService</instance>
+        </interface>
+        <fqname>@1.0::ICmtInfoService/HwcCmtInfoService</fqname>
+        <fqname>@1.0::ICmtInfoService/TpcCmtInfoService</fqname>
+        <fqname>@1.0::ICmtInfoService/c2.info</fqname>
+        <fqname>@1.0::ICmtInfoService/tunerCmtInfoService</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.demuxext</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IDemuxExt</name>
+            <instance>demuxext</instance>
+        </interface>
+        <fqname>@1.0::IDemuxExt/demuxext</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.dispservice</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IDispService</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IHwcCmtInfo</name>
+            <instance>HwcCmtInfoService</instance>
+        </interface>
+        <fqname>@1.0::IDispService/default</fqname>
+        <fqname>@1.0::IHwcCmtInfo/HwcCmtInfoService</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.filterext</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>IFilterExt</name>
+            <instance>filterext</instance>
+        </interface>
+        <fqname>@1.1::IFilterExt/filterext</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.graphics.externalbuffer</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IExternalbuffer</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IExternalbuffer/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.halconnect</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IHalConnection</name>
+            <instance>tvinput</instance>
+        </interface>
+        <fqname>@1.0::IHalConnection/tvinput</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.hwcomposer.composer</name>
+        <transport>hwbinder</transport>
+        <version>2.5</version>
+        <interface>
+            <name>IComposer</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.5::IComposer/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.iommupool</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IIommuPool</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IIommuPool/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.mediator</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMediator</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IMediator/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.osd</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IOsd</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IOsd/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.pq</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IPq</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IPq/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.render</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IRender</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IRender/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.startdelegate</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IStartDelegate</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IStartDelegate/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.tpc</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ITpcCmtInfo</name>
+            <instance>TpcCmtInfoService</instance>
+        </interface>
+        <interface>
+            <name>ITpcConnection</name>
+            <instance>Codec2</instance>
+            <instance>audio</instance>
+            <instance>hwc</instance>
+            <instance>tuner</instance>
+        </interface>
+        <fqname>@1.0::ITpcCmtInfo/TpcCmtInfoService</fqname>
+        <fqname>@1.0::ITpcConnection/Codec2</fqname>
+        <fqname>@1.0::ITpcConnection/audio</fqname>
+        <fqname>@1.0::ITpcConnection/hwc</fqname>
+        <fqname>@1.0::ITpcConnection/tuner</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.tunercmt</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ITunerCmtInfoService</name>
+            <instance>tunerCmtInfoService</instance>
+        </interface>
+        <fqname>@1.0::ITunerCmtInfoService/tunerCmtInfoService</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.tunerext</name>
+        <transport>hwbinder</transport>
+        <version>1.5</version>
+        <interface>
+            <name>ITunerExt</name>
+            <instance>tunerext</instance>
+        </interface>
+        <fqname>@1.5::ITunerExt/tunerext</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.hardware.utility</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IUtility</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IUtility/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.mediatek.tv.mtkmediaservice</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMtkMediaService</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IMtkMediaService/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.sony.hardware.acas</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IAcas</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IAcas/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.sony.hardware.audio.IOutput.IVirtualizer</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISonyHrtf</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::ISonyHrtf/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.sony.hardware.pq</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IPqAmbientCameraReflectionCorrection</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IPqAmbientCameraReflectionCorrection/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.sony.hardware.pq</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IPanelPowerConsumption</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.0::IPanelPowerConsumption/default</fqname>
+    </hal>
+    <sepolicy>
+        <version>31.0</version>
+    </sepolicy>
+    <kernel target-level="6"/>
+</manifest>

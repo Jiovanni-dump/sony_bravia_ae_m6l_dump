@@ -1,0 +1,24 @@
+on init
+    setprop ro.vendor.iview.force_non_realtime 1
+    setprop vendor.display-size 3840x2160
+    setprop vendor.video-decoder-capability 7680x4320x30
+    #set soc model
+    setprop ro.soc.model MT9972
+
+on init && property:ro.vendor.mtk.ui.resolution=2K
+    setprop ro.sf.lcd_density 320
+    setprop vendor.mtk.sf.lcd.density 320
+    setprop vendor.mtk.osd_size 1080p
+    setprop ro.vendor.max_ui_width 1920
+    setprop ro.surface_flinger.max_graphics_width 1920
+    setprop ro.surface_flinger.max_graphics_height 1080
+
+on init && property:ro.vendor.mtk.ui.resolution=4K
+    setprop ro.sf.lcd_density 640
+    setprop vendor.mtk.sf.lcd.density 640
+    setprop vendor.mtk.osd_size 2160p
+    setprop ro.vendor.max_ui_width 3840
+    setprop ro.surface_flinger.max_graphics_width 3840
+    setprop ro.surface_flinger.max_graphics_height 2160
+    # for b2r support color format
+    setprop vendor.mtk.mtkphot.render_output_rgb 0

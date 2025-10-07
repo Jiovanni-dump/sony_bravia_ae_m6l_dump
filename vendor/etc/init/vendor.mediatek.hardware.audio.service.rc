@@ -1,0 +1,11 @@
+service vendor.audio-hal /vendor/bin/hw/vendor.mediatek.hardware.audio.service
+    setenv LD_LIBRARY_PATH /data/asan/vendor/lib:/data/asan/system/lib
+    setenv ASAN_OPTIONS halt_on_error=false:print_scariness=true:fast_unwind_on_malloc=true
+    class hal
+    user audioserver
+    # media gid needed for /dev/fm (radio) and for /data/misc/media (tee)
+    group audio vendor_realtime system camera drmrpc inet media mediadrm net_bt net_bt_admin net_bw_acct wakelock context_hub
+    capabilities BLOCK_SUSPEND SYS_NICE
+    ioprio rt 4
+    task_profiles ProcessCapacityHigh HighPerformance
+    onrestart restart audioserver

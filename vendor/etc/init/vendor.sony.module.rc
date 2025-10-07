@@ -1,0 +1,97 @@
+#
+# Copyright 2021 Sony Corporation
+#
+on early-boot
+    # insert damp driver
+    insmod /vendor/lib/modules/sony_damp.ko
+
+    # insert tuxera ntfs driver
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules tntfs
+
+    # insert tuxera exfat driver
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules texfat
+
+    # insert sony panel/backlight driver
+    insmod /vendor/lib/modules/panel-sony.ko
+    insmod /vendor/lib/modules/backlight-sony.ko
+
+    # sony display extension
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules sony_display_extension
+
+    # insert temp sensor driver
+    insmod /vendor/lib/modules/hwmon.ko
+    insmod /vendor/lib/modules/lm75.ko
+    insmod /vendor/lib/modules/lm75_ro.ko
+
+    # insert tilt sensor driver
+    insmod /vendor/lib/modules/bma456o_i2c_driver.ko
+
+    # insert light sensor driver
+    insmod /vendor/lib/modules/sony_m6_lightsensor.ko
+
+    # insert sony pmu driver
+    insmod /vendor/lib/modules/sony_pmu.ko
+
+    # insert sony tuner driver
+    insmod /vendor/lib/modules/cxd_tnr.ko
+
+    # insert sony demodulation driver
+    insmod /vendor/lib/modules/cxd_dmd.ko
+
+    # insert dish driver
+    insmod /vendor/lib/modules/dish_a8303_1.ko
+    insmod /vendor/lib/modules/dish_tps65235.ko
+    insmod /vendor/lib/modules/dish_mp8128.ko
+
+    # insert light sensor driver
+    insmod /vendor/lib/modules/sony_hl_usb.ko
+
+    # insert sony camera driver
+    insmod /vendor/lib/modules/sony_m6_camera.ko
+
+    # insert pqu system driver
+    insmod /vendor/lib/modules/pqu_system_driver.ko
+
+on early-boot && property:ro.build.type=user
+    # insert mtk cas driver
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      mtk_sc.ko
+
+on early-boot && property:ro.build.type=userdebug && property:ro.boot.vendor.sc_log_config=true
+    # insert mtk cas driver
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      mtk_sc.ko
+
+on early-boot && property:ro.build.type=userdebug && property:ro.boot.vendor.sc_log_config=""
+    # insert mtk cas driver
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      mtk_sc.ko sc_log_level=6
+
+on boot
+    # insert sony led driver
+    insmod /vendor/lib/modules/sony_led.ko
+
+    # trigger to start hwDiag
+    setprop vendor.boot.insmodcomplete 1
+
+    # insert sony pq ecs driver
+    insmod /vendor/lib/modules/sony_pq_ecs.ko
+
+    # insert usb serial driver
+    insmod /vendor/lib/modules/usbserial.ko
+    insmod /vendor/lib/modules/ftdi_sio.ko
+    insmod /vendor/lib/modules/pl2303.ko
+
+    # insert sony ether power enable/disable driver
+    insmod /vendor/lib/modules/sony_ether_power.ko
+
+on boot
+    # insert suspend/resume watchdog timer driver
+    insmod /vendor/lib/modules/sony_sus_res_wdt.ko timeoutf=10 timeouts=40
+
+on property:sys.boot_completed=1
+    setprop persist.vendor.extended_core.sony.maint_reboot.is_maint 0
+
+    # enable pushing data into dmesg buffer
+    write /sys/bus/rpmsg/devices/virtio2.pqu-vuart.-1.0/mtk_dbg/record_log 1
+    write /sys/bus/rpmsg/devices/virtio1.frc-vuart.-1.1/mtk_dbg/record_log 1

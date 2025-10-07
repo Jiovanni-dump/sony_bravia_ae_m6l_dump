@@ -1,0 +1,11 @@
+<manifest version="1.0" type="device">
+    <hal format="hidl">
+        <name>vendor.sony.system.precisiontime</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IPtpManager</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</manifest>

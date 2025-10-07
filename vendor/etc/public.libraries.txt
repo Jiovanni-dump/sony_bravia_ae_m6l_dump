@@ -1,0 +1,3 @@
+# this is the public vendor libraries available to the system partition
+vendor.sony.hardware.hardwareCredential@1.0.so
+vendor.sony.system.precisiontime@1.0.so

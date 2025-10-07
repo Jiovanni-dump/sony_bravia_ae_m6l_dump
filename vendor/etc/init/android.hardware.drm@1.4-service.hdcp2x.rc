@@ -1,0 +1,16 @@
+service vendor.drm-hdcp2x-hal-1-4 /vendor/bin/hw/android.hardware.drm@1.4-service.hdcp2x
+    interface android.hardware.drm@1.0::ICryptoFactory hdcp2x
+    interface android.hardware.drm@1.0::IDrmFactory hdcp2x
+    interface android.hardware.drm@1.1::ICryptoFactory hdcp2x
+    interface android.hardware.drm@1.1::IDrmFactory hdcp2x
+    interface android.hardware.drm@1.2::ICryptoFactory hdcp2x
+    interface android.hardware.drm@1.2::IDrmFactory hdcp2x
+    interface android.hardware.drm@1.3::ICryptoFactory hdcp2x
+    interface android.hardware.drm@1.3::IDrmFactory hdcp2x
+    interface android.hardware.drm@1.4::ICryptoFactory hdcp2x
+    interface android.hardware.drm@1.4::IDrmFactory hdcp2x
+    class hal
+    user media
+    group media mediadrm drmrpc system vendor_tee
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks

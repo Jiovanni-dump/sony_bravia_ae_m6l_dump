@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<opapp>
+    <country name="NLD">
+        <operator name="Canal Digitaal">
+            <enable>true</enable>
+            <status>512</status>
+            <launch_status>0</launch_status>
+            <appname></appname>
+            <applicationIdentifier>
+                <orgID></orgID>
+                <appId></appId>
+            </applicationIdentifier>
+            <discovery_type>
+                <HardwiredWithXMLAITURI>https://static.solocoo.tv/opapp/opapp.aitx</HardwiredWithXMLAITURI>
+                <BroadcastNITBATWithOperatorFQDN></BroadcastNITBATWithOperatorFQDN>    
+                <HardwiredWithOperatorFQDN></HardwiredWithOperatorFQDN>
+                <BroadcastNITBATWithAITURI></BroadcastNITBATWithAITURI>
+                <DNSSRVLookupAddr></DNSSRVLookupAddr>
+                <CICAMNITWithXMLAITURI></CICAMNITWithXMLAITURI>
+                <CICAMNITWithOperatorFQDN></CICAMNITWithOperatorFQDN>
+            </discovery_type>
+        </operator>
+    </country>
+    <country name="BEL">
+        <operator name="TV VLAANDEREN">
+            <enable>true</enable>
+            <status>512</status>
+            <launch_status>0</launch_status>
+            <appname></appname>
+            <applicationIdentifier>
+                <orgID></orgID>
+                <appId></appId>
+            </applicationIdentifier>
+            <discovery_type>
+                <HardwiredWithXMLAITURI>https://static.solocoo.tv/opapp/opapp.aitx</HardwiredWithXMLAITURI>
+                <BroadcastNITBATWithOperatorFQDN></BroadcastNITBATWithOperatorFQDN>    
+                <HardwiredWithOperatorFQDN></HardwiredWithOperatorFQDN>
+                <BroadcastNITBATWithAITURI></BroadcastNITBATWithAITURI>
+                <DNSSRVLookupAddr></DNSSRVLookupAddr>
+                <CICAMNITWithXMLAITURI></CICAMNITWithXMLAITURI>
+                <CICAMNITWithOperatorFQDN></CICAMNITWithOperatorFQDN>
+            </discovery_type>
+        </operator>
+        <operator name="TELESAT">
+            <enable>true</enable>
+            <status>512</status>
+            <launch_status>0</launch_status>
+            <appname></appname>
+            <applicationIdentifier>
+                <orgID></orgID>
+                <appId></appId>
+            </applicationIdentifier>
+            <discovery_type>
+                <HardwiredWithXMLAITURI>https://static.solocoo.tv/opapp/opapp.aitx</HardwiredWithXMLAITURI>
+                <BroadcastNITBATWithOperatorFQDN></BroadcastNITBATWithOperatorFQDN>    
+                <HardwiredWithOperatorFQDN></HardwiredWithOperatorFQDN>
+                <BroadcastNITBATWithAITURI></BroadcastNITBATWithAITURI>
+                <DNSSRVLookupAddr></DNSSRVLookupAddr>
+                <CICAMNITWithXMLAITURI></CICAMNITWithXMLAITURI>
+                <CICAMNITWithOperatorFQDN></CICAMNITWithOperatorFQDN>
+            </discovery_type>
+        </operator>
+    </country>
+    <country name="AUT">
+        <operator name="HD Austria">
+            <enable>true</enable>
+            <status>512</status>
+            <launch_status>0</launch_status>
+            <appname></appname>
+            <applicationIdentifier>
+                <orgID></orgID>
+                <appId></appId>
+            </applicationIdentifier>
+            <discovery_type>
+                <HardwiredWithXMLAITURI>https://static.solocoo.tv/opapp/opapp.aitx</HardwiredWithXMLAITURI>
+                <BroadcastNITBATWithOperatorFQDN></BroadcastNITBATWithOperatorFQDN>    
+                <HardwiredWithOperatorFQDN></HardwiredWithOperatorFQDN>
+                <BroadcastNITBATWithAITURI></BroadcastNITBATWithAITURI>
+                <DNSSRVLookupAddr></DNSSRVLookupAddr>
+                <CICAMNITWithXMLAITURI></CICAMNITWithXMLAITURI>
+                <CICAMNITWithOperatorFQDN></CICAMNITWithOperatorFQDN>
+            </discovery_type>
+        </operator>
+    </country>
+    <country name="CZE">
+        <operator name="Skylink">
+            <enable>true</enable>
+            <status>512</status>
+            <launch_status>0</launch_status>
+            <appname></appname>
+            <applicationIdentifier>
+                <orgID></orgID>
+                <appId></appId>
+            </applicationIdentifier>
+            <discovery_type>
+                <HardwiredWithXMLAITURI>https://static.solocoo.tv/opapp/opapp.aitx</HardwiredWithXMLAITURI>
+                <BroadcastNITBATWithOperatorFQDN></BroadcastNITBATWithOperatorFQDN>    
+                <HardwiredWithOperatorFQDN></HardwiredWithOperatorFQDN>
+                <BroadcastNITBATWithAITURI></BroadcastNITBATWithAITURI>
+                <DNSSRVLookupAddr></DNSSRVLookupAddr>
+                <CICAMNITWithXMLAITURI></CICAMNITWithXMLAITURI>
+                <CICAMNITWithOperatorFQDN></CICAMNITWithOperatorFQDN>
+            </discovery_type>
+        </operator>
+    </country>
+    <country name="SVK">
+        <operator name="Skylink">
+            <enable>true</enable>
+            <status>512</status>
+            <launch_status>0</launch_status>
+            <appname></appname>
+            <applicationIdentifier>
+                <orgID></orgID>
+                <appId></appId>
+            </applicationIdentifier>
+            <discovery_type>
+                <HardwiredWithXMLAITURI>https://static.solocoo.tv/opapp/opapp.aitx</HardwiredWithXMLAITURI>
+                <BroadcastNITBATWithOperatorFQDN></BroadcastNITBATWithOperatorFQDN>    
+                <HardwiredWithOperatorFQDN></HardwiredWithOperatorFQDN>
+                <BroadcastNITBATWithAITURI></BroadcastNITBATWithAITURI>
+                <DNSSRVLookupAddr></DNSSRVLookupAddr>
+                <CICAMNITWithXMLAITURI></CICAMNITWithXMLAITURI>
+                <CICAMNITWithOperatorFQDN></CICAMNITWithOperatorFQDN>
+            </discovery_type>
+        </operator>
+    </country>
+    <country name="DEU">
+        <operator name="Astra HD+">
+            <enable>true</enable>
+            <status>512</status>
+            <launch_status>0</launch_status>
+            <appname></appname>
+            <applicationIdentifier>
+                <orgID></orgID>
+                <appId></appId>
+            </applicationIdentifier>
+            <discovery_type>
+                <HardwiredWithXMLAITURI></HardwiredWithXMLAITURI>
+                <BroadcastNITBATWithOperatorFQDN></BroadcastNITBATWithOperatorFQDN>    
+                <HardwiredWithOperatorFQDN></HardwiredWithOperatorFQDN>
+                <BroadcastNITBATWithAITURI></BroadcastNITBATWithAITURI>
+                <DNSSRVLookupAddr></DNSSRVLookupAddr>
+                <CICAMNITWithXMLAITURI></CICAMNITWithXMLAITURI>
+                <CICAMNITWithOperatorFQDN></CICAMNITWithOperatorFQDN>
+            </discovery_type>
+        </operator>
+        <operator name="Fast Scan Deutschland">
+            <enable>true</enable>
+            <status>512</status>
+            <launch_status>0</launch_status>
+            <appname></appname>
+            <applicationIdentifier>
+                <orgID></orgID>
+                <appId></appId>
+            </applicationIdentifier>
+            <discovery_type>
+                <HardwiredWithXMLAITURI>https://static.solocoo.tv/opapp/opapp.aitx</HardwiredWithXMLAITURI>
+                <BroadcastNITBATWithOperatorFQDN></BroadcastNITBATWithOperatorFQDN>    
+                <HardwiredWithOperatorFQDN></HardwiredWithOperatorFQDN>
+                <BroadcastNITBATWithAITURI></BroadcastNITBATWithAITURI>
+                <DNSSRVLookupAddr></DNSSRVLookupAddr>
+                <CICAMNITWithXMLAITURI></CICAMNITWithXMLAITURI>
+                <CICAMNITWithOperatorFQDN></CICAMNITWithOperatorFQDN>
+            </discovery_type>
+        </operator>
+    </country>
+    <country name="ROU">
+        <operator name="FocusSAT">
+            <enable>true</enable>
+            <status>512</status>
+            <launch_status>0</launch_status>
+            <appname></appname>
+            <applicationIdentifier>
+                <orgID></orgID>
+                <appId></appId>
+            </applicationIdentifier>
+            <discovery_type>
+                <HardwiredWithXMLAITURI>https://static.solocoo.tv/opapp/opapp.aitx</HardwiredWithXMLAITURI>
+                <BroadcastNITBATWithOperatorFQDN></BroadcastNITBATWithOperatorFQDN>    
+                <HardwiredWithOperatorFQDN></HardwiredWithOperatorFQDN>
+                <BroadcastNITBATWithAITURI></BroadcastNITBATWithAITURI>
+                <DNSSRVLookupAddr></DNSSRVLookupAddr>
+                <CICAMNITWithXMLAITURI></CICAMNITWithXMLAITURI>
+                <CICAMNITWithOperatorFQDN></CICAMNITWithOperatorFQDN>
+            </discovery_type>
+        </operator>
+    </country>
+    <country name="HUN">
+        <operator name="Direct One">
+            <enable>true</enable>
+            <status>512</status>
+            <launch_status>0</launch_status>
+            <appname></appname>
+            <applicationIdentifier>
+                <orgID></orgID>
+                <appId></appId>
+            </applicationIdentifier>
+            <discovery_type>
+                <HardwiredWithXMLAITURI>https://static.solocoo.tv/opapp/opapp.aitx</HardwiredWithXMLAITURI>
+                <BroadcastNITBATWithOperatorFQDN></BroadcastNITBATWithOperatorFQDN>    
+                <HardwiredWithOperatorFQDN></HardwiredWithOperatorFQDN>
+                <BroadcastNITBATWithAITURI></BroadcastNITBATWithAITURI>
+                <DNSSRVLookupAddr></DNSSRVLookupAddr>
+                <CICAMNITWithXMLAITURI></CICAMNITWithXMLAITURI>
+                <CICAMNITWithOperatorFQDN></CICAMNITWithOperatorFQDN>
+            </discovery_type>
+        </operator>
+    </country>
+</opapp>

@@ -1,0 +1,724 @@
+{
+	"data_name": "ndat",
+	"DVI_version": "32",
+	"variation_num": "89",
+	"required_attributes_keys": [
+		"Panel ID String"
+	],
+	"attribute_default_values": {
+	},
+	"data_variations": [
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDFO007MCP0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDFO007MCP0201"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDFO009MCP0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDFO011MCP0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDFO012MCP0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDFO015MCP0101"
+				}
+			]
+		},
+		{
+			"data_name": "SJ_55",
+			"attributes": [
+				{
+					"Panel ID String": "YDFO007MCS0101"
+				}
+			]
+		},
+		{
+			"data_name": "SJ_65",
+			"attributes": [
+				{
+					"Panel ID String": "YDFO009MCS0101"
+				}
+			]
+		},
+		{
+			"data_name": "SJ_75",
+			"attributes": [
+				{
+					"Panel ID String": "YDFO011MCS0101"
+				}
+			]
+		},
+		{
+			"data_name": "SJ_85",
+			"attributes": [
+				{
+					"Panel ID String": "YDFO012MCK0101"
+				}
+			]
+		},
+		{
+			"data_name": "SJ_85",
+			"attributes": [
+				{
+					"Panel ID String": "YDFO012MCU0101"
+				}
+			]
+		},
+		{
+			"data_name": "SJ_98",
+			"attributes": [
+				{
+					"Panel ID String": "YDFO015MCS0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEG002UNG0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEG002UNG0201"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEG004UNG0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEG004UNG0201"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEM007UNG0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEM007UNG0201"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEM009UNG0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEM009UNG0201"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEM014UNG0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEM014UNG0201"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YD9S005DND0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDCO011MES0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEO007MCS0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEO007MCS0201"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEO009MCS0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEO009MCS0201"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEO009MDS0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEO009MDS0201"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEO011MCS0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEO011MCS0201"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEO011MDS0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEO011MDS0201"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEO012MCU0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDEO012MDU0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDDO009MES0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDDO011MDS0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDDO012MDU0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "HDBO011DDU0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "HDCO011MDS0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "HDCO012MDU0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDCG002UNG0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDCG004UNG0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDCM007UNG0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDCM007UNG0201"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDCM009UNG0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDCM009UNG0201"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDCM014UNG0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDDO007UND0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDDO009UND0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDDO014UND0101"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDDO007UND0301"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDDO009UND0301"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDDO007UND0201"
+				}
+			]
+		},
+		{
+			"data_name": "Default",
+			"attributes": [
+				{
+					"Panel ID String": "YDDO009UND0201"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM003CNP0201"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM003CNP0301"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM006CNP0201"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM006CNP0301"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM007CNP0101"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM007CNP0201"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM007CNP0301"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM009CNP0101"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM009CNP0201"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM009CNP0301"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM011CNP0101"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM011CNP0201"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM011CNP0301"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM012CNP0101"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM012CNP0201"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSFM012CNP0301"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSCM003CNO1101"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM003HNO0201"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM003HNO0301"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM006HNO0201"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM006HNO0301"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM007HNO0101"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM007HNO0201"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM007HNO0301"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM009HNO0101"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM009HNO0201"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM009HNO0301"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM011CNO0101"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM011CNO0201"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM011CNO0301"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM012CNU0101"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM012CNU0201"
+				}
+			]
+		},
+		{
+			"data_name": "SxB",
+			"attributes": [
+				{
+					"Panel ID String": "YSGM012CNU0301"
+				}
+			]
+		}
+	]
+}

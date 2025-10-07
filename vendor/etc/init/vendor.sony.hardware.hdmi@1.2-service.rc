@@ -1,0 +1,12 @@
+################################################################
+# Copyright 2021,2022,2023 Sony Corporation
+################################################################
+
+service hdmi-service-1.2 /vendor/bin/hw/vendor.sony.hardware.hdmi@1.2-service
+    class hal
+    user system
+    group system
+#service hdmi-service-1.2 /vendor/bin/hw/vendor.sony.hardware.hdmi@1.2-service
+
+on early-boot-sony
+    mkdir /data/vendor/sony/hdmi 0770 system system

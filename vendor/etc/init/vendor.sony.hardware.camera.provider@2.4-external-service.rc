@@ -1,0 +1,17 @@
+# Copyright 2023 Sony Corporation
+
+on early-boot-sony
+    mkdir /mnt/vendor/tmp/sony/camera 0770 system system
+
+service vendor.camera-provider-2-4-ext /vendor/bin/hw/vendor.sony.hardware.camera.provider@2.4-external-service
+    interface android.hardware.camera.provider@2.4::ICameraProvider external/0
+    interface vendor.sony.hardware.camera.provider@2.4::IMtkCameraProvider external/0
+    interface vendor.sony.hardware.camera@1.0::ICameraLensShutter default
+    interface vendor.sony.hardware.camera@1.1::ICameraLensShutter default
+    interface vendor.sony.hardware.camera@1.1::IAmbientRecognitionCamera default
+    class hal
+    user cameraserver
+    group audio camera input drmrpc usb system
+    ioprio rt 4
+    capabilities SYS_NICE
+    task_profiles CameraServiceCapacity MaxPerformance

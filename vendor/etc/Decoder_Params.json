@@ -1,0 +1,14 @@
+{
+    "Dts": {
+        "Default": {
+            "DtsLoudnessEnable" : 1,
+            "DtsLoudnessLevel" : -20,
+            "DtsFixedSpeakerOutMask" : 0,
+        },
+    },
+    "Aac": {
+        "Default": {
+            "AacAribChannelMappingFlag" : 0,
+        },
+    },
+}

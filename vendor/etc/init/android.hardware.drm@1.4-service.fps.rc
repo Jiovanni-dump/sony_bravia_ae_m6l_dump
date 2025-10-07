@@ -1,0 +1,16 @@
+service vendor.drm-fps-hal-1-4 /vendor/bin/hw/android.hardware.drm@1.4-service.fps
+    interface android.hardware.drm@1.0::ICryptoFactory fps
+    interface android.hardware.drm@1.0::IDrmFactory fps
+    interface android.hardware.drm@1.1::ICryptoFactory fps
+    interface android.hardware.drm@1.1::IDrmFactory fps
+    interface android.hardware.drm@1.2::ICryptoFactory fps
+    interface android.hardware.drm@1.2::IDrmFactory fps
+    interface android.hardware.drm@1.3::ICryptoFactory fps
+    interface android.hardware.drm@1.3::IDrmFactory fps
+    interface android.hardware.drm@1.4::ICryptoFactory fps
+    interface android.hardware.drm@1.4::IDrmFactory fps
+    class hal
+    user media
+    group drmrpc media mediadrm system
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks

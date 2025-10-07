@@ -1,0 +1,8 @@
+# Copyright 2022 Sony Corporation
+on early-boot-sony
+    mkdir /data/vendor/sony/sensing_fusion 0750 system system
+
+service vendor.sony.hardware.sensingFusion@1.0-service /vendor/bin/hw/vendor.sony.hardware.sensingFusion@1.0-service
+    class hal
+    user system
+    group system usb camera

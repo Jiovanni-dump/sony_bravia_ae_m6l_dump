@@ -1,0 +1,18 @@
+{
+    "Mic" : [
+        { "Voice Remote Control" : "RMF-TX451J", "Output Parameter" : "AC_MIC_SHAPE14"},
+        { "Voice Remote Control" : "RMF-TX452J", "Output Parameter" : "AC_MIC_SHAPE14"},
+        { "Voice Remote Control" : "RMF-TX810C", "Output Parameter" : "AC_MIC_SHAPE17"},
+        { "Voice Remote Control" : "RMF-TX810V", "Output Parameter" : "AC_MIC_SHAPE19"},
+        { "Voice Remote Control" : "RMF-TX810*", "Output Parameter" : "AC_MIC_SHAPE15"},
+        { "Voice Remote Control" : "RMF-TX811*", "Output Parameter" : "AC_MIC_SHAPE15"},
+        { "Voice Remote Control" : "RMF-TX910C", "Output Parameter" : "AC_MIC_SHAPE18"},
+        { "Voice Remote Control" : "RMF-TX910V", "Output Parameter" : "AC_MIC_SHAPE20"},
+        { "Voice Remote Control" : "RMF-TX910*", "Output Parameter" : "AC_MIC_SHAPE16"},
+        { "Voice Remote Control" : "RMF-TX461J", "Output Parameter" : "AC_MIC_SHAPE21"},
+        { "Voice Remote Control" : "RMF-TX820*", "Output Parameter" : "AC_MIC_SHAPE22"},
+        { "Voice Remote Control" : "RMF-TX920*", "Output Parameter" : "AC_MIC_SHAPE23"},
+        { "Voice Remote Control" : "RMF-TX830*", "Output Parameter" : "AC_MIC_SHAPE22"},
+        { "Voice Remote Control" : "-",          "Output Parameter" : "AC_MIC_UNKNOWN"}
+    ]
+}

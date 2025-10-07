@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="vendor.sony.hardware.infraredRemote-V1.0-java-vendor"
+    file="/vendor/framework/vendor.sony.hardware.infraredRemote-V1.0-java-vendor.jar" />
+</permissions>
+

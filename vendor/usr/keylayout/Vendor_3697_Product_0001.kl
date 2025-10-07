@@ -1,0 +1,91 @@
+# Copyright (C) 2010 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# MStar Smart TV IR Receiver.
+#
+
+key 116     POWER   WAKE
+key 11      BUTTON_10
+key 2       BUTTON_10
+key 3       BUTTON_10
+key 4       BUTTON_10
+key 5       BUTTON_10
+key 6       BUTTON_10
+key 7       BUTTON_10
+key 8       BUTTON_10
+key 9       BUTTON_10
+key 10      BUTTON_10
+key 398     PROG_RED
+key 399     PROG_GREEN
+key 400     PROG_YELLOW
+key 401     PROG_BLUE
+key 103     DPAD_UP
+key 108     DPAD_DOWN
+key 105     DPAD_LEFT
+key 106     DPAD_RIGHT
+key 28      DPAD_CENTER
+key 363     LAST_CHANNEL
+key 402     CHANNEL_UP
+key 403     CHANNEL_DOWN
+key 115     VOLUME_UP
+key 114     VOLUME_DOWN
+key 104     STEM_1
+key 59      SLASH
+key 109     PAGE_DOWN
+key 102     HOME    WAKE
+key 139     MENU
+key 158     BACK
+key 365     TV
+key 113     VOLUME_MUTE
+key 167     MEDIA_RECORD
+key 138     GUIDE   WAKE   #STEM_3
+key 358     INFO
+key 395     STEM_2   WAKE
+key 82      WINDOW
+key 356     TV_POWER
+key 142     STEM_PRIMARY
+key 370     CAPTIONS
+key 79      TV_INPUT
+key 372     TV_ZOOM_MODE
+key 468     TV_TELETEXT
+key 466     MUHENKAN
+key 64      STEM_3   #for FVP hotkey
+key 168     MEDIA_REWIND
+key 159     MEDIA_FAST_FORWARD
+key 165     MEDIA_PREVIOUS
+key 163     MEDIA_NEXT
+key 207     MEDIA_PLAY
+key 119     MEDIA_PAUSE
+key 164     MEDIA_PLAY_PAUSE
+key 128     MEDIA_STOP
+key 392     MEDIA_AUDIO_TRACK
+key 469     CAPTIONS
+key 60      TV_DATA_SERVICE
+key 471     SYSRQ
+key 583     PAIRING
+key 622     SETTINGS
+key 190     BUTTON_3   WAKE  #define KEY_F20   190      KEY_F20                 =       0x64 #IR_YOUTUBE
+key 187     BUTTON_4   WAKE  #define KEY_F17   187      KEY_F17                 =       0x63 #IR_NETFLIX
+key 193     BUTTON_6     #define KEY_F23   193      KEY_F23                 =       0x67 #IR_DISNEY
+key 194     BUTTON_7     #define KEY_F24   194      KEY_F24                 =       0x68 #IR_HBOMAX
+
+#####Watson position 1,11
+key 364     BOOKMARK     #define KEY_FAVORITES 0x16c
+key 249     SETTINGS
+
+#####google TV position 1,11
+key 473     NOTIFICATION     #define KEY_FN_F8 0x1d9 =473
+key 474     PROFILE_SWITCH   #define KEY_FN_F9             0x1da =474
+key 352     BUTTON_16

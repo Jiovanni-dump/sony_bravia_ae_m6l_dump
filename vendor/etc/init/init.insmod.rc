@@ -1,0 +1,132 @@
+import /vendor/etc/init/init.fusion.rc
+
+on fs
+    # insert tee driver
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      optee.ko mtk_tee.ko mtk-ab-boot.ko mtk-efuse.ko
+
+    # /proc/efuse is created by mtk-efuse.ko; if move mtk-efuse.ko, should also move "chown root system /proc/efuse"
+    chown root system /proc/efuse
+
+on early-boot
+   # insert memory related drivers
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      ion_cma_heap.ko system_heap.ko mtk_iommu.ko
+
+   # insert peripheral drivers
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      mt5896-mailbox.ko mt5896_hwspinlock.ko wdt-mt5896.ko mtk-bdma.ko \
+      rtc-mt5896.ko mt5896_saradc.ko virtio_rpmsg_bus.ko mtk_pmu_rproc.ko \
+      pwm-mt5896.ko pwmscan-mt5896.ko pwm-ext-mt5896.ko pwm-mtk-pmu.ko i2c-mt5896.ko i2c-gpio.ko \
+      pwmadc-mt5896.ko i2c-dev.ko spidev.ko leds-mtk-irtx.ko leds-gpio.ko gpio-mtk-pmu.ko \
+      i2c-mt5896-rproc.ko mtk_tty_uart.ko mtk_mic_mute_drv.ko mtk_tty_vuart.ko
+
+    #insert realtime module in the following order
+    insmod /vendor/lib/modules/mtk_realtime_producer.ko
+    start realtime-svc
+    start pqucdmp-svc
+
+    # insert display driver
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      mtk_hwreg.ko mtk-pqmaputil.ko mtk_xcalg.ko mtk_xcalg3pty.ko vim2m.ko mtk_cus.ko mtk_pqu_rproc.ko mtktv-disp-rm.ko mtk_shmctrl.ko \
+      mtk-stctrl.ko mtk-caps.ko mtk-pq.ko mtk-srccap.ko spi-mtk-pmu.ko spi-mtkdtv-ci.ko mtk-pmu-ir.ko mtk-pmu-keypad.ko
+
+    #insert vcodec / drm driver
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      mtk-vcu-vdec.ko mtk-vcu-venc.ko mtk-vcodec-dec.ko mtk-vcodec-enc.ko \
+      mtk-v4l2-jpd.ko mediatek-drm-tv.ko
+
+    # sync mode for fence
+    chmod 666 /sys/kernel/debug/sync/sw_sync
+
+    # insert apu_comm apusys mdla (AI)
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      mtktv_apusys.ko apu_power.ko mdla.ko edma.ko
+
+    # insert dvb / cfm / dmx driver
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules	\
+      mtk_dmx.ko
+
+    # insert tuner / dish /dscmb / cec / demod driver
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      tuner_mxl661.ko tuner_av2017.ko tuner_si2151.ko tuner_cxd686.ko tuner_r842.ko dish_rt5047.ko dish_rt5047_bf.ko \
+      dish_sgm41286.ko dish_h29.ko dish_tps65235.ko dish_tps65233.ko dish_arg81300.ko \
+      mtk-pmu-cec.ko mtk-austin-demod.ko mtk-merak-demod.ko
+
+    # insert Mali driver
+    insmod /vendor/lib/modules/mali_kbase_${ro.boot.vendor.cf.hardware}.ko
+
+    # insert voice driver
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      mtk-mic-capture.ko
+
+    # insert dvfs driver
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      mtktv-regulator-mt5896.ko mtktv-thermal.ko mtktv-cpufreq.ko
+
+    # insert dramc mediator driver
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      mtk-dramc.ko mtk-mediator.ko
+
+    #insert audio driver (can't use modprobe)
+    insmod /vendor/lib/modules/mtk-soc.ko
+    insmod /vendor/lib/modules/snd-coprocessor.ko
+    insmod /vendor/lib/modules/snd-amp-rt9114.ko
+    insmod /vendor/lib/modules/snd-amp-rt9120.ko
+    insmod /vendor/lib/modules/snd-amp-rt9119.ko
+    insmod /vendor/lib/modules/snd-amp-ntp8928.ko
+    insmod /vendor/lib/modules/snd-amp-ad82089.ko
+    insmod /vendor/lib/modules/snd-amp-tas5805.ko
+    insmod /vendor/lib/modules/extcon-mtk-headset.ko
+    insmod /vendor/lib/modules/snd-pcm-platform.ko
+    insmod /vendor/lib/modules/snd-machine.ko
+    insmod /vendor/lib/modules/snd-aloop.ko
+    insmod /vendor/lib/modules/mtk-aloop.ko
+
+    # insert EARC driver
+    insmod /vendor/lib/modules/mtk-earc.ko
+
+    # insert es buffer mgr for SVP, this ko do not depends on other ko.
+    insmod /vendor/lib/modules/mtk-es-buf-mgr.ko
+
+    # insert light sensor driver
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      mtk_als.ko mtk_light.ko
+
+on early-boot && property:ro.vendor.have_aeev_feature=1
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+        mrdump.ko aee_aed.ko aee_rs.ko
+
+    # inser debug ko
+on early-boot && property:ro.boot.stress=on
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      mtk-hang-debug.ko mtk-xiu-timeout.ko mtk-mmdebug.ko mtk-irqmon.ko mtk-perf-probe.ko
+
+on early-boot && property:ro.vendor.mtk.ltpktf=true
+    insmod /vendor/lib/modules/ktf.ko
+    insmod /vendor/lib/modules/mtk-v4l2-g2d.ko
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -d /vendor/lib/modules \
+      mtk-hang-debug.ko mtk-irqmon.ko mtk-xiu-timeout.ko mtk-perf-probe.ko
+
+on early-boot && property:ro.vendor.mtk.tfafuzzer=true
+    insmod /vendor/lib/modules/atf_fuzzer.ko
+
+on property:sys.boot_completed=1
+    start post_insert_module
+    start startdelegate-hal-1-0
+    insmod /vendor/lib/modules/mtk_and.ko poll_delay=5000 th_eff=1 conf=AudioInputProce%com.google.android.katniss:interactor=S:N19
+
+    # post insert kernel driver
+service post_insert_module /vendor/bin/sh /vendor/bin/insert_kernel_drv.sh
+    console
+    oneshot
+    seclabel u:r:mt_insert_kernel_drv:s0
+
+    # wlan dongle detect service
+service wlan_dongle_detect /vendor/bin/wlan_dongle_detect
+    class main
+    priority 19
+    ioprio idle 7
+    console
+    oneshot
+    seclabel u:r:mt_wlan_dongle_detect:s0

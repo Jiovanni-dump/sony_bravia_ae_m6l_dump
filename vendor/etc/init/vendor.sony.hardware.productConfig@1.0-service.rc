@@ -1,0 +1,9 @@
+# Copyright 2023 Sony Corporation
+on early-boot-sony
+	mkdir /mnt/vendor/persist/sony/product_config 755 system system
+	restorecon_recursive /mnt/vendor/persist/sony/product_config
+
+service productConfig-1.0 /vendor/bin/hw/vendor.sony.hardware.productConfig@1.0-service
+    class early_hal
+    user system
+    group system

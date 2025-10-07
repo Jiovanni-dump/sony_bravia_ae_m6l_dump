@@ -1,0 +1,9 @@
+# Copyright 2021,2023 Sony Corporation
+#
+# vendor.sony.hardware.idd@1.0-service.rc
+#
+service vendor.sony.hardware.idd-1-0 /vendor/bin/hw/vendor.sony.hardware.idd@1.0-service
+    class hal
+    user oem_2906
+    group oem_2906 log inet
+    writepid /dev/cpuset/system-background/tasks

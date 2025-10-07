@@ -1,0 +1,4 @@
+service serialport-service /vendor/bin/hw/vendor.sony.hardware.serialport-service
+    class hal
+    user system
+    group system

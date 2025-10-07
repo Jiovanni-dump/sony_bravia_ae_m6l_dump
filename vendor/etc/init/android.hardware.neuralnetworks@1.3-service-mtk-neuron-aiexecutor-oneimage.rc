@@ -1,0 +1,9 @@
+service neuralnetworks_hal_service_mtk_neuron /vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron-aiexecutor-oneimage
+    interface android.hardware.neuralnetworks@1.0::IDevice mtk-neuron
+    interface android.hardware.neuralnetworks@1.1::IDevice mtk-neuron
+    interface android.hardware.neuralnetworks@1.2::IDevice mtk-neuron
+    interface android.hardware.neuralnetworks@1.3::IDevice mtk-neuron
+    interface vendor.mediatek.tv.aiexecutor@1.0::IAiexecutor default
+    class hal
+    user system
+    group system readproc vendor_tee drmrpc

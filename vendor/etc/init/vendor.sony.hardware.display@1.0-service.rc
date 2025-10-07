@@ -1,0 +1,21 @@
+################################################################
+# Copyright 2021,2022,2023 Sony Corporation
+################################################################
+on early-boot-sony
+mkdir /mnt/vendor/persist/sony/display 755 system system
+mkdir /mnt/vendor/persist/sony/display/fdat 755 system system
+mkdir /mnt/vendor/persist/sony/display/be_self_recovery 755 system system
+mkdir /mnt/vendor/persist/sony/display/wb_adj_data 755 system system
+mkdir /mnt/vendor/persist/sony/display/hwc 755 system system
+mkdir /mnt/vendor/persist/sony/display/hwc/gammactl 755 system system
+mkdir /mnt/vendor/persist/sony/display/hwc/gammactl/bin 755 system system
+mkdir /mnt/vendor/persist/sony/display/hwc/gammactl/cfd 755 system system
+mkdir /mnt/vendor/persist/sony/display/hwc/gammactl/reglist 755 system system
+mkdir /mnt/vendor/persist/sony/display/hwc/gammactl/rulelist 755 system system
+mkdir /mnt/vendor/persist/sony/display/hwc/gammactl/scaling 755 system system
+mkdir /mnt/vendor/persist/sony/display/hwc/gammactl/version 755 system system
+
+service display-service-1.0 /vendor/bin/hw/vendor.sony.hardware.display@1.0-service
+    class hal
+    user system
+    group system

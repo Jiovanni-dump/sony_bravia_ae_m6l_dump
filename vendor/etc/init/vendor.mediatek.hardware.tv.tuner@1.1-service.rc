@@ -1,0 +1,9 @@
+service vendor.tuner-hal-1-1 /vendor/bin/hw/vendor.mediatek.hardware.tv.tuner@1.1-service
+    # init language extension, provides information of what service is served
+    # if multiple interfaces are served, they can be specified one on each line
+    # would also cause the hal to start early during boot if oneshot wasn't set
+    class hal
+    user media
+    group mediadrm drmrpc
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks

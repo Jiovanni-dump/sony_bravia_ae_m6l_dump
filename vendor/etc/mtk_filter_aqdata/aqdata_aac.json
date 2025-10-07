@@ -1,0 +1,12 @@
+{
+    "Audio": {
+        "Aac": {
+            "Japan": {
+                "AacAribChannelMappingFlag" : 1
+            },
+            "Others": {
+                "AacAribChannelMappingFlag" : 0
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+#
+# Copyright 2022 Sony Corporation
+#
+
+on post-fs-data && property:ro.boot.vendor.extended_core.sony.sw_sku=JP
+    class_start acas_hal
+
+service vendor.sony.hardware.acas@1.0-service /vendor/bin/hw/vendor.sony.hardware.acas@1.0-service
+    class acas_hal
+    user system
+    group system

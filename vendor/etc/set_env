@@ -1,0 +1,33 @@
+# <- this is for comment / total file size must be less than 4KB
+# Kernel protect is automatically done by mboot
+
+# Boot from RamDisk.
+setenv bootargs console=ttyS0,115200 init=/init CORE_DUMP_PATH=/data/core_dump.%%p.gz KDebug=1 delaylogo=true security=selinux SD_CONFIG=2 loop.max_part=7
+setenv verify n
+setenv devicestate lock
+setenv usb_auto_upgrade disable
+setenv force_boot_recovery false
+setenv autoload 0
+setenv android_product palmer
+setenv board palmer
+setenv android_manufacturer Mediatek
+setenv dtbo_cfg_part default
+setenv dtbo_cfg_sel default
+setenv bootconfig 0
+setenv ENTER_STANDBY 0
+setenv QHB_FLAG 0
+setenv loglevel 3
+env default -f dtboaddr
+env default -f fdt_high
+env default -f initrd_high
+
+saveenv
+addbootargs vmpressure_level_critical 80
+addbootargs cgroup.memory nokmem
+addbootargs utpa_str_fr 1
+addbootargs 8250.nr_uarts 4
+addbootargs vmalloc 550M
+addbootargs kasan_multi_shot 1
+addbootargs firmware_class.path /vendor/firmware/,/vendor/tvconfig
+
+% <- this is end of file symbol

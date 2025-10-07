@@ -1,0 +1,4 @@
+service ethernet-service /vendor/bin/hw/vendor.sony.hardware.ethernet-service
+    class hal
+    user system
+    group system

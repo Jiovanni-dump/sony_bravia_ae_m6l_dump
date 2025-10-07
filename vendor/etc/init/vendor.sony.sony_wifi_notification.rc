@@ -1,0 +1,2 @@
+on property:wifi.active.interface=wlan0
+    exec /vendor/bin/sony_wifi_notification

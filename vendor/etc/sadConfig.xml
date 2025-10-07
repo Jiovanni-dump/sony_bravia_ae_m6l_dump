@@ -1,0 +1,8 @@
+<!-- Customized audio codec and SAD -->
+<config version="1.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+<device type="VX_AUDIO_DEVICE_IN_HDMI_ARC">
+  <supportedFormat format="AUDIO_FORMAT_DTS" descriptor="ffffff"/>
+  <supportedFormat format="AUDIO_FORMAT_DDP" descriptor="ffffff"/>
+  <supportedFormat format="AUDIO_FORMAT_MAX" descriptor="ffffff"/>
+</device>
+</config>

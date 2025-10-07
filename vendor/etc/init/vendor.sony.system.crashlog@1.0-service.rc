@@ -1,0 +1,5 @@
+# Copyright 2022,2023 Sony Corporation
+
+service vendor.crashlog-1-0 /vendor/bin/hw/vendor.sony.system.crashlog@1.0-service
+    class hal
+    group root log

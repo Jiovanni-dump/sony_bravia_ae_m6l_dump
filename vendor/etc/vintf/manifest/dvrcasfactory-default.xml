@@ -1,0 +1,7 @@
+<manifest version="1.0" type="device">
+    <hal format="aidl">
+        <name>vendor.mediatek.hardware.dvrcasfactory</name>
+        <version>2</version>
+        <fqname>IHddRereg/default</fqname>
+    </hal>
+</manifest>

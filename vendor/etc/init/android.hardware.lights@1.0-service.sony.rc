@@ -1,0 +1,6 @@
+# Copyright 2023 Sony Corporation
+
+service vendor.light-default /vendor/bin/hw/android.hardware.lights@1.0-service.sony
+    class hal
+    user system
+    group system

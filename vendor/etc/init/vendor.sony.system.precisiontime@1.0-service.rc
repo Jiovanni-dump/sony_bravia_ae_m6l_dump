@@ -1,0 +1,4 @@
+service vendor.sony.system.precisiontime@1.0-service  /vendor/bin/hw/vendor.sony.system.precisiontime@1.0-service
+    class hal
+    user system
+    group system

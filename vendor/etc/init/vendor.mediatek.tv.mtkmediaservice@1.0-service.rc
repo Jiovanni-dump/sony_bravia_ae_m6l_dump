@@ -1,0 +1,4 @@
+service tv-mtkmediaservice-hal-1-0 /vendor/bin/hw/vendor.mediatek.tv.mtkmediaservice@1.0-service
+    class hal
+    user system
+    group system media mediadrm vendor_tee

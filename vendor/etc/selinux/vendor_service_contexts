@@ -1,0 +1,51 @@
+#line 1 "device/google/atv/sepolicy/vendor/service_contexts"
+tv_remote                                 u:object_r:tv_remote_service:s0
+display.qservice                          u:object_r:surfaceflinger_service:s0
+#line 1 "vendor/mediatek/tv/system/sepolicy/service_contexts"
+###
+### HAL Services
+###
+
+vendor.hardware.tv.earc.IHdmiEarc/default                           u:object_r:hal_tv_earc_service:s0
+
+vendor.mediatek.hardware.mtk_hw_sys.IQhbControl/default             u:object_r:hal_mtkhwsys_service:s0
+vendor.mediatek.hardware.mtk_hw_sys.IUsbControl/default             u:object_r:hal_mtkhwsys_service:s0
+vendor.mediatek.hardware.mtk_netflix.INetflixControl/default        u:object_r:hal_mtknetflix_service:s0
+vendor.mediatek.hardware.mtk_netflix.INetflixdrmControl/default     u:object_r:hal_mtknetflix_service:s0
+mtk.qda.IQDAInterface/default                                       u:object_r:QDAService_service:s0
+vendor.mediatek.hardware.airplay_proxy.IProxy/default               u:object_r:hal_airplay_proxy_hwservice:s0
+vendor.mediatek.hardware.dvrcasfactory.IHddRereg/default            u:object_r:hal_dvrcasfactory_service:s0
+#line 1 "vendor/mediatek/tv/system/sepolicy/dolby/service_contexts"
+#
+# Copyright (C) 2023 Dolby International AB
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# Bind an AIDL service name to the selinux type
+vendor.dolby.audio.ms12.IMs12/default u:object_r:hal_msd_service:s0
+vendor.dolby.audio.measurement.ILatencyReporter/default u:object_r:hal_msd_service:s0
+#line 1 "device/sony/common-sepolicy/service_contexts"
+# Copyright 2022,2023 Sony Corporation
+
+# aidl
+media_statistics_anchor                                         u:object_r:sony_media_statistics_anchor_service:s0
+MediaStatisticsRepositoryService                                u:object_r:sony_media_statistics_repository_service:s0
+
+# aidl hal
+vendor.sony.hardware.serialport.ISerialPort/default             u:object_r:hal_tv_sony_serial_port_service:s0
+vendor.sony.hardware.usb.IVbusControl/default                   u:object_r:hal_tv_sony_usb_service:s0
+vendor.sony.hardware.usb.IUsbDevice/default                     u:object_r:hal_tv_sony_usb_service:s0
+vendor.sony.hardware.ethernet.IEthernet/default                 u:object_r:hal_tv_sony_ethernet_service:s0
+vendor.sony.hardware.wifi.IWifiRegulatoryDomain/default         u:object_r:hal_tv_sony_wifi_service:s0
+vendor.sony.hardware.camerapqbridge.ICameraPqBridge/default     u:object_r:hal_tv_sony_camerapqbridge_service:s0

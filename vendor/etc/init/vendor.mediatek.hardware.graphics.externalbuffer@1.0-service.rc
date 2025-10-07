@@ -1,0 +1,6 @@
+service externalbuffer-1-0 /vendor/bin/hw/vendor.mediatek.hardware.graphics.externalbuffer@1.0-service
+    class hal animation
+    interface vendor.mediatek.hardware.graphics.externalbuffer@1.0::IExternalbuffer default
+    user system
+    group graphics drmrpc
+    onrestart restart surfaceflinger

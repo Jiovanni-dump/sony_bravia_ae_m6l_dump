@@ -1,0 +1,89 @@
+<!-- Copyright 2022,2023,2034 Sony Corporation Inc. -->
+
+<manifest version="1.0" type="device">
+    <hal format="hidl">
+        <name>vendor.sony.hardware.audio</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ICodec</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IMicControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.sony.hardware.audio.IOutput</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ISpeaker</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IVirtualizer</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IDigitalOutput</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IDelay</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.sony.hardware.audio.IOutput</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IVoiceZoom</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.sony.hardware.audio.IOutput.ISpeaker</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ILocationFilter</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IEqualizer</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IAutoVolume</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.sony.hardware.audio.IOutput.ISpeaker</name>
+        <transport>hwbinder</transport>
+        <version>2.1</version>
+        <interface>
+            <name>IAcousticOptimization</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IAutoVolume</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IDampPowerSaving</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IEqualizer</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ILocationFilter</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</manifest>

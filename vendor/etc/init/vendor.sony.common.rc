@@ -1,0 +1,80 @@
+on init
+    mkdir /mnt/vendor/sony_config 0775 root system
+    mkdir /mnt/vendor/featuredata 0775 root system
+
+on early-boot-sony-restorecon
+    restorecon_recursive /data/vendor/sony
+    restorecon_recursive /mnt/vendor/tmp/sony
+    restorecon_recursive /mnt/vendor/sony_config
+    restorecon_recursive /mnt/vendor/persist/sony
+
+on early-boot
+    mkdir /data/vendor/sony 755 system system
+    mkdir /mnt/vendor/tmp/sony 755 system system
+    mkdir /mnt/vendor/persist/sony 755 system system
+    mkdir /mnt/chperm 770 root media_rw
+    trigger early-boot-sony
+    trigger early-boot-sony-restorecon
+
+# install hashkey.sign
+on zygote-start
+    copy /vendor/etc/hashkey.sign /mnt/vendor/certificate/hashkey.sign
+    chmod 0660 /mnt/vendor/certificate/hashkey.sign
+    chown root system /mnt/vendor/certificate/hashkey.sign
+    restorecon /mnt/vendor/certificate/hashkey.sign
+
+on property:ro.boot.vendor.extended_core.sony.sw_sku="CN"
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+    mkdir /mnt/vendor/persist/sony/vts
+    copy /vendor/etc/tuner_vts_config_1_0_CN.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    copy /vendor/etc/tuner_vts_config_1_1_CN.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+
+on property:ro.boot.vendor.extended_core.sony.sw_sku="EU"
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+    mkdir /mnt/vendor/persist/sony/vts
+    copy /vendor/etc/tuner_vts_config_1_0_EU.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    copy /vendor/etc/tuner_vts_config_1_1_EU.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+
+on property:ro.boot.vendor.extended_core.sony.sw_sku="HK"
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+    mkdir /mnt/vendor/persist/sony/vts
+    copy /vendor/etc/tuner_vts_config_1_0_HK.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    copy /vendor/etc/tuner_vts_config_1_1_HK.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+
+on property:ro.boot.vendor.extended_core.sony.sw_sku="NA"
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+    mkdir /mnt/vendor/persist/sony/vts
+    copy /vendor/etc/tuner_vts_config_1_0_NA.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    copy /vendor/etc/tuner_vts_config_1_1_NA.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+
+on property:ro.boot.vendor.extended_core.sony.sw_sku="PA"
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+    mkdir /mnt/vendor/persist/sony/vts
+    copy /vendor/etc/tuner_vts_config_1_0_PA.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    copy /vendor/etc/tuner_vts_config_1_1_PA.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+
+on property:ro.boot.vendor.extended_core.sony.sw_sku="TW"
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+    mkdir /mnt/vendor/persist/sony/vts
+    copy /vendor/etc/tuner_vts_config_1_0_TW.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    copy /vendor/etc/tuner_vts_config_1_1_TW.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+
+on property:ro.boot.vendor.extended_core.sony.sw_sku="LA"
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+    mkdir /mnt/vendor/persist/sony/vts
+    copy /vendor/etc/tuner_vts_config_1_0_LA.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    copy /vendor/etc/tuner_vts_config_1_1_LA.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+
+on property:ro.boot.vendor.extended_core.sony.sw_sku="JP"
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    rm /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml
+    mkdir /mnt/vendor/persist/sony/vts
+    copy /vendor/etc/tuner_vts_config_1_0_JP.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_0.xml
+    copy /vendor/etc/tuner_vts_config_1_1_JP.xml /mnt/vendor/persist/sony/vts/tuner_vts_config_1_1.xml

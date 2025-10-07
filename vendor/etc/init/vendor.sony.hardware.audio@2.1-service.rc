@@ -1,0 +1,14 @@
+#
+# Copyright 2023 Sony Corporation
+#
+
+service audio-service-2.1 /vendor/bin/hw/vendor.sony.hardware.audio@2.1-service
+    class hal
+    user system
+    group system
+
+on property:init.svc.vendor.audio-hal=running
+    restart audio-service-2.1
+
+on early-boot-sony
+    mkdir /data/vendor/sony/audio 0770 system system

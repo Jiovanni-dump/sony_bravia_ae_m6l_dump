@@ -1,0 +1,16 @@
+service vendor.drm-dtcpip-hal-1-4 /vendor/bin/hw/android.hardware.drm@1.4-service.dtcpip
+    interface android.hardware.drm@1.0::ICryptoFactory dtcpip
+    interface android.hardware.drm@1.0::IDrmFactory dtcpip
+    interface android.hardware.drm@1.1::ICryptoFactory dtcpip
+    interface android.hardware.drm@1.1::IDrmFactory dtcpip
+    interface android.hardware.drm@1.2::ICryptoFactory dtcpip
+    interface android.hardware.drm@1.2::IDrmFactory dtcpip
+    interface android.hardware.drm@1.3::ICryptoFactory dtcpip
+    interface android.hardware.drm@1.3::IDrmFactory dtcpip
+    interface android.hardware.drm@1.4::ICryptoFactory dtcpip
+    interface android.hardware.drm@1.4::IDrmFactory dtcpip
+    class hal
+    user media
+    group media mediadrm drmrpc system vendor_tee
+    ioprio rt 4
+    writepid /dev/cpuset/foreground/tasks

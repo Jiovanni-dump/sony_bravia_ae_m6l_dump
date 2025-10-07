@@ -1,0 +1,437 @@
+# Copyright (C) 2010 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#
+# Key character map for Sony remote control.
+#
+
+type SPECIAL_FUNCTION
+
+### Basic QWERTY keys ###
+
+key 0 {
+    label:                              '0'
+    base:                               '0'
+}
+
+key 1 {
+    label:                              '1'
+    base:                               '1'
+}
+
+key 2 {
+    label:                              '2'
+    base:                               '2'
+}
+
+key 3 {
+    label:                              '3'
+    base:                               '3'
+}
+
+key 4 {
+    label:                              '4'
+    base:                               '4'
+}
+
+key 5 {
+    label:                              '5'
+    base:                               '5'
+}
+
+key 6 {
+    label:                              '6'
+    base:                               '6'
+}
+
+key 7 {
+    label:                              '7'
+    base:                               '7'
+}
+
+key 8 {
+    label:                              '8'
+    base:                               '8'
+}
+
+key 9 {
+    label:                              '9'
+    base:                               '9'
+}
+
+key PERIOD {
+    label:                              '.'
+    base:                               '.'
+}
+
+### Gamepad buttons ###
+
+key BUTTON_1 {
+    base:                               none
+}
+
+key BUTTON_2 {
+    base:                               none
+}
+
+key BUTTON_3 {
+    base:                               none
+}
+
+key BUTTON_4 {
+    base:                               none
+}
+
+key BUTTON_5 {
+    base:                               none
+}
+
+key BUTTON_6 {
+    base:                               none
+}
+
+key BUTTON_7 {
+    base:                               none
+}
+
+key BUTTON_8 {
+    base:                               none
+}
+
+key BUTTON_9 {
+    base:                               none
+}
+
+key BUTTON_10 {
+    base:                               none
+}
+
+key BUTTON_11 {
+    base:                               none
+}
+
+key BUTTON_12 {
+    base:                               none
+}
+
+key BUTTON_13 {
+    base:                               none
+}
+
+key BUTTON_14 {
+    base:                               none
+}
+
+key BUTTON_15 {
+    base:                               none
+}
+
+key BUTTON_16 {
+    base:                               none
+}
+
+### Remote control specific keys ###
+
+key 11 {
+    base:                               none
+}
+
+key 12 {
+    base:                               none
+}
+
+key 3D_MODE {
+    base:                               none
+}
+
+key ALL_APPS {
+    base:                               none
+}
+
+key BACK {
+    base:                               none
+}
+
+key CAPTIONS {
+    base:                               none
+}
+
+key CHANNEL_DOWN {
+    base:                               none
+}
+
+key CHANNEL_UP {
+    base:                               none
+}
+
+key DPAD_CENTER {
+    base:                               none
+}
+
+key DPAD_DOWN {
+    base:                               none
+}
+
+key DPAD_LEFT {
+    base:                               none
+}
+
+key DPAD_RIGHT {
+    base:                               none
+}
+
+key DPAD_UP {
+    base:                               none
+}
+
+###Non-printing keys ###
+key ESCAPE {
+    base:                               fallback BACK
+}
+
+key GUIDE {
+    base:                               none
+}
+
+key HELP {
+    base:                               none
+}
+
+key HOME {
+    base:                               none
+}
+
+key INFO {
+    base:                               none
+}
+
+key LAST_CHANNEL {
+    base:                               none
+}
+
+key MEDIA_AUDIO_TRACK {
+    base:                               none
+}
+
+key MEDIA_FAST_FORWARD {
+    base:                               none
+}
+
+key MEDIA_NEXT {
+    base:                               none
+}
+
+key MEDIA_PLAY {
+    base:                               none
+}
+
+key MEDIA_PLAY_PAUSE {
+    base:                               none
+}
+
+key MEDIA_PREVIOUS {
+    base:                               none
+}
+
+key MEDIA_RECORD {
+    base:                               none
+}
+
+key MEDIA_REWIND {
+    base:                               none
+}
+
+key MEDIA_STOP {
+    base:                               none
+}
+
+key MEDIA_TOP_MENU {
+    base:                               none
+}
+
+key MENU {
+    base:                               none
+}
+
+key POWER {
+    base:                               none
+}
+
+key PROG_BLUE {
+    base:                               none
+}
+
+key PROG_GREEN {
+    base:                               none
+}
+
+key PROG_RED {
+    base:                               none
+}
+
+key PROG_YELLOW {
+    base:                               none
+}
+
+key SEARCH {
+    base:                               none
+}
+
+key SLEEP {
+    base:                               none
+}
+
+key TV {
+    base:                               none
+}
+
+key TV_ANTENNA_CABLE {
+    base:                               none
+}
+
+key TV_AUDIO_DESCRIPTION {
+    base:                               none
+}
+
+key TV_AUDIO_DESCRIPTION_MIX_DOWN {
+    base:                               none
+}
+
+key TV_AUDIO_DESCRIPTION_MIX_UP {
+    base:                               none
+}
+
+key TV_CONTENTS_MENU {
+    base:                               none
+}
+
+key TV_DATA_SERVICE {
+    base:                               none
+}
+
+key TV_INPUT {
+    base:                               none
+}
+
+key TV_INPUT_COMPONENT_1 {
+    base:                               none
+}
+
+key TV_INPUT_COMPONENT_2 {
+    base:                               none
+}
+
+key TV_INPUT_COMPOSITE_1 {
+    base:                               none
+}
+
+key TV_INPUT_COMPOSITE_2 {
+    base:                               none
+}
+
+key TV_INPUT_HDMI_1 {
+    base:                               none
+}
+
+key TV_INPUT_HDMI_2 {
+    base:                               none
+}
+
+key TV_INPUT_HDMI_3 {
+    base:                               none
+}
+
+key TV_INPUT_HDMI_4 {
+    base:                               none
+}
+
+key TV_INPUT_VGA_1 {
+    base:                               none
+}
+
+key TV_MEDIA_CONTEXT_MENU {
+    base:                               none
+}
+
+key TV_NETWORK {
+    base:                               none
+}
+
+key TV_NUMBER_ENTRY {
+    base:                               none
+}
+
+key TV_RADIO_SERVICE {
+    base:                               none
+}
+
+key TV_SATELLITE {
+    base:                               none
+}
+
+key TV_SATELLITE_BS {
+    base:                               none
+}
+
+key TV_SATELLITE_CS {
+    base:                               none
+}
+
+key TV_SATELLITE_SERVICE {
+    base:                               none
+}
+
+key TV_TELETEXT {
+    base:                               none
+}
+
+key TV_TERRESTRIAL_ANALOG {
+    base:                               none
+}
+
+key TV_TERRESTRIAL_DIGITAL {
+    base:                               none
+}
+
+key TV_TIMER_PROGRAMMING {
+    base:                               none
+}
+
+key TV_ZOOM_MODE {
+    base:                               none
+}
+
+# key UNKNOWN {
+#     base:                               none
+# }
+
+key VOLUME_DOWN {
+    base:                               none
+}
+
+key VOLUME_MUTE {
+    base:                               none
+}
+
+key VOLUME_UP {
+    base:                               none
+}
+
+key WAKEUP {
+    base:                               none
+}
+
+key WINDOW {
+    base:                               none
+}

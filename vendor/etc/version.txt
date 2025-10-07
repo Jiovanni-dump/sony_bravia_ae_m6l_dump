@@ -1,0 +1,1 @@
+export VERSION := t-apollo-mp-2103-refs-fy23-229-003-3-001-sony-1_mtk-20250625-1

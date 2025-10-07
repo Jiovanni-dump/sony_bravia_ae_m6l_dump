@@ -1,0 +1,4 @@
+service vendor.sony.ecs_native /vendor/bin/vendor.sony.ecs_native
+     class main
+     user system
+     group system

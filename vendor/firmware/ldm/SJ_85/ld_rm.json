@@ -1,0 +1,60 @@
+{
+    "PqRuleGroups": {
+        "Backlight_LD_mainRule": {
+            "#version": {
+                "JsonVersionFormat": "0002.0001",
+                "Note": "6044",
+                "Revision": "6044"
+            },
+            "rules": [
+                {
+                    "comparator": {
+                        "LD_MODE": [
+                            "Off"
+                        ]
+                    },
+                    "settings": [
+                        {"LD_SETTING": "OFF"}
+                    ]
+                },
+                {
+                    "comparator": {
+                        "LD_MODE": [
+                            "Low"
+                        ]
+                    },
+                    "settings": [
+                        {"LD_SETTING": "LD_LOW"}
+                    ]
+                },
+                {
+                    "comparator": {
+                        "LD_MODE": [
+                            "Middle"
+                        ]
+                    },
+                    "settings": [
+                        {"LD_SETTING": "LD_MIDDLE"}
+                    ]
+                },
+                {
+                    "comparator": {
+                        "LD_MODE": [
+                            "High"
+                        ]
+                    },
+                    "settings": [
+                        {"LD_SETTING": "LD_HIGH"}
+                    ]
+                },
+                {
+                    "comparator": {
+                    },
+                    "settings": [
+                        {"LD_SETTING": "Default"}
+                    ]
+                }
+            ]
+        }
+    }
+}

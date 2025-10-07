@@ -1,0 +1,5 @@
+service usb-service /vendor/bin/hw/vendor.sony.hardware.usb-service
+    class hal
+    user system
+    group system vendor_usb_vbus
+    capabilities SYS_ADMIN

@@ -1,0 +1,8 @@
+# Copyright 2022,2023 Sony Corporation
+
+service vendor.bugreportretriever-1-0 /vendor/bin/hw/vendor.sony.system.bugreportretriever@1.0-service
+    interface vendor.sony.system.bugreportretriever@1.0::IBugreportRetriever default
+    class hal
+    group root
+    oneshot
+    disabled

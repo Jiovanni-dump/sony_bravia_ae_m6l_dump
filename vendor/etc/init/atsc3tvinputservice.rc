@@ -1,0 +1,3 @@
+# Copyright 2022,2023 Sony Corporation 
+on early-boot-sony
+    mkdir /data/vendor/sony/atsc 777 mediadrm mediadrm

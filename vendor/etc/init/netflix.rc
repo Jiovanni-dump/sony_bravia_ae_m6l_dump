@@ -1,0 +1,1 @@
+import /vendor/etc/init/netflix/netflix.gen${ro.boot.vendor.extended_core.sony.generation}.rc

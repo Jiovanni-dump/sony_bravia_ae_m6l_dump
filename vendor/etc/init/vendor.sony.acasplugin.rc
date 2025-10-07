@@ -1,0 +1,6 @@
+#
+# Copyright 2022 Sony Corporation
+#
+
+on property:init.svc.vendor.sony.hardware.acas@1.0-service=running
+    mount overlay overlay /vendor/lib/mediacas lowerdir=/vendor/lib/mediacas:/vendor/lib/mediacas_JP

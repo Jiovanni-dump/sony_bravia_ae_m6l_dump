@@ -1,0 +1,9 @@
+on early-boot-sony
+    mkdir /data/vendor/sony/wifi 0770 system system
+    chown system system /data/vendor/sony/wifi/RegDomain.txt
+
+service wifi-service /vendor/bin/hw/vendor.sony.hardware.wifi-service
+    class hal
+    user system
+    group system net_admin inet net_raw
+    capabilities NET_RAW NET_ADMIN

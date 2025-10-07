@@ -1,0 +1,28 @@
+{
+  "Profiles": [
+    {
+      "Name": "HighEnergySaving",
+    },
+    {
+      "Name": "NormalPerformance",
+    },
+    {
+      "Name": "ServicePerformance",
+    },
+    {
+      "Name": "HighPerformance",
+    },
+    {
+      "Name": "MaxPerformance",
+    },
+    {
+      "Name": "RealtimePerformance",
+    },
+    {
+      "Name": "CameraServicePerformance",
+    },
+    {
+      "Name": "NNApiHALPerformance",
+    },
+  ],
+}

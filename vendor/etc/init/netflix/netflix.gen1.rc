@@ -1,0 +1,2 @@
+on init
+    setprop ro.vendor.nrdp.modelgroup SONYANDROIDTV2024AE2

@@ -1,0 +1,17 @@
+################################################################
+# Copyright 2021 Sony Corporation
+################################################################
+
+on early-boot-sony
+    mkdir /mnt/vendor/persist/sony/hardware_diagnosis 755 system system
+    mkdir /mnt/vendor/persist/sony/hardware_diagnosis/history 755 system system
+    mkdir /mnt/vendor/persist/sony/hardware_diagnosis/config 755 system system
+
+service vendor.sony.hardware.hardwareDiagnosis@1.0-service /vendor/bin/hw/vendor.sony.hardware.hardwareDiagnosis@1.0-service
+    class hal
+    user system
+    group system
+    disabled
+
+on property:vendor.boot.insmodcomplete=1
+    start vendor.sony.hardware.hardwareDiagnosis@1.0-service

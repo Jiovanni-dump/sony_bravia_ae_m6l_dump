@@ -1,0 +1,13 @@
+<!-- Copyright 2022 Sony Corporation -->
+
+<manifest version="1.1" type="device">
+    <hal format="hidl">
+        <name>vendor.sony.hardware.kyildm</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>IKyildmService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</manifest>

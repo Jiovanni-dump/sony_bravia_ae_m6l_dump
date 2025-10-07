@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021 Sony Corporation -->
+<permissions>
+    <library name="vendor.sony.hardware.hardwareDiagnosis-V1.0-java-vendor"
+    file="/vendor/framework/vendor.sony.hardware.hardwareDiagnosis-V1.0-java-vendor.jar" />
+</permissions>

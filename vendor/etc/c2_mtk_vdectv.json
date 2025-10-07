@@ -1,0 +1,152 @@
+{
+    "version": "1.0",
+    "BufferBudget": {
+        "SupportedPreference": [
+            "quality",
+            "avsync"
+        ],
+        "Preference": "quality"
+    },
+    "DtvAvSync": {
+        "syncStart": "none",
+        "muteFreezeControl": "mute"
+    },
+    "CpuBudget": {
+        "INIT": {
+            "CASE1": {
+                "Width": 1280,
+                "Hieght": 768,
+                "FrameRate": 60000,
+                "Cost": 25
+            },
+            "CASE2": {
+                "Width": 1920,
+                "Hieght": 1088,
+                "FrameRate": 30000,
+                "Cost": 25
+            },
+            "CASE3": {
+                "Width": 1920,
+                "Hieght": 1088,
+                "FrameRate": 60000,
+                "Cost": 25
+            },
+            "CASE4": {
+                "Width": 3840,
+                "Hieght": 2176,
+                "FrameRate": 30000,
+                "Cost": 25
+            },
+            "CASE5": {
+                "Width": 3840,
+                "Hieght": 2176,
+                "FrameRate": 60000,
+                "Cost": 25
+            },
+            "CASE6": {
+                "Width": 3840,
+                "Hieght": 2176,
+                "FrameRate": 120000,
+                "Cost": 25
+            }
+        },
+        "STABLE": {
+            "CASE1": {
+                "Width": 1280,
+                "Hieght": 768,
+                "FrameRate": 60000,
+                "Cost": 4
+            },
+            "CASE2": {
+                "Width": 1920,
+                "Hieght": 1088,
+                "FrameRate": 30000,
+                "Cost": 3
+            },
+            "CASE3": {
+                "Width": 1920,
+                "Hieght": 1088,
+                "FrameRate": 60000,
+                "Cost": 5
+            },
+            "CASE4": {
+                "Width": 3840,
+                "Hieght": 2176,
+                "FrameRate": 30000,
+                "Cost": 11
+            },
+            "CASE5": {
+                "Width": 3840,
+                "Hieght": 2176,
+                "FrameRate": 60000,
+                "Cost": 21
+            },
+            "CASE6": {
+                "Width": 3840,
+                "Hieght": 2176,
+                "FrameRate": 120000,
+                "Cost": 46
+            }
+        }
+    },
+    "DolbyVisionResourceManager": {
+        "InputSrc": {
+            "SupportedOutOfResourceDecision": [
+                "fatal_error",
+                "mute",
+            ],
+            "OutOfResourceDecision": "mute"
+        },
+        "MM": {
+            "SupportedOutOfResourceDecision": [
+                "fatal_error",
+                "out_of_memory",
+                "mute",
+            ],
+            "OutOfResourceDecision": "out_of_memory",
+            "SupportedCheckPoint": [
+                "init",
+                "process",
+            ],
+            "CheckPoint": "process"
+        }
+    },
+    "PerfManager": {
+        "MM": {
+            "Enable": 1,
+            "NormalMode": {
+                "LateThresholdUs": 2000000
+            },
+            "LowLatencyMode": {
+                "LateThresholdUs": 2000000
+            },
+            "LateToleranceDurationUs": 0
+        },
+        "DTV": {
+            "Enable": 0,
+            "NormalMode": {
+                "LateThresholdUs": 2000000
+            },
+            "LowLatencyMode": {
+                "LateThresholdUs": 2000000
+            },
+            "LateToleranceDurationUs": 500000
+        }
+    },
+    "OpRateMode": {
+        "Undefined": {
+            "RealTime": 0
+        },
+    },
+    "VCodecDropMode": {
+        "Enable": 0
+    },
+    "DtvInitDropDuration": {
+        "Duration": 1000,
+        "DurationWithoutClock": 300
+    },
+    "CustomizedFFR": {
+      "Enable": true
+    }
+}
+
