@@ -1,0 +1,44 @@
+#
+# Copyright 2022 Sony Corporation
+#
+on early-boot
+    # insert iio driver
+    insmod /lib/modules/mt5896_saradc.ko
+
+    # for RPMSG
+    insmod /lib/modules/pwm-mtk-pmu.ko
+
+    insmod /lib/modules/panel-sony-recovery.ko
+
+    # insert sony backlight driver
+    insmod /lib/modules/backlight-sony.ko
+
+    # insert sony pmu driver
+    insmod /lib/modules/sony_pmu.ko
+
+on early-boot && property:ro.boot.sony_panel_self_run=1
+    write /sys/devices/platform/odm/odm:sony_panel/panel_self_run 1
+
+on boot
+    # insert sony led driver
+    insmod /lib/modules/sony_led.ko
+    start sony_hardwareDiagnosis_recovery
+
+on fs
+    mkdir /mnt/vendor/featuredata 0755 root root
+    mount ext4 /dev/block/by-name/featuredata${ro.boot.slot_suffix} /mnt/vendor/featuredata ro nosuid nodev noexec
+    mkdir /mnt/vendor/persist
+    mount ext4 /dev/block/by-name/persist /mnt/vendor/persist wait rw block_validity nodiscard data=ordered journal_checksum
+    mkdir /mnt/vendor/persist/sony 755 system system
+    mkdir /mnt/vendor/persist/sony/hardware_diagnosis 0755 system system
+    mkdir /mnt/vendor/persist/sony/hardware_diagnosis/history 0755 system system
+    mkdir /mnt/vendor/persist/sony/hardware_diagnosis/config 0755 system system
+    restorecon_recursive /mnt/vendor/persist
+
+service sony_hardwareDiagnosis_recovery /vendor/bin/sony_hardwareDiagnosis_recovery
+    user system
+    group system
+    console
+    disabled
+    seclabel u:r:sony_hardware_diagnosis_recovery:s0
+

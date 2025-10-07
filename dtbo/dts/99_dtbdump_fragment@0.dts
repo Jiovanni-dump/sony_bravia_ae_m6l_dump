@@ -1,0 +1,99 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_paneldet {
+				panelOnPreDelay = <0x00>;
+				panelOnPostDelay = <0x6e>;
+				panelOffPreDelay = <0x00>;
+				panelOffPostDelay = <0x00>;
+				blOnPreDelay = <0x258>;
+				blOnPreDelay_pless = <0x258>;
+				blOnPostDelay = <0x00>;
+				blOffPreDelay = <0x00>;
+				blOffPostDelay = <0xbb8>;
+				phandle = <0x01>;
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_panel {
+				compatible = "sony,panel";
+				status = "okay";
+				panel_name = "default";
+				ioNum = <0xd5 0x01>;
+				panelOnPreDelay = <0x00>;
+				panelOnPostDelay = <0x6e>;
+				panelOffPreDelay = <0x00>;
+				panelOffPostDelay = <0x00>;
+				tconErrIoNum = <0x3b 0x01>;
+				powerOffOnProtection = <0xbb8>;
+				phandle = <0x02>;
+
+				oled_maintenance_info {
+					compatible = "sony,panel_refresh";
+					keys = "maintenance_support.true\0maintenance_sequence_type.SDC_TCON_SEQUENCE\0cooling_time_minutes.55\0cooling_time_minutes_for_retry.5\0cooling_temp_th_low.10\0cooling_temp_th_high.43";
+				};
+			};
+
+			sony_backlight {
+				compatible = "sony,backlight";
+				status = "okay";
+				panel_name = "default";
+				ioNum = <0x10e 0x01>;
+				blOnPreDelay = <0x258>;
+				blOnPreDelay_pless = <0x258>;
+				blOnPostDelay = <0x00>;
+				blOffPreDelay = <0x00>;
+				blOffPostDelay = <0x00>;
+				ldErrDetIo = <0x07 0x00>;
+				gErrDetIo = <0x0a 0x01>;
+				powerOffOnProtection = <0xbb8>;
+				phandle = <0x03>;
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_display_extension {
+				paneltype = "oled";
+				phandle = <0x04>;
+			};
+		};
+	};
+
+	fragment@3 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			drop_recovery;
+			drop-time = <0x14>;
+		};
+	};
+
+	__symbols__ {
+		sony_paneldet = "/fragment@0/__overlay__/sony_paneldet";
+		sony_pnl_pwr = "/fragment@1/__overlay__/sony_panel";
+		sony_bl_pwr = "/fragment@1/__overlay__/sony_backlight";
+		sony_display_extension = "/fragment@2/__overlay__/sony_display_extension";
+	};
+
+	__fixups__ {
+		odm = "/fragment@0:target:0\0/fragment@1:target:0\0/fragment@2:target:0";
+		mmc0 = "/fragment@3:target:0";
+	};
+};

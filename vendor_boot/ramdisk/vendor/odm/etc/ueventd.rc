@@ -1,0 +1,101 @@
+# ueventd can only set permissions on device nodes and their associated
+# sysfs attributes, not on arbitrary paths.
+#
+# format for /dev rules: devname mode uid gid
+# format for /sys rules: nodename attr mode uid gid
+# shortcut: "mtd@NN" expands to "/dev/mtd/mtdNN"
+
+/dev/sony_display_extension     0666   root       root
+/dev/sony_pq_ecs                0660   root       system
+/dev/gpiochip0                  0660   root       system
+/dev/gpiochip1                  0660   root       system
+/dev/ttyS3                      0666   root       root
+/dev/ttyUART-PROXY0             0660   root       system
+/dev/ttyUSB0                    0660   root       system
+/dev/rtc1                       0660   system     system
+
+# sysfs
+/sys/devices/platform/odm/odm:sony_panel*       panel_id                        0440    root    system
+/sys/devices/platform/odm/odm:sony_panel*       panel_power                     0660    root    system
+/sys/devices/platform/odm/odm:sony_panel*       panel_ref                       0440    root    system
+/sys/devices/platform/odm/odm:sony_panel*       tcon_error                      0444    root    system
+/sys/devices/platform/odm/odm:sony_panel*       pid_error                       0444    root    system
+/sys/devices/platform/odm/odm:sony_panel*       panel_test_ptn                  0220    root    system
+/sys/devices/platform/odm/odm:sony_backlight*   backlight_power                 0660    root    system
+/sys/devices/platform/odm/odm:sony_backlight*   backlight_stable                0440    root    system
+/sys/devices/platform/odm/odm:sony_backlight*   backlight_initialize            0664    root    system
+/sys/devices/platform/odm/odm:sony_backlight*   panel_power_count               0664    root    system
+/sys/devices/platform/odm/odm:sony_backlight*   bcm_error                       0444    root    system
+/sys/devices/platform/odm/odm:sony_backlight*   ld_error                        0444    root    system
+/sys/devices/platform/odm/odm:sony_backlight*   backlight_error                 0444    root    system
+/sys/devices/platform/odm/odm:sony_backlight*   power_consumption               0444    root    system
+/sys/devices/platform/odm/odm:sony_backlight*   power_cons_measure_capability   0444    root    system
+/sys/devices/platform/odm/odm:sony_backlight*   power_cons_average_duration     0444    root    system
+/sys/devices/platform/odm/odm:sony_ether_power* enable                          0660    root    system
+/sys/devices/platform/1c2e6000.gpio/gpiochip0*  dev                             0444    root    system
+/sys/devices/platform/1c023000.gpio/gpiochip1*  dev                             0444    root    system
+/sys/devices/platform/ir_control*               wakeup/pwrkeycode               0664    root    system
+
+/sys/module/sony_pmu*              parameters/12v_det            0440    root    system
+/sys/module/sony_pmu*              parameters/5v_det             0440    root    system
+/sys/module/sony_pmu*              parameters/dc_det             0440    root    system
+/sys/module/sony_pmu*              parameters/is_ac_connected    0440    root    system
+/sys/module/sony_pmu*              parameters/cold_standby       0660    root    system
+
+/sys/devices/platform/odm/odm:sony_led_driver*    powerLedBrightness    0660    root    system
+/sys/devices/platform/odm/odm:sony_led_driver*    rgbLedBrightness      0220    root    system
+/sys/devices/platform/odm/odm:sony_led_driver*    tallyLedBrightness    0220    root    system
+/sys/devices/platform/odm/odm:sony_led_driver*    wakeupPowerLedDuty    0220    root    system
+/sys/devices/platform/odm/odm:sony_led_driver*    errorLedblinkNum      0220    root    system
+
+/sys/devices/platform/odm/odm:sony_display_extension*    aging_mode                                   0660    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    bcm_fw_update                                0660    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    be_power/be_power_request                    0220    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    be_power/be_power_status                     0440    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    caps/be_exists                               0440    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    caps/be_type                                 0440    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    diag/4k_be_com_error                         0440    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    diag/4k_be_wdt_error                         0440    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    diag/8k_be_com_error                         0440    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    diag/fan_error                               0440    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    diag/sw_error                                0660    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    luminance/limiter_control                    0220    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    luminance/limiter_mode                       0220    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    mute                                         0660    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    orbit_auto_mode                              0220    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    panel_maintenance/cancel_panel_calibration   0660    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    panel_maintenance/set_panel_refresh_flag     0220    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    panel_maintenance/start_panel_calibration    0660    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    panel_maintenance/start_panel_refresh        0660    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    vac_mode                                     0220    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    vbo/be_vbo_frame_comp                        0220    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    vbo/be_vbo_frame_ready                       0220    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    vbo/be_vboreq                                0440    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    be_boot_status                               0440    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    vbo_rx_setting                               0660    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    oip_control/suspend_oip_control              0660    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    oip_control/resume_oip_control               0660    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    be_initialize_setting_done                   0440    system    system
+/sys/devices/platform/odm/odm:sony_display_extension*    panel_status                                 0220    system    system
+
+/sys/devices/platform/odm/odm:sony_damp*   audio/aud_err        0664    root    system
+/sys/devices/platform/odm/odm:sony_damp*   audio/aud_i2c_err    0664    root    system
+
+/sys/devices/platform/odm/odm:sony_m6_lightsensor*   lightsensor_i2c_status    0444    root    system
+
+/sys/devices/platform/1c644000.I2C_0/i2c-0/0-0049/hwmon/hwmon*    name           0444    root    system
+/sys/devices/platform/1c644000.I2C_0/i2c-0/0-0049/hwmon/hwmon*    temp1_input    0444    root    system
+/sys/devices/platform/1c644000.I2C_0/i2c-0/0-004a/hwmon/hwmon*    name           0444    root    system
+/sys/devices/platform/1c644000.I2C_0/i2c-0/0-004a/hwmon/hwmon*    temp1_input    0444    root    system
+/sys/devices/platform/1c644000.I2C_0/i2c-0/0-004d/hwmon/hwmon*    name           0444    root    system
+/sys/devices/platform/1c644000.I2C_0/i2c-0/0-004d/hwmon/hwmon*    temp1_input    0444    root    system
+/sys/devices/platform/1c644000.I2C_0/i2c-0/0-004e/hwmon/hwmon*    name           0444    root    system
+/sys/devices/platform/1c644000.I2C_0/i2c-0/0-004e/hwmon/hwmon*    temp1_input    0444    root    system
+
+/sys/devices/platform/1c644c00.I2C_3/i2c-3/3-0018                 acc_value      0444    root    system
+
+/sys/devices/platform/1c7a3e00.usb/1c7a0000.xhci/usb*    manage_start_stop    0660    root    system
+/sys/devices/platform/1c7a3e00.usb/1c7a0000.xhci/usb*    delete               0220    root    system
+/sys/devices/platform/mtk-pq*                            mtk_dbg/pattern_ip2  0664    root    system
+/sys/devices/platform/mediatek-drm-tv-kms*               mtk_dbg/pattern_tcon 0664    root    system
+/sys/devices/platform/mediatek-drm-tv-kms*               mtk_dbg/pattern_pq_gamma 0664    root    system

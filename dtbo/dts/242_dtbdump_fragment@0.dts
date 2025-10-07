@@ -1,0 +1,39 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			est_bw_total = <0x7151>;
+			est_bw_cpu = <0xdb6>;
+			est_bw_gpu = <0x613>;
+			est_bw_gop = <0x926>;
+			est_bw_dip = <0x1c9>;
+			est_bw_demura = <0x175>;
+			est_bw_oled = <0x00>;
+			est_bw_ld = <0x129>;
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			est_bw_total = <0x67fc>;
+			est_bw_cpu = <0xdb6>;
+			est_bw_gpu = <0x613>;
+			est_bw_gop = <0x926>;
+			est_bw_dip = <0x1c9>;
+			est_bw_demura = <0x175>;
+			est_bw_oled = <0x00>;
+			est_bw_ld = <0x129>;
+		};
+	};
+
+	__fixups__ {
+		dram_bw_est_balance = "/fragment@0:target:0";
+		dram_bw_est_unbalance = "/fragment@1:target:0";
+	};
+};

@@ -1,0 +1,121 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			pin_gpio_14 {
+				gpio-hog;
+				gpios = <0x0e 0x00>;
+				output-low;
+				line-name = "EWS_PWR_ON";
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			cxd_tnr@60 {
+				agc1_delivery_sys = "SYS_ISDBT";
+				rssi_group = <0x01 0x02>;
+				rssi_group_num = <0x02>;
+
+				rssi3 {
+					tuner = "Ascot4";
+					delsys = "SYS_ANALOG";
+					rssi = <0x03>;
+					phandle = <0x01>;
+				};
+
+				rssi39 {
+					tuner = "Ascot4";
+					delsys = "SYS_ISDBT";
+					rssi = <0x27>;
+					phandle = <0x02>;
+				};
+			};
+
+			cxd_dmd@6e {
+				driving_current_tsclock_96MHz = <0x08>;
+				driving_current_other_96MHz = <0x08>;
+				gpio_mask_ews_pwr_on = <0x40>;
+				gpio_reg_base_ews_pwr_on = <0x1c023001>;
+				gpio_reg_base_size_ews_pwr_on = <0x01>;
+				gpio_mask_p_on_hl_ews = <0x80>;
+				gpio_reg_base_p_on_hl_ews = <0x1c023010>;
+				gpio_reg_base_size_p_on_hl_ews = <0x01>;
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			vritual_fe_id = <0x00 0x01>;
+			vritual_fe_num = <0x02>;
+			cfm_group = <0xffffffff 0xffffffff>;
+
+			cfm_node0 {
+				demods = <0x01 0xffff>;
+				tuners = <0x6056 0xffff>;
+				lnbs = <0xffff>;
+			};
+
+			cfm_node1 {
+				demods = <0x00 0xffff>;
+				tuners = <0x6056 0xffff>;
+				lnbs = <0xffff>;
+			};
+		};
+	};
+
+	fragment@3 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			enable_delsys = "SYS_ANALOG";
+
+			clampgains {
+				clampgain_b = <0x2df>;
+				clampgain_gh = <0x2df>;
+				clampgain_dk = <0x2f0>;
+				clampgain_i = <0x340>;
+				clampgain_mn = <0x2f0>;
+			};
+		};
+	};
+
+	__symbols__ {
+		rssi3 = "/fragment@1/__overlay__/cxd_tnr@60/rssi3";
+		rssi39 = "/fragment@1/__overlay__/cxd_tnr@60/rssi39";
+	};
+
+	__fixups__ {
+		pm_gpio0 = "/fragment@0:target:0";
+		pm_i2c1 = "/fragment@1:target:0";
+		mtk_cfm = "/fragment@2:target:0";
+		cfm_node0 = "/fragment@2/__overlay__:cfm_group:0";
+		cfm_node1 = "/fragment@2/__overlay__:cfm_group:4";
+		mtk_demod = "/fragment@3:target:0";
+	};
+
+	__local_fixups__ {
+
+		fragment@1 {
+
+			__overlay__ {
+
+				cxd_tnr@60 {
+					rssi_group = <0x00 0x04>;
+				};
+			};
+		};
+	};
+};

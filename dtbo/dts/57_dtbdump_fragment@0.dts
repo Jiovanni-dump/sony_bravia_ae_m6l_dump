@@ -1,0 +1,127 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_paneldet {
+				panel_id = "YDEO009MCS0101";
+				phandle = <0x01>;
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_panel {
+				panel_id = "YDEO009MCS0101";
+				panelAvail;
+				inch_size = "65";
+				phandle = <0x02>;
+			};
+
+			sony_backlight {
+				panelAvail;
+				phandle = <0x03>;
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_display_extension {
+				phandle = <0x04>;
+
+				sony_be_out_format_timing_48Hz {
+					width = <0xf00>;
+					height = <0x870>;
+					framerate = <0xbb80>;
+					total_h_size = <0x1130>;
+					total_v_size = <0xafc>;
+					h_start = <0x1a0>;
+					v_start = <0x28>;
+					actHSize = <0xf00>;
+					actVSize = <0x870>;
+					vsWidth = <0x01>;
+					hsWidth = <0x04>;
+				};
+
+				sony_be_out_format_timing_50Hz {
+					width = <0xf00>;
+					height = <0x870>;
+					framerate = <0xc350>;
+					total_h_size = <0x1130>;
+					total_v_size = <0xa8c>;
+					h_start = <0x1a0>;
+					v_start = <0x28>;
+					actHSize = <0xf00>;
+					actVSize = <0x870>;
+					vsWidth = <0x01>;
+					hsWidth = <0x04>;
+				};
+
+				sony_be_out_format_timing_60Hz {
+					width = <0xf00>;
+					height = <0x870>;
+					framerate = <0xea60>;
+					total_h_size = <0x1130>;
+					total_v_size = <0x8cc>;
+					h_start = <0x1a0>;
+					v_start = <0x28>;
+					actHSize = <0xf00>;
+					actVSize = <0x870>;
+					vsWidth = <0x01>;
+					hsWidth = <0x04>;
+				};
+
+				sony_be_out_format_timing_100Hz {
+					width = <0xf00>;
+					height = <0x870>;
+					framerate = <0x186a0>;
+					total_h_size = <0x1130>;
+					total_v_size = <0xa8c>;
+					h_start = <0x1a0>;
+					v_start = <0x28>;
+					actHSize = <0xf00>;
+					actVSize = <0x870>;
+					vsWidth = <0x01>;
+					hsWidth = <0x04>;
+				};
+
+				sony_be_out_format_timing_120Hz {
+					width = <0xf00>;
+					height = <0x870>;
+					framerate = <0x1d4c0>;
+					total_h_size = <0x1130>;
+					total_v_size = <0x8cc>;
+					h_start = <0x1a0>;
+					v_start = <0x28>;
+					actHSize = <0xf00>;
+					actVSize = <0x870>;
+					vsWidth = <0x01>;
+					hsWidth = <0x04>;
+				};
+			};
+		};
+	};
+
+	__symbols__ {
+		sony_paneldet = "/fragment@0/__overlay__/sony_paneldet";
+		sony_pnl_pwr = "/fragment@1/__overlay__/sony_panel";
+		sony_bl_pwr = "/fragment@1/__overlay__/sony_backlight";
+		sony_display_extension = "/fragment@2/__overlay__/sony_display_extension";
+	};
+
+	__fixups__ {
+		odm = "/fragment@0:target:0\0/fragment@1:target:0\0/fragment@2:target:0";
+	};
+};

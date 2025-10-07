@@ -1,0 +1,16 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			dtbo-name-Sony-pqu-PanelDet-PanelID = "pqu_Sony_panel_det_pid_lcd.dtbo";
+		};
+	};
+
+	__fixups__ {
+		mtk_pqu = "/fragment@0:target:0";
+	};
+};

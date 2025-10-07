@@ -1,0 +1,28 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			compatible = "mediatek,mt5896-i2c";
+
+			bma456@18 {
+				compatible = "bma4xy";
+				reg = <0x18>;
+				status = "okay";
+				acc_config = <0x01 0x07 0x00 0x00>;
+				phandle = <0x01>;
+			};
+		};
+	};
+
+	__symbols__ {
+		tilt = "/fragment@0/__overlay__/bma456@18";
+	};
+
+	__fixups__ {
+		i2c3 = "/fragment@0:target:0";
+	};
+};

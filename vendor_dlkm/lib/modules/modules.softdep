@@ -1,0 +1,7 @@
+# Soft dependencies extracted from modules themselves.
+softdep mali_kbase_mt5896 pre: memory_group_manager
+softdep mediatek_drm_tv pre: mtk_srccap
+softdep mali_kbase_mt5873 pre: memory_group_manager
+softdep mali_kbase_mt5879 pre: memory_group_manager
+softdep mali_kbase_mt5876 pre: memory_group_manager
+softdep mali_kbase_mt5897 pre: memory_group_manager

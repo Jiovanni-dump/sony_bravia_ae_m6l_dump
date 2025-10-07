@@ -1,0 +1,16 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			dtbo-name-Sony-gpio-mute-trial-invalid = "pqu_Sony_gpio_mute_trial_invalid.dtbo";
+		};
+	};
+
+	__fixups__ {
+		mtk_pqu = "/fragment@0:target:0";
+	};
+};

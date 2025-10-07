@@ -1,0 +1,135 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			cxd_tnr@60 {
+				rssi_group = <0x01 0x02 0x03 0x04 0x05>;
+				rssi_group_num = <0x05>;
+
+				rssi40 {
+					tuner = "Freia";
+					delsys = "SYS_ANALOG";
+					rssi = <0x28>;
+					phandle = <0x01>;
+				};
+
+				rssi41 {
+					tuner = "Freia";
+					delsys = "SYS_DVBT";
+					rssi = <0x29>;
+					phandle = <0x02>;
+				};
+
+				rssi42 {
+					tuner = "Freia";
+					delsys = "SYS_DVBT2";
+					rssi = <0x2a>;
+					phandle = <0x03>;
+				};
+
+				rssi43_1 {
+					tuner = "Freia";
+					delsys = "SYS_DVBS";
+					rssi = <0x2b>;
+					phandle = <0x04>;
+				};
+
+				rssi43_2 {
+					tuner = "Freia";
+					delsys = "SYS_DVBS2";
+					rssi = <0x2b>;
+					phandle = <0x05>;
+				};
+			};
+
+			dish-a8303-1@09 {
+				status = "okay";
+			};
+
+			dish-a8303-1@08 {
+				status = "okay";
+			};
+
+			dish_tps65235@11 {
+				status = "okay";
+			};
+
+			dish_tps65235@10 {
+				status = "okay";
+			};
+
+			dish_mp8128@0b {
+				status = "okay";
+			};
+
+			dish_mp8128@0a {
+				status = "okay";
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			vritual_fe_id = <0x00>;
+			vritual_fe_num = <0x01>;
+			cfm_group = <0xffffffff>;
+
+			cfm_node0 {
+				demods = <0x00 0xffff>;
+				tuners = <0x6056 0xffff>;
+				lnbs = <0x56a0>;
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			envelope_tone_mode = <0x01>;
+
+			clampgains {
+				clampgain_b = <0x2df>;
+				clampgain_gh = <0x2df>;
+				clampgain_dk = <0x2f0>;
+				clampgain_i = <0x340>;
+				clampgain_mn = <0x2f0>;
+			};
+		};
+	};
+
+	__symbols__ {
+		rssi40 = "/fragment@0/__overlay__/cxd_tnr@60/rssi40";
+		rssi41 = "/fragment@0/__overlay__/cxd_tnr@60/rssi41";
+		rssi42 = "/fragment@0/__overlay__/cxd_tnr@60/rssi42";
+		rssi43_1 = "/fragment@0/__overlay__/cxd_tnr@60/rssi43_1";
+		rssi43_2 = "/fragment@0/__overlay__/cxd_tnr@60/rssi43_2";
+	};
+
+	__fixups__ {
+		pm_i2c1 = "/fragment@0:target:0";
+		mtk_cfm = "/fragment@1:target:0";
+		cfm_node0 = "/fragment@1/__overlay__:cfm_group:0";
+		mtk_demod = "/fragment@2:target:0";
+	};
+
+	__local_fixups__ {
+
+		fragment@0 {
+
+			__overlay__ {
+
+				cxd_tnr@60 {
+					rssi_group = <0x00 0x04 0x08 0x0c 0x10>;
+				};
+			};
+		};
+	};
+};

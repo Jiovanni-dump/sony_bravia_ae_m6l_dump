@@ -1,0 +1,16 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			dtbo-name-Sony-thermal-sensor-ambient = "pqu_Sony_thermal_sensor_ambient.dtbo";
+		};
+	};
+
+	__fixups__ {
+		mtk_pqu = "/fragment@0:target:0";
+	};
+};

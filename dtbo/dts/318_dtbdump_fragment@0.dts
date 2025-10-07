@@ -1,0 +1,52 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			audio-codec = <0x01>;
+			codec-dai-name = "sony-damp-amplifier";
+			audio-routing = "I2S0\0SPEAKER_PLAYBACK\0DAC0\0HEADPHONE_PLAYBACK\0DAC1\0LINEOUT_PLAYBACK";
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_damp {
+				status = "okay";
+				ampmute-gpios = <0xffffffff 0x05 0x01>;
+				ampreset-gpios = <0xffffffff 0x0a 0x01>;
+				headphonemute-gpios = <0xffffffff 0x45 0x01>;
+				amperrdet-gpios = <0xffffffff 0x2f 0x01>;
+				amppowersaving-gpios = <0xffffffff 0x83 0x01>;
+				phandle = <0x01>;
+			};
+		};
+	};
+
+	__symbols__ {
+		sony_damp = "/fragment@1/__overlay__/sony_damp";
+	};
+
+	__fixups__ {
+		mtk_sound_machine = "/fragment@0:target:0";
+		odm = "/fragment@1:target:0";
+		pm_gpio0 = "/fragment@1/__overlay__/sony_damp:ampmute-gpios:0\0/fragment@1/__overlay__/sony_damp:ampreset-gpios:0";
+		gpio0 = "/fragment@1/__overlay__/sony_damp:headphonemute-gpios:0\0/fragment@1/__overlay__/sony_damp:amperrdet-gpios:0\0/fragment@1/__overlay__/sony_damp:amppowersaving-gpios:0";
+	};
+
+	__local_fixups__ {
+
+		fragment@0 {
+
+			__overlay__ {
+				audio-codec = <0x00>;
+			};
+		};
+	};
+};

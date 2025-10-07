@@ -1,0 +1,184 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_paneldet {
+				isBE = "8K";
+				phandle = <0x01>;
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_display_extension {
+				be_type = <0x02>;
+				phandle = <0x02>;
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_be_out_format_timing_48Hz_8kbe_lcd {
+				width = <0xf00>;
+				height = <0x870>;
+				framerate = <0xbb80>;
+				total_h_size = <0x1140>;
+				total_v_size = <0xaf4>;
+				h_start = <0x1a0>;
+				v_start = <0x28>;
+				actHSize = <0xf00>;
+				actVSize = <0x870>;
+				vsWidth = <0x01>;
+				hsWidth = <0x04>;
+			};
+
+			sony_be_out_format_timing_50Hz_8kbe_lcd {
+				width = <0xf00>;
+				height = <0x870>;
+				framerate = <0xc350>;
+				total_h_size = <0x1140>;
+				total_v_size = <0xa84>;
+				h_start = <0x1a0>;
+				v_start = <0x28>;
+				actHSize = <0xf00>;
+				actVSize = <0x870>;
+				vsWidth = <0x01>;
+				hsWidth = <0x04>;
+			};
+
+			sony_be_out_format_timing_60Hz_8kbe_lcd {
+				width = <0xf00>;
+				height = <0x870>;
+				framerate = <0xea60>;
+				total_h_size = <0x1140>;
+				total_v_size = <0x8c4>;
+				h_start = <0x1a0>;
+				v_start = <0x28>;
+				actHSize = <0xf00>;
+				actVSize = <0x870>;
+				vsWidth = <0x01>;
+				hsWidth = <0x04>;
+			};
+
+			sony_be_out_format_timing_100Hz_8kbe_lcd {
+				width = <0xf00>;
+				height = <0x870>;
+				framerate = <0x186a0>;
+				total_h_size = <0x1140>;
+				total_v_size = <0xa84>;
+				h_start = <0x1a0>;
+				v_start = <0x28>;
+				actHSize = <0xf00>;
+				actVSize = <0x870>;
+				vsWidth = <0x01>;
+				hsWidth = <0x04>;
+			};
+
+			sony_be_out_format_timing_120Hz_8kbe_lcd {
+				width = <0xf00>;
+				height = <0x870>;
+				framerate = <0x1d4c0>;
+				total_h_size = <0x1140>;
+				total_v_size = <0x8c4>;
+				h_start = <0x1a0>;
+				v_start = <0x28>;
+				actHSize = <0xf00>;
+				actVSize = <0x870>;
+				vsWidth = <0x01>;
+				hsWidth = <0x04>;
+			};
+
+			sony_be_out_format_timing_48Hz_8kbe_oled {
+				width = <0xf00>;
+				height = <0x870>;
+				framerate = <0xbb80>;
+				total_h_size = <0x1120>;
+				total_v_size = <0xb08>;
+				h_start = <0x1a0>;
+				v_start = <0x44>;
+				actHSize = <0xf00>;
+				actVSize = <0x870>;
+				vsWidth = <0x01>;
+				hsWidth = <0x04>;
+			};
+
+			sony_be_out_format_timing_50Hz_8kbe_oled {
+				width = <0xf00>;
+				height = <0x870>;
+				framerate = <0xc350>;
+				total_h_size = <0x1120>;
+				total_v_size = <0xa94>;
+				h_start = <0x1a0>;
+				v_start = <0x44>;
+				actHSize = <0xf00>;
+				actVSize = <0x870>;
+				vsWidth = <0x01>;
+				hsWidth = <0x04>;
+			};
+
+			sony_be_out_format_timing_60Hz_8kbe_oled {
+				width = <0xf00>;
+				height = <0x870>;
+				framerate = <0xea60>;
+				total_h_size = <0x1120>;
+				total_v_size = <0x8d4>;
+				h_start = <0x1a0>;
+				v_start = <0x44>;
+				actHSize = <0xf00>;
+				actVSize = <0x870>;
+				vsWidth = <0x01>;
+				hsWidth = <0x04>;
+			};
+
+			sony_be_out_format_timing_100Hz_8kbe_oled {
+				width = <0xf00>;
+				height = <0x870>;
+				framerate = <0x186a0>;
+				total_h_size = <0x1120>;
+				total_v_size = <0xa94>;
+				h_start = <0x1a0>;
+				v_start = <0x44>;
+				actHSize = <0xf00>;
+				actVSize = <0x870>;
+				vsWidth = <0x01>;
+				hsWidth = <0x04>;
+			};
+
+			sony_be_out_format_timing_120Hz_8kbe_oled {
+				width = <0xf00>;
+				height = <0x870>;
+				framerate = <0x1d4c0>;
+				total_h_size = <0x1120>;
+				total_v_size = <0x8d4>;
+				h_start = <0x1a0>;
+				v_start = <0x44>;
+				actHSize = <0xf00>;
+				actVSize = <0x870>;
+				vsWidth = <0x01>;
+				hsWidth = <0x04>;
+			};
+		};
+	};
+
+	__symbols__ {
+		sony_paneldet = "/fragment@0/__overlay__/sony_paneldet";
+		sony_display_extension = "/fragment@1/__overlay__/sony_display_extension";
+	};
+
+	__fixups__ {
+		odm = "/fragment@0:target:0\0/fragment@1:target:0\0/fragment@2:target:0";
+	};
+};

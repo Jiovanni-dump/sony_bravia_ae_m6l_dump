@@ -1,0 +1,86 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			cxd_tnr@60 {
+				rssi_group = <0x01 0x02>;
+				rssi_group_num = <0x02>;
+
+				rssi3 {
+					tuner = "Ascot4";
+					delsys = "SYS_ANALOG";
+					rssi = <0x03>;
+					phandle = <0x01>;
+				};
+
+				rssi6 {
+					tuner = "Ascot4";
+					delsys = "SYS_ISDBT";
+					rssi = <0x06>;
+					phandle = <0x02>;
+				};
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			vritual_fe_id = <0x00>;
+			vritual_fe_num = <0x01>;
+			cfm_group = <0xffffffff>;
+
+			cfm_node0 {
+				demods = <0x00 0xffff>;
+				tuners = <0x6056 0xffff>;
+				lnbs = <0xffff>;
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			clampgains {
+				clampgain_b = <0x2df>;
+				clampgain_gh = <0x2df>;
+				clampgain_dk = <0x2f0>;
+				clampgain_i = <0x340>;
+				clampgain_mn = <0x2f0>;
+			};
+		};
+	};
+
+	__symbols__ {
+		rssi3 = "/fragment@0/__overlay__/cxd_tnr@60/rssi3";
+		rssi6 = "/fragment@0/__overlay__/cxd_tnr@60/rssi6";
+	};
+
+	__fixups__ {
+		pm_i2c1 = "/fragment@0:target:0";
+		mtk_cfm = "/fragment@1:target:0";
+		cfm_node0 = "/fragment@1/__overlay__:cfm_group:0";
+		mtk_demod = "/fragment@2:target:0";
+	};
+
+	__local_fixups__ {
+
+		fragment@0 {
+
+			__overlay__ {
+
+				cxd_tnr@60 {
+					rssi_group = <0x00 0x04>;
+				};
+			};
+		};
+	};
+};

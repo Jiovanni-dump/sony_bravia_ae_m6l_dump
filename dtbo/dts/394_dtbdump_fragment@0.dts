@@ -1,0 +1,16 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			model_info = <0x02>;
+		};
+	};
+
+	__fixups__ {
+		mtk_demod = "/fragment@0:target:0";
+	};
+};

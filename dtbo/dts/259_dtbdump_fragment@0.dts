@@ -1,0 +1,26 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			lm75_dram_ti {
+				compatible = "ti,tmp100,ro";
+				reg = <0x4d>;
+				status = "okay";
+				phandle = <0x01>;
+			};
+		};
+	};
+
+	__symbols__ {
+		lm75_dram_ti = "/fragment@0/__overlay__/lm75_dram_ti";
+	};
+
+	__fixups__ {
+		i2c0 = "/fragment@0:target:0";
+	};
+};

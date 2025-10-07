@@ -1,0 +1,160 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			hw_reserved_1 {
+				reg = <0x00 0x20000000 0x00 0x5700000>;
+				no-map;
+			};
+
+			hw_reserved_2 {
+				reg = <0x00 0x259c0000 0x00 0x640000>;
+				no-map;
+			};
+
+			hw_reserved_3 {
+				reg = <0x00 0x85d95000 0x00 0x9400000>;
+				no-map;
+			};
+
+			hw_reserved_4 {
+				reg = <0x00 0x8f23f000 0x00 0x171c1000>;
+				no-map;
+			};
+
+			hw_reserved_5 {
+				reg = <0x01 0x9fc00000 0x00 0x400000>;
+				no-map;
+			};
+
+			default_cma {
+				compatible = "shared-dma-pool";
+				reg = <0x01 0x9f800000 0x00 0x400000>;
+				reusable;
+				linux,cma-default;
+			};
+
+			nullmem_1 {
+				device_type = "mtk-nullmem";
+				reg = <0x00 0x3000000 0x00 0x10000000>;
+			};
+
+			reserved_disp_gucd_dma {
+				reg = <0x00 0xa8800000 0x00 0x1b0000>;
+				reusable;
+				mediatek,mpu-nomap;
+			};
+
+			reserved_disp_localcolor_dma {
+				reg = <0x00 0xa89b0000 0x00 0x140000>;
+				reusable;
+				mediatek,mpu-nomap;
+			};
+
+			reserved_local_dimming {
+				reg = <0x00 0xa8000000 0x00 0x800000>;
+				reusable;
+				mediatek,mpu-nomap;
+			};
+
+			reserved_dummy_2 {
+				reg = <0x00 0xa8af0000 0x00 0x110000>;
+				mediatek,mpu-nomap;
+			};
+
+			mrdump-reserve {
+				compatible = "mediatek,aee_debug_kinfo";
+				reg = <0x00 0x25710000 0x00 0x10000>;
+				no-map;
+			};
+
+			minirdump-reserved-memory {
+				compatible = "mediatek,minirdump";
+				reg = <0x00 0x25720000 0x00 0x2a0000>;
+				no-map;
+			};
+
+			rscshm@pmu3 {
+				compatible = "shared-dma-pool";
+				reg = <0x00 0x85d94000 0x00 0x1000>;
+				no-map;
+			};
+
+			vdev0vring1@pmu1 {
+				compatible = "shared-dma-pool";
+				reg = <0x00 0x85d82000 0x00 0x2000>;
+				no-map;
+			};
+
+			vdev0vring0@pmu0 {
+				compatible = "shared-dma-pool";
+				reg = <0x00 0x85d80000 0x00 0x2000>;
+				no-map;
+			};
+
+			pmu_mspi_shm@pmu4 {
+				compatible = "shared-dma-pool";
+				reg = <0x00 0x85d00000 0x00 0x80000>;
+				no-map;
+			};
+
+			vdev0buffer@pmu2 {
+				compatible = "shared-dma-pool";
+				reg = <0x00 0x85d84000 0x00 0x10000>;
+				no-map;
+			};
+
+			frc_dma_pool@frc0 {
+				compatible = "shared-dma-pool";
+				reg = <0x00 0x8f1aa000 0x00 0x15000>;
+				no-map;
+			};
+
+			pqu_dma_pool@pqu0 {
+				compatible = "shared-dma-pool";
+				reg = <0x00 0x8f195000 0x00 0x15000>;
+				no-map;
+			};
+
+			ram-console-reserved-memory {
+				compatible = "mediatek,ram_console";
+				reg = <0x00 0x25700000 0x00 0x10000>;
+				no-map;
+			};
+
+			hwi2c_mem {
+				compatible = "shared-dma-pool";
+				reg = <0x00 0x8f1bf000 0x00 0x80000>;
+				no-map;
+			};
+
+			cma_22 {
+				compatible = "shared-dma-pool";
+				heap_name = "RETURN";
+				reg = <0x00 0x2fc00000 0x00 0x4000000>;
+				reusable;
+			};
+
+			cma_23 {
+				compatible = "shared-dma-pool";
+				heap_name = "OTHERS_RETURN";
+				reg = <0x00 0xa6400000 0x00 0x1c00000>;
+				reusable;
+			};
+
+			iommu_carveout@cv0 {
+				reg = <0x00 0x85cff000 0x00 0x1000>;
+				mediatek,mpu-map;
+			};
+		};
+	};
+
+	__fixups__ {
+		reserved_memory = "/fragment@0:target:0";
+	};
+};

@@ -1,0 +1,39 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			dish-a8303-1@08 {
+				fixed_output_19v = <0x01>;
+			};
+
+			dish-a8303-1@09 {
+				fixed_output_19v = <0x01>;
+			};
+
+			dish_tps65235@10 {
+				fixed_output_19v = <0x01>;
+			};
+
+			dish_tps65235@11 {
+				fixed_output_19v = <0x01>;
+			};
+
+			dish_mp8128@0a {
+				fixed_output_19v = <0x01>;
+			};
+
+			dish_mp8128@0b {
+				fixed_output_19v = <0x01>;
+			};
+		};
+	};
+
+	__fixups__ {
+		pm_i2c1 = "/fragment@0:target:0";
+	};
+};

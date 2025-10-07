@@ -1,0 +1,116 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			cxd_tnr@60 {
+				agc1_delivery_sys = "SYS_ATSC30";
+				rssi_group = <0x01 0x02 0x03 0x04>;
+				rssi_group_num = <0x04>;
+
+				rssi3 {
+					tuner = "Ascot4";
+					delsys = "SYS_ANALOG";
+					rssi = <0x03>;
+					phandle = <0x01>;
+				};
+
+				rssi5_1 {
+					tuner = "Ascot4";
+					delsys = "SYS_ATSC";
+					rssi = <0x05>;
+					phandle = <0x02>;
+				};
+
+				rssi5_2 {
+					tuner = "Ascot4";
+					delsys = "SYS_DVBC_ANNEX_B";
+					rssi = <0x05>;
+					phandle = <0x03>;
+				};
+
+				rssi19_1 {
+					tuner = "Ascot4";
+					delsys = "SYS_ATSC30";
+					rssi = <0x13>;
+					phandle = <0x04>;
+				};
+			};
+
+			cxd_dmd@6e {
+				delivery_system = "SYS_ATSC30";
+				driving_current_tsclock_96MHz = <0x08>;
+				driving_current_other_96MHz = <0x08>;
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			vritual_fe_id = <0x00 0x01>;
+			vritual_fe_num = <0x02>;
+			cfm_group = <0xffffffff 0xffffffff>;
+
+			cfm_node0 {
+				demods = <0x00 0xffff>;
+				tuners = <0x6056 0xffff>;
+				lnbs = <0xffff>;
+			};
+
+			cfm_node1 {
+				demods = <0x01 0xffff>;
+				tuners = <0x6056 0xffff>;
+				lnbs = <0xffff>;
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			clampgains {
+				clampgain_b = <0x2df>;
+				clampgain_gh = <0x2df>;
+				clampgain_dk = <0x2f0>;
+				clampgain_i = <0x340>;
+				clampgain_mn = <0x2f0>;
+			};
+		};
+	};
+
+	__symbols__ {
+		rssi3 = "/fragment@0/__overlay__/cxd_tnr@60/rssi3";
+		rssi5_1 = "/fragment@0/__overlay__/cxd_tnr@60/rssi5_1";
+		rssi5_2 = "/fragment@0/__overlay__/cxd_tnr@60/rssi5_2";
+		rssi19_1 = "/fragment@0/__overlay__/cxd_tnr@60/rssi19_1";
+	};
+
+	__fixups__ {
+		pm_i2c1 = "/fragment@0:target:0";
+		mtk_cfm = "/fragment@1:target:0";
+		cfm_node0 = "/fragment@1/__overlay__:cfm_group:0";
+		cfm_node1 = "/fragment@1/__overlay__:cfm_group:4";
+		mtk_demod = "/fragment@2:target:0";
+	};
+
+	__local_fixups__ {
+
+		fragment@0 {
+
+			__overlay__ {
+
+				cxd_tnr@60 {
+					rssi_group = <0x00 0x04 0x08 0x0c>;
+				};
+			};
+		};
+	};
+};

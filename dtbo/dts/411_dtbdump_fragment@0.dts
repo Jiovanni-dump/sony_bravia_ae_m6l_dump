@@ -1,0 +1,16 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			dtbo-name-Sony-oled-ip = "pqu_Sony_oled_ip_enable.dtbo";
+		};
+	};
+
+	__fixups__ {
+		mtk_pqu = "/fragment@0:target:0";
+	};
+};

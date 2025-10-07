@@ -1,0 +1,93 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_paneldet {
+				panelOnPreDelay = <0x00>;
+				panelOnPostDelay = <0x6e>;
+				panelOffPreDelay = <0x00>;
+				panelOffPostDelay = <0x00>;
+				blOnPreDelay = <0x00>;
+				blOnPreDelay_pless = <0x258>;
+				blOnPostDelay = <0x00>;
+				blOffPreDelay = <0x00>;
+				blOffPostDelay = <0x7d0>;
+				phandle = <0x01>;
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_panel {
+				compatible = "sony,panel";
+				status = "okay";
+				panel_name = "default";
+				ioNum = <0xd5 0x01>;
+				panelOnPreDelay = <0x00>;
+				panelOnPostDelay = <0x6e>;
+				panelOffPreDelay = <0x00>;
+				panelOffPostDelay = <0x00>;
+				powerOffOnProtection = <0x514>;
+				phandle = <0x02>;
+			};
+
+			sony_backlight {
+				compatible = "sony,backlight";
+				status = "okay";
+				panel_name = "default";
+				ioNum = <0x10e 0x01>;
+				blOnPreDelay = <0x00>;
+				blOnPreDelay_pless = <0x258>;
+				blOnPostDelay = <0x00>;
+				blOffPreDelay = <0x00>;
+				blOffPostDelay = <0x00>;
+				ldErrDetIo = <0x3b 0x01>;
+				gErrDetIo = <0x0a 0x01>;
+				powerOffOnProtection = <0x514>;
+				phandle = <0x03>;
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_display_extension {
+				paneltype = "lcd";
+				phandle = <0x04>;
+			};
+		};
+	};
+
+	fragment@3 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			drop_recovery;
+			drop-time = <0x00>;
+		};
+	};
+
+	__symbols__ {
+		sony_paneldet = "/fragment@0/__overlay__/sony_paneldet";
+		sony_pnl_pwr = "/fragment@1/__overlay__/sony_panel";
+		sony_bl_pwr = "/fragment@1/__overlay__/sony_backlight";
+		sony_display_extension = "/fragment@2/__overlay__/sony_display_extension";
+	};
+
+	__fixups__ {
+		odm = "/fragment@0:target:0\0/fragment@1:target:0\0/fragment@2:target:0";
+		mmc0 = "/fragment@3:target:0";
+	};
+};

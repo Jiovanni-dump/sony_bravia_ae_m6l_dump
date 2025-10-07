@@ -1,0 +1,25 @@
+# Android fstab file.
+#<src>                                                  <mnt_point>         <type>    <mnt_flags>             <fs_mgr_flags>
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+system                                                 /system               ext4      ro,barrier=1           wait,logical,first_stage_mount,slotselect
+vendor                                                 /vendor               ext4      ro,barrier=1           wait,logical,first_stage_mount,slotselect
+vendor_dlkm                                            /vendor_dlkm          ext4      noatime,ro,errors=panic   wait,logical,first_stage_mount,slotselect,avb
+/dev/block/sda1                                        /sdcard               vfat      defaults               defaults
+/dev/block/by-name/userdata       /data                 ext4      noatime,nosuid,nodev   wait,block_validity,nodiscard,data=ordered,journal_checksum
+/dev/block/by-name/metadata       /metadata             ext4      noatime,nosuid,nodev,discard,sync  wait,formattable,first_stage_mount
+/dev/block/by-name/cache          /cache                ext4      noatime,nosuid,nodev   wait,block_validity,nodiscard,data=ordered,journal_checksum
+/dev/block/by-name/tvconfig       /vendor/tvconfig      ext4      rw                     wait
+/dev/block/by-name/MBOOT          /MBOOT                emmc      defaults               defaults
+/dev/block/by-name/MPOOL          /MPOOL                emmc      defaults               defaults
+/dev/block/by-name/misc           /misc                 emmc      defaults               defaults
+/dev/block/by-name/vbmeta         /vbmeta               emmc      defaults               defaults,slotselect
+/dev/block/by-name/boot           /boot                 emmc      defaults               defaults,slotselect
+/dev/block/by-name/dtbo           /dtbo                 emmc      defaults               defaults,slotselect
+/dev/block/by-name/optee          /optee                emmc      defaults               defaults
+/dev/block/by-name/armfw          /armfw                emmc      defaults               defaults
+/devices/platform/mstar_fcie*                          auto                  auto      defaults               encryptable=true,voldmanaged=usb:auto
+/devices/platform/mstar_sdio*                          auto                  auto      defaults               encryptable=true,voldmanaged=usb:auto
+/devices/Mstar-ehci*                                   auto                  auto      defaults               encryptable=true,voldmanaged=usb:auto
+/devices/Mstar-xhci*                                   auto                  auto      defaults               encryptable=true,voldmanaged=usb:auto

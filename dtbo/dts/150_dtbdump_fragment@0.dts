@@ -1,0 +1,17 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			pinctrl-mt5896,bits = <0x15 0xf0 0x01 0x18 0x0f 0x01>;
+			pinctrl-mtk,pins = <0x15 0xf0 0x01 0x18 0x0f 0x01>;
+		};
+	};
+
+	__fixups__ {
+		pm_uart_pmux = "/fragment@0:target:0";
+	};
+};

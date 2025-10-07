@@ -1,0 +1,36 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			status = "okay";
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			pinctrl-3 = <0xffffffff>;
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			pinctrl-mt5896,pins = <0x260 0x00>;
+			pinctrl-mt5896,drive-strength = <0x07 0x04>;
+			pinctrl-mt5896,bias-pulldown = <0x00 0x28 0x00 0x28>;
+		};
+	};
+
+	__fixups__ {
+		mtk_ci = "/fragment@0:target:0";
+		mtk_demux2 = "/fragment@1:target:0";
+		cil_tx_clk_pcfg_shared = "/fragment@1/__overlay__:pinctrl-3:0\0/fragment@2:target:0";
+	};
+};

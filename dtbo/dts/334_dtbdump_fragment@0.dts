@@ -1,0 +1,26 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_camera_driver {
+				compatible = "sony,sony_m6_camera";
+				status = "disabled";
+				rpmsg-ept-name = "sony-camera-ept";
+				phandle = <0x01>;
+			};
+		};
+	};
+
+	__symbols__ {
+		sony_camera_driver = "/fragment@0/__overlay__/sony_camera_driver";
+	};
+
+	__fixups__ {
+		odm = "/fragment@0:target:0";
+	};
+};

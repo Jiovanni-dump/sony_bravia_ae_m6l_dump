@@ -1,0 +1,27 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			cxd_tnr@60 {
+				fm_trap_digital_vhf_h = <0x01>;
+			};
+
+			cxd_tnr@61 {
+				fm_trap_digital_vhf_h = <0x01>;
+			};
+
+			cxd_tnr@62 {
+				fm_trap_digital_vhf_h = <0x01>;
+			};
+		};
+	};
+
+	__fixups__ {
+		pm_i2c1 = "/fragment@0:target:0";
+	};
+};

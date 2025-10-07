@@ -1,0 +1,16 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			tx-swing = <0x04>;
+		};
+	};
+
+	__fixups__ {
+		gmac = "/fragment@0:target:0";
+	};
+};

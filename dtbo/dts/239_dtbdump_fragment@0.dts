@@ -1,0 +1,103 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			audio-codec = <0x01>;
+			codec-dai-name = "sony-damp-amplifier";
+			audio-routing = "I2S0\0SPEAKER_PLAYBACK\0DAC0\0HEADPHONE_PLAYBACK\0DAC1\0LINEOUT_PLAYBACK";
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_damp {
+				status = "okay";
+				ampmute-gpios = <0xffffffff 0x05 0x01>;
+				ampreset-gpios = <0xffffffff 0x0a 0x01>;
+				headphonemute-gpios = <0xffffffff 0x45 0x01>;
+				amperrdet-gpios = <0xffffffff 0x2f 0x01>;
+				compatible = "sony,tas5825";
+				damp = <0x02 0x03 0x04 0x05>;
+				phandle = <0x01>;
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			tas5825_amp@4c {
+				compatible = "sony,tas5825_i2c";
+				reg = <0x4c>;
+				status = "okay";
+				phandle = <0x02>;
+			};
+
+			tas5825_amp@4d {
+				compatible = "sony,tas5825_i2c";
+				reg = <0x4d>;
+				status = "okay";
+				phandle = <0x03>;
+			};
+
+			tas5825_amp@4e {
+				compatible = "sony,tas5825_i2c";
+				reg = <0x4e>;
+				status = "okay";
+				phandle = <0x04>;
+			};
+
+			tas5825_amp@4f {
+				compatible = "sony,tas5825_i2c";
+				reg = <0x4f>;
+				status = "okay";
+				phandle = <0x05>;
+			};
+		};
+	};
+
+	__symbols__ {
+		sony_damp = "/fragment@1/__overlay__/sony_damp";
+		tas5825_0 = "/fragment@2/__overlay__/tas5825_amp@4c";
+		tas5825_1 = "/fragment@2/__overlay__/tas5825_amp@4d";
+		tas5825_2 = "/fragment@2/__overlay__/tas5825_amp@4e";
+		tas5825_3 = "/fragment@2/__overlay__/tas5825_amp@4f";
+	};
+
+	__fixups__ {
+		mtk_sound_machine = "/fragment@0:target:0";
+		odm = "/fragment@1:target:0";
+		pm_gpio0 = "/fragment@1/__overlay__/sony_damp:ampmute-gpios:0\0/fragment@1/__overlay__/sony_damp:ampreset-gpios:0";
+		gpio0 = "/fragment@1/__overlay__/sony_damp:headphonemute-gpios:0\0/fragment@1/__overlay__/sony_damp:amperrdet-gpios:0";
+		i2c1 = "/fragment@2:target:0";
+	};
+
+	__local_fixups__ {
+
+		fragment@0 {
+
+			__overlay__ {
+				audio-codec = <0x00>;
+			};
+		};
+
+		fragment@1 {
+
+			__overlay__ {
+
+				sony_damp {
+					damp = <0x00 0x04 0x08 0x0c>;
+				};
+			};
+		};
+	};
+};

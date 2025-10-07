@@ -1,0 +1,543 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			cxd_tnr@60 {
+				compatible = "sony,cxd_tnr";
+				reg = <0x60>;
+				status = "okay";
+				unique_id = <0x6056>;
+				i2c_slave_id = <0xc0>;
+				delivery_system = <0x01 0x02 0x03 0x08 0x0b 0x0d 0x10 0x13>;
+			};
+
+			cxd_tnr@61 {
+				compatible = "sony,cxd_tnr";
+				reg = <0x61>;
+				status = "okay";
+				unique_id = <0x6058>;
+				i2c_slave_id = <0xc2>;
+				delivery_system = <0x01 0x02 0x03 0x08 0x0b 0x0d 0x10 0x13>;
+			};
+
+			cxd_tnr@62 {
+				compatible = "sony,cxd_tnr";
+				reg = <0x62>;
+				status = "okay";
+				unique_id = <0x6059>;
+				i2c_slave_id = <0xc4>;
+				delivery_system = <0x01 0x02 0x03 0x08 0x0b 0x0d 0x10 0x13>;
+			};
+
+			cxd_tnr@63 {
+				compatible = "sony,cxd_tnr";
+				reg = <0x63>;
+				status = "okay";
+				unique_id = <0x6056>;
+				i2c_slave_id = <0xc6>;
+				delivery_system = <0x01 0x02 0x03 0x08 0x0b 0x0d 0x10 0x13>;
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			cxd_dmd@6e {
+				compatible = "sony,cxd_dmd";
+				reg = <0x6e>;
+				status = "okay";
+				unique_id = <0x01>;
+				i2c_slave_id = <0xd8>;
+				gpio_base_addr = <0x1c023001>;
+				gpio_base_size = <0x01>;
+				gpio_mask = <0x08>;
+				gpio_dmd_reset_enable = <0x00>;
+				gpio_dmd_reset_disable = <0x08>;
+				pin = "ext_ts_demod_pad_mux";
+			};
+
+			cxd_dmd@6f {
+				compatible = "sony,cxd_dmd";
+				reg = <0x6f>;
+				status = "okay";
+				unique_id = <0x02>;
+				i2c_slave_id = <0xda>;
+				gpio_base_addr = <0x1c023001>;
+				gpio_base_size = <0x01>;
+				gpio_mask = <0x08>;
+				gpio_dmd_reset_enable = <0x00>;
+				gpio_dmd_reset_disable = <0x08>;
+				pin = "ext2_ts_demod_pad_mux";
+			};
+
+			cxd_dmd@66 {
+				compatible = "sony,cxd_dmd";
+				reg = <0x66>;
+				status = "okay";
+				unique_id = <0x03>;
+				i2c_slave_id = <0xc8>;
+				gpio_base_addr = <0x1c023001>;
+				gpio_base_size = <0x01>;
+				gpio_mask = <0x08>;
+				gpio_dmd_reset_enable = <0x00>;
+				gpio_dmd_reset_disable = <0x08>;
+				pin = "ext1_ts_demod_pad_mux";
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			pin_gpio_11 {
+				gpio-hog;
+				gpios = <0x0b 0x00>;
+				output-high;
+				line-name = "OPCTRL11";
+			};
+
+			pin_gpio_71 {
+				gpio-hog;
+				gpios = <0x47 0x00>;
+				output-low;
+				line-name = "P_ON_HL";
+			};
+		};
+	};
+
+	fragment@3 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_panel {
+				compatible = "sony,panel";
+				status = "okay";
+				panel_name = "default";
+				ioNum = <0xd5>;
+				panelOnPreDelay = <0x00>;
+				panelOnPostDelay = <0x00>;
+				panelOffPreDelay = <0x00>;
+				panelOffPostDelay = <0x00>;
+				phandle = <0x01>;
+			};
+
+			sony_backlight {
+				compatible = "sony,backlight";
+				status = "okay";
+				panel_name = "default";
+				ioNum = <0x10e>;
+				blOnPreDelay = <0x00>;
+				blOnPostDelay = <0x00>;
+				blOffPreDelay = <0x00>;
+				blOffPostDelay = <0x00>;
+				phandle = <0x02>;
+			};
+		};
+	};
+
+	fragment@4 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_pq_ecs {
+				compatible = "sony,pq-ecs";
+				status = "okay";
+				phandle = <0x03>;
+			};
+		};
+	};
+
+	fragment@5 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_pmu {
+				compatible = "sony,pmu";
+				status = "okay";
+				rpmsg-ept-name = "sony-pmu-ept";
+			};
+		};
+	};
+
+	fragment@6 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+
+	fragment@7 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			speed-scl-count = <0x5b8d8 0x0a 0x10>;
+			clock-frequency = <0x5b8d8>;
+			push-disable;
+		};
+	};
+
+	fragment@8 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			speed-scl-count = <0x5b8d8 0x0a 0x10>;
+			clock-frequency = <0x5b8d8>;
+			push-disable;
+		};
+	};
+
+	fragment@9 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			speed-scl-count = <0x5b8d8 0x0a 0x10>;
+			clock-frequency = <0x5b8d8>;
+			push-disable;
+		};
+	};
+
+	fragment@10 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			speed-scl-count = <0x5b8d8 0x0a 0x10>;
+			clock-frequency = <0x5b8d8>;
+			push-disable;
+		};
+	};
+
+	fragment@11 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			speed-scl-count = <0x5b8d8 0x0a 0x10>;
+			clock-frequency = <0x5b8d8>;
+			push-disable;
+		};
+	};
+
+	fragment@12 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			speed-scl-count = <0x5b8d8 0x0a 0x10>;
+			clock-frequency = <0x5b8d8>;
+			push-disable;
+		};
+	};
+
+	fragment@13 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_m6_lightsensor {
+				compatible = "sony,sony_m6_lightsensor";
+				status = "okay";
+			};
+
+			sony_m6_rgbsensor {
+				compatible = "sony,sony_m6_rgbsensor";
+				status = "okay";
+			};
+		};
+	};
+
+	fragment@14 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			extcon-gpios = <0xffffffff 0x44 0x00>;
+		};
+	};
+
+	fragment@15 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+
+	fragment@16 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			tuner-mxl661@60 {
+				status = "disabled";
+			};
+		};
+	};
+
+	fragment@17 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			pinctrl-names = "disabled";
+		};
+	};
+
+	fragment@18 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			tuner-av2017@63 {
+				status = "disabled";
+			};
+		};
+	};
+
+	fragment@19 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			tuner-si2151@64 {
+				status = "disabled";
+			};
+		};
+	};
+
+	fragment@20 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			tuner-rda5815@0c {
+				status = "disabled";
+			};
+		};
+	};
+
+	fragment@21 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+
+	fragment@22 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			dish-a8304@60 {
+				status = "disabled";
+			};
+		};
+	};
+
+	fragment@23 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			status = "disabled";
+			interrupts = <0x00 0x0f 0x04>;
+			reg = <0x00 0x1c460200 0x00 0x200>;
+			clocks = <0xffffffff 0x78 0xffffffff 0x79 0xffffffff 0x7a 0xffffffff 0x01 0xffffffff 0x02 0xffffffff 0x03 0xffffffff 0x04>;
+			clock-names = "smart_ck\0smart_synth_432_ck\0smart_synth_27_ck\0smart2piu\0smart_synth_272piu\0smart_synth_4322piu\0mcu_nonpm2smart0";
+			vcc_high_active = <0x01>;
+		};
+	};
+
+	fragment@24 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			status = "disabled";
+
+			spidev@1 {
+				status = "disabled";
+			};
+		};
+	};
+
+	fragment@25 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_hl_usb {
+				compatible = "sony,sony_hl_usb";
+				hl_usb_gpio_num-gpios = <0xffffffff 0x49 0x00>;
+				status = "okay";
+			};
+		};
+	};
+
+	fragment@26 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_ether_power {
+				compatible = "sony,ether-power";
+				gpios = <0xd1 0x00>;
+				status = "okay";
+			};
+		};
+	};
+
+	fragment@27 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+
+	fragment@28 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			pinctrl-mt5896,bits = <0x3d 0x0f 0x05 0x3d 0xf0 0x05 0x40 0x0f 0x05 0x40 0xf0 0x00>;
+			pinctrl-mtk,pins = <0x3d 0x0f 0x05 0x3d 0xf0 0x05 0x40 0x0f 0x05 0x40 0xf0 0x00>;
+		};
+	};
+
+	fragment@29 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			vbus-gpios = <0xffffffff 0x2c 0x00 0xffffffff 0x2d 0x00>;
+		};
+	};
+
+	fragment@30 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_display_extension {
+				phandle = <0x04>;
+
+				sony_be_out_format_timing_48Hz {
+					width = <0xf00>;
+					height = <0x870>;
+					framerate = <0xbb80>;
+					total_h_size = <0x1578>;
+					total_v_size = <0x8cc>;
+					h_start = <0x180>;
+					v_start = <0x28>;
+					actHSize = <0xf00>;
+					actVSize = <0x870>;
+					vsWidth = <0x01>;
+					hsWidth = <0x04>;
+				};
+
+				sony_be_out_format_timing_50Hz {
+					width = <0xf00>;
+					height = <0x870>;
+					framerate = <0xc350>;
+					total_h_size = <0x14a0>;
+					total_v_size = <0x8ca>;
+					h_start = <0x180>;
+					v_start = <0x28>;
+					actHSize = <0xf00>;
+					actVSize = <0x870>;
+					vsWidth = <0x01>;
+					hsWidth = <0x04>;
+				};
+
+				sony_be_out_format_timing_60Hz {
+					width = <0xf00>;
+					height = <0x870>;
+					framerate = <0xea60>;
+					total_h_size = <0x1130>;
+					total_v_size = <0x8ca>;
+					h_start = <0x180>;
+					v_start = <0x28>;
+					actHSize = <0xf00>;
+					actVSize = <0x870>;
+					vsWidth = <0x01>;
+					hsWidth = <0x04>;
+				};
+
+				sony_be_out_format_timing_100Hz {
+					width = <0xf00>;
+					height = <0x870>;
+					framerate = <0xc350>;
+					total_h_size = <0x14a0>;
+					total_v_size = <0x8ca>;
+					h_start = <0x180>;
+					v_start = <0x28>;
+					actHSize = <0xf00>;
+					actVSize = <0x870>;
+					vsWidth = <0x01>;
+					hsWidth = <0x04>;
+				};
+
+				sony_be_out_format_timing_120Hz {
+					width = <0xf00>;
+					height = <0x870>;
+					framerate = <0xea60>;
+					total_h_size = <0x1130>;
+					total_v_size = <0x8ca>;
+					h_start = <0x180>;
+					v_start = <0x28>;
+					actHSize = <0xf00>;
+					actVSize = <0x870>;
+					vsWidth = <0x01>;
+					hsWidth = <0x04>;
+				};
+			};
+		};
+	};
+
+	fragment@31 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			compatible = "simple-bus";
+		};
+	};
+
+	__symbols__ {
+		sony_pnl_pwr = "/fragment@3/__overlay__/sony_panel";
+		sony_bl_pwr = "/fragment@3/__overlay__/sony_backlight";
+		sony_pq_ecs = "/fragment@4/__overlay__/sony_pq_ecs";
+		sony_display_extension = "/fragment@30/__overlay__/sony_display_extension";
+	};
+
+	__fixups__ {
+		pm_i2c1 = "/fragment@0:target:0\0/fragment@1:target:0\0/fragment@12:target:0\0/fragment@16:target:0\0/fragment@18:target:0\0/fragment@19:target:0\0/fragment@20:target:0";
+		pm_gpio0 = "/fragment@2:target:0\0/fragment@25/__overlay__/sony_hl_usb:hl_usb_gpio_num-gpios:0";
+		odm = "/fragment@3:target:0\0/fragment@4:target:0\0/fragment@5:target:0\0/fragment@13:target:0\0/fragment@25:target:0\0/fragment@26:target:0\0/fragment@30:target:0\0/fragment@31:target:0";
+		gpio_front_led = "/fragment@6:target:0";
+		i2c0 = "/fragment@7:target:0";
+		i2c1 = "/fragment@8:target:0\0/fragment@22:target:0";
+		i2c2 = "/fragment@9:target:0";
+		i2c3 = "/fragment@10:target:0";
+		pm_i2c0 = "/fragment@11:target:0";
+		extcon_gpio = "/fragment@14:target:0";
+		gpio0 = "/fragment@14/__overlay__:extcon-gpios:0\0/fragment@29/__overlay__:vbus-gpios:0\0/fragment@29/__overlay__:vbus-gpios:12";
+		rt9114 = "/fragment@15:target:0";
+		mtk_pqu = "/fragment@17:target:0";
+		dish_rt5047 = "/fragment@21:target:0";
+		mtk_sc = "/fragment@23:target:0";
+		topgen_mux_gate = "/fragment@23/__overlay__:clocks:0\0/fragment@23/__overlay__:clocks:8\0/fragment@23/__overlay__:clocks:16";
+		smart2_OOXX = "/fragment@23/__overlay__:clocks:24\0/fragment@23/__overlay__:clocks:32\0/fragment@23/__overlay__:clocks:40";
+		smart_OOXX = "/fragment@23/__overlay__:clocks:48";
+		mspi_ci = "/fragment@24:target:0";
+		pcierc1 = "/fragment@27:target:0";
+		mspi_frc_pmux = "/fragment@28:target:0";
+		usb_host0 = "/fragment@29:target:0";
+	};
+};

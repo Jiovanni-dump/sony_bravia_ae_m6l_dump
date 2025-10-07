@@ -1,0 +1,267 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			dish-a8303-1@09 {
+				status = "okay";
+				register_to = "dvb_frontend";
+			};
+
+			dish-a8303-1@08 {
+				status = "okay";
+				register_to = "dvb_frontend";
+			};
+
+			dish_tps65235@11 {
+				status = "okay";
+				register_to = "dvb_frontend";
+			};
+
+			dish_tps65235@10 {
+				status = "okay";
+				register_to = "dvb_frontend";
+			};
+
+			dish_mp8128@0b {
+				status = "okay";
+				register_to = "dvb_frontend";
+				reg_ctrl2 = <0x6e>;
+			};
+
+			dish_mp8128@0a {
+				status = "okay";
+				register_to = "dvb_frontend";
+				reg_ctrl2 = <0x6e>;
+			};
+
+			cxd_tnr@60 {
+				rssi_group = <0x01 0x02 0x03 0x04>;
+				rssi_group_num = <0x04>;
+			};
+
+			cxd_tnr@61 {
+				rssi_group = <0x05 0x06 0x07 0x08>;
+				rssi_group_num = <0x04>;
+			};
+
+			cxd_tnr@62 {
+				rssi_group = <0x09 0x0a 0x0b 0x0c>;
+				rssi_group_num = <0x04>;
+			};
+
+			rssi23 {
+				tuner = "FreiaP";
+				delsys = "SYS_ISDBT";
+				lna = "on";
+				rssi = <0x17>;
+				phandle = <0x01>;
+			};
+
+			rssi24 {
+				tuner = "FreiaP";
+				delsys = "SYS_ISDBT";
+				lna = "off";
+				rssi = <0x18>;
+				phandle = <0x02>;
+			};
+
+			rssi25 {
+				tuner = "FreiaP";
+				delsys = "SYS_ISDBS";
+				rssi = <0x19>;
+				phandle = <0x03>;
+			};
+
+			rssi26 {
+				tuner = "FreiaP";
+				delsys = "SYS_ISDBS3";
+				rssi = <0x1a>;
+				phandle = <0x04>;
+			};
+
+			rssi27 {
+				tuner = "FreiaP";
+				delsys = "SYS_ISDBT";
+				lna = "on";
+				rssi = <0x1b>;
+				phandle = <0x05>;
+			};
+
+			rssi28 {
+				tuner = "FreiaP";
+				delsys = "SYS_ISDBT";
+				lna = "off";
+				rssi = <0x1c>;
+				phandle = <0x06>;
+			};
+
+			rssi29 {
+				tuner = "FreiaP";
+				delsys = "SYS_ISDBS";
+				rssi = <0x1d>;
+				phandle = <0x07>;
+			};
+
+			rssi30 {
+				tuner = "FreiaP";
+				delsys = "SYS_ISDBS3";
+				rssi = <0x1e>;
+				phandle = <0x08>;
+			};
+
+			rssi31 {
+				tuner = "FreiaP";
+				delsys = "SYS_ISDBT";
+				lna = "on";
+				rssi = <0x1f>;
+				phandle = <0x09>;
+			};
+
+			rssi32 {
+				tuner = "FreiaP";
+				delsys = "SYS_ISDBT";
+				lna = "off";
+				rssi = <0x20>;
+				phandle = <0x0a>;
+			};
+
+			rssi33 {
+				tuner = "FreiaP";
+				delsys = "SYS_ISDBS";
+				rssi = <0x21>;
+				phandle = <0x0b>;
+			};
+
+			rssi34 {
+				tuner = "FreiaP";
+				delsys = "SYS_ISDBS3";
+				rssi = <0x22>;
+				phandle = <0x0c>;
+			};
+
+			cxd_dmd@6e {
+				driving_current_tsclock_96MHz = <0x08>;
+				driving_current_other_96MHz = <0x08>;
+				driving_current_tsclock_128MHz = <0x08>;
+				driving_current_other_128MHz = <0x08>;
+			};
+
+			cxd_dmd@6f {
+				driving_current_tsclock_96MHz = <0x08>;
+				driving_current_other_96MHz = <0x08>;
+				driving_current_tsclock_128MHz = <0x08>;
+				driving_current_other_128MHz = <0x08>;
+			};
+
+			cxd_dmd@66 {
+				driving_current_tsclock_96MHz = <0x08>;
+				driving_current_other_96MHz = <0x08>;
+				driving_current_tsclock_128MHz = <0x08>;
+				driving_current_other_128MHz = <0x08>;
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			vritual_fe_id = <0x00 0x01 0x02>;
+			vritual_fe_num = <0x03>;
+			cfm_group = <0x0d 0x0e 0x0f>;
+
+			cfm_node0 {
+				demods = <0x01 0xffff>;
+				tuners = <0x6056 0xffff>;
+				lnbs = <0xffff>;
+				phandle = <0x0d>;
+			};
+
+			cfm_node1 {
+				demods = <0x02 0xffff>;
+				tuners = <0x6058 0xffff>;
+				lnbs = <0xffff>;
+				phandle = <0x0e>;
+			};
+
+			cfm_node2 {
+				demods = <0x03 0xffff>;
+				tuners = <0x6059 0xffff>;
+				lnbs = <0xffff>;
+				phandle = <0x0f>;
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			clampgains {
+				clampgain_b = <0x2df>;
+				clampgain_gh = <0x2df>;
+				clampgain_dk = <0x2f0>;
+				clampgain_i = <0x340>;
+				clampgain_mn = <0x2f0>;
+			};
+		};
+	};
+
+	__symbols__ {
+		rssi23 = "/fragment@0/__overlay__/rssi23";
+		rssi24 = "/fragment@0/__overlay__/rssi24";
+		rssi25 = "/fragment@0/__overlay__/rssi25";
+		rssi26 = "/fragment@0/__overlay__/rssi26";
+		rssi27 = "/fragment@0/__overlay__/rssi27";
+		rssi28 = "/fragment@0/__overlay__/rssi28";
+		rssi29 = "/fragment@0/__overlay__/rssi29";
+		rssi30 = "/fragment@0/__overlay__/rssi30";
+		rssi31 = "/fragment@0/__overlay__/rssi31";
+		rssi32 = "/fragment@0/__overlay__/rssi32";
+		rssi33 = "/fragment@0/__overlay__/rssi33";
+		rssi34 = "/fragment@0/__overlay__/rssi34";
+		cfm_node0 = "/fragment@1/__overlay__/cfm_node0";
+		cfm_node1 = "/fragment@1/__overlay__/cfm_node1";
+		cfm_node2 = "/fragment@1/__overlay__/cfm_node2";
+	};
+
+	__fixups__ {
+		pm_i2c1 = "/fragment@0:target:0";
+		mtk_cfm = "/fragment@1:target:0";
+		mtk_demod = "/fragment@2:target:0";
+	};
+
+	__local_fixups__ {
+
+		fragment@0 {
+
+			__overlay__ {
+
+				cxd_tnr@60 {
+					rssi_group = <0x00 0x04 0x08 0x0c>;
+				};
+
+				cxd_tnr@61 {
+					rssi_group = <0x00 0x04 0x08 0x0c>;
+				};
+
+				cxd_tnr@62 {
+					rssi_group = <0x00 0x04 0x08 0x0c>;
+				};
+			};
+		};
+
+		fragment@1 {
+
+			__overlay__ {
+				cfm_group = <0x00 0x04 0x08>;
+			};
+		};
+	};
+};

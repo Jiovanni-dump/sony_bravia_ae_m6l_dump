@@ -1,0 +1,6 @@
+tvconfig.img.xz
+vendor_boot.img.xz
+vendor_boot/dtb/01_dtbdump_,MediaTek_MT5896.dtb.xz
+system_ext/priv-app/WebAppRuntime/WebAppRuntime.apk.xz
+product/priv-app/sku_NA/AtscBrowserService/AtscBrowserService.apk.xz
+product/app/sku_EU/HybridBrowserService/HybridBrowserService.apk.xz

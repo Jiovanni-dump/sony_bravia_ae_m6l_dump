@@ -1,0 +1,43 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			src_detect_gpio {
+				src0_gpio_num = <0x42>;
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			src_detect_gpio {
+				src0_gpio_num = <0x42>;
+			};
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			input0 {
+				data_port = "INPUT_PORT_HDMI3";
+			};
+		};
+	};
+
+	__fixups__ {
+		mtk_capability_0 = "/fragment@0:target:0";
+		mtk_capability_1 = "/fragment@1:target:0";
+		mtk_portmap = "/fragment@2:target:0";
+	};
+};

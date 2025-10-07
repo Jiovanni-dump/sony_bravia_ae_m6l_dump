@@ -1,0 +1,20 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			pinctrl-names = "default";
+			pinctrl-0 = <0xffffffff 0xffffffff>;
+			phy-type = <0x01>;
+		};
+	};
+
+	__fixups__ {
+		gmac = "/fragment@0:target:0";
+		rgmii_pmux = "/fragment@0/__overlay__:pinctrl-0:0";
+		rgmii_tx_pcfg = "/fragment@0/__overlay__:pinctrl-0:4";
+	};
+};

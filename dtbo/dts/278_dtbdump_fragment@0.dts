@@ -1,0 +1,34 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			reset-gpio-num = <0xe6>;
+		};
+	};
+
+	fragment@1 {
+		target-path = "/";
+
+		__overlay__ {
+
+			wifi_sub_reset {
+				compatible = "mediatek,mtk-wifi-sub_reset";
+				wifisubreset-gpios = <0xffffffff 0x16 0x00>;
+			};
+
+			bt_reset {
+				compatible = "mediatek,mtk-bt-reset";
+				btreset-gpios = <0xffffffff 0x15 0x00>;
+			};
+		};
+	};
+
+	__fixups__ {
+		wifi_reset = "/fragment@0:target:0";
+		gpio0 = "/fragment@1/__overlay__/wifi_sub_reset:wifisubreset-gpios:0\0/fragment@1/__overlay__/bt_reset:btreset-gpios:0";
+	};
+};

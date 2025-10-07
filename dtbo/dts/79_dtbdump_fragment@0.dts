@@ -1,0 +1,45 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_paneldet {
+				panel_id = "YDGO019RNP0101";
+				phandle = <0x01>;
+			};
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_panel {
+				panel_id = "YDGO019RNP0101";
+				panelAvail;
+				inch_size = "115";
+				phandle = <0x02>;
+			};
+
+			sony_backlight {
+				panelAvail;
+				phandle = <0x03>;
+			};
+		};
+	};
+
+	__symbols__ {
+		sony_paneldet = "/fragment@0/__overlay__/sony_paneldet";
+		sony_pnl_pwr = "/fragment@1/__overlay__/sony_panel";
+		sony_bl_pwr = "/fragment@1/__overlay__/sony_backlight";
+	};
+
+	__fixups__ {
+		odm = "/fragment@0:target:0\0/fragment@1:target:0";
+	};
+};

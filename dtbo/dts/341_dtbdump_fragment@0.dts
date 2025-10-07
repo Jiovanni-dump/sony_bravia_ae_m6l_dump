@@ -1,0 +1,19 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			cxd_dmd@6f {
+				canal_config = <0x01>;
+			};
+		};
+	};
+
+	__fixups__ {
+		pm_i2c1 = "/fragment@0:target:0";
+	};
+};

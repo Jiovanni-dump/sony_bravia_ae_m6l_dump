@@ -1,0 +1,40 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			pinctrl-names = "default";
+			pinctrl-0 = <0xffffffff 0xffffffff>;
+			phy-type = <0x01>;
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			pinctrl-names = "default";
+			pinctrl-0 = <0xffffffff 0xffffffff 0xffffffff>;
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			pinctrl-mt5896,pins = <0x258 0x00>;
+			pinctrl-mt5896,drive-strength = <0x07 0x05>;
+			pinctrl-mtk,pins = <0x258 0x07 0x05>;
+		};
+	};
+
+	__fixups__ {
+		gmac = "/fragment@0:target:0\0/fragment@1:target:0";
+		rgmii_pmux = "/fragment@0/__overlay__:pinctrl-0:0\0/fragment@1/__overlay__:pinctrl-0:0";
+		rgmii_tx_pcfg = "/fragment@0/__overlay__:pinctrl-0:4\0/fragment@1/__overlay__:pinctrl-0:4";
+		rgmii_tx_ext1_pcfg = "/fragment@1/__overlay__:pinctrl-0:8\0/fragment@2:target:0";
+	};
+};

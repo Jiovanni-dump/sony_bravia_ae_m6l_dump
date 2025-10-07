@@ -1,0 +1,318 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+
+	fragment@2 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			dish-a8304@07 {
+				status = "disabled";
+			};
+
+			dish-h29@08 {
+				status = "disabled";
+			};
+
+			dish-TPS65235@09 {
+				status = "disabled";
+			};
+
+			dish-TPS65233@0A {
+				status = "disabled";
+			};
+
+			dish-ARG81300@0B {
+				status = "disabled";
+			};
+
+			dish-a8303-1@09 {
+				compatible = "sony,a8303-1";
+				reg = <0x09>;
+				status = "disabled";
+				unique_id = <0x56a1>;
+				i2c_slave_id = <0x09>;
+				register_to = "cfm";
+			};
+
+			dish-a8303-1@08 {
+				compatible = "sony,a8303-1";
+				reg = <0x08>;
+				unique_id = <0x56a0>;
+				status = "disabled";
+				i2c_slave_id = <0x08>;
+				register_to = "cfm";
+			};
+
+			dish_tps65235@11 {
+				compatible = "sony,tps65235";
+				reg = <0x11>;
+				status = "disabled";
+				unique_id = <0x56a1>;
+				i2c_slave_id = <0x11>;
+				register_to = "cfm";
+			};
+
+			dish_tps65235@10 {
+				compatible = "sony,tps65235";
+				reg = <0x10>;
+				status = "disabled";
+				unique_id = <0x56a0>;
+				i2c_slave_id = <0x10>;
+				register_to = "cfm";
+			};
+
+			dish_mp8128@0b {
+				compatible = "sony,mp8128";
+				reg = <0x0b>;
+				status = "disabled";
+				unique_id = <0x56a1>;
+				i2c_slave_id = <0x0b>;
+				reg_ctrl2 = <0x32>;
+				register_to = "cfm";
+			};
+
+			dish_mp8128@0a {
+				compatible = "sony,mp8128";
+				reg = <0x0a>;
+				status = "disabled";
+				unique_id = <0x56a0>;
+				i2c_slave_id = <0x0a>;
+				reg_ctrl2 = <0x32>;
+				register_to = "cfm";
+			};
+		};
+	};
+
+	fragment@3 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			#pwm-cells = <0x02>;
+		};
+	};
+
+	fragment@4 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_led_driver {
+				compatible = "sony,led";
+				status = "okay";
+				rpmsg-ept-name = "sony-led-ept";
+				pwms = <0xffffffff 0x00 0x5f5e10 0xffffffff 0x04 0x5f5e10 0xffffffff 0x02 0x5f5e10 0xffffffff 0x03 0x5f5e10 0xffffffff 0x05 0x5f5e10>;
+				pwm-names = "LED_PWM0\0PHYLED0\0LED_PWM2\0LED_PWM3\0PHYLED1";
+				phandle = <0x02>;
+			};
+		};
+	};
+
+	fragment@5 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			compatible = "mediatek,mt5896-i2c-rproc";
+		};
+	};
+
+	fragment@6 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			compatible = "mediatek,mt5896-i2c-rproc";
+		};
+	};
+
+	fragment@7 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			tuner-av2018@62 {
+				status = "disabled";
+			};
+
+			tuner-cxd686@65 {
+				status = "disabled";
+			};
+
+			tuner-r842@66 {
+				status = "disabled";
+			};
+		};
+	};
+
+	fragment@8 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			ref-bitmap = <0x3ff>;
+		};
+	};
+
+	fragment@9 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+
+	fragment@10 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			vbus-gpios = <0xffffffff 0xffff 0x00>;
+		};
+	};
+
+	fragment@11 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			dtbo-prop = "dtbo-name\0dtbo-name-Sony-default\0dtbo-name-Sony-color-sensor\0dtbo-name-Sony-thermal-sensor-ambient\0dtbo-name-Sony-thermal-sensor-ambient-dev\0dtbo-name-Sony-thermal-sensor-high-temp\0dtbo-name-Sony-thermal-sensor-high-temp-dev\0dtbo-name-Sony-oled-ip\0dtbo-name-Sony-pqu-PanelDet-PanelID\0dtbo-name-Sony-pqu-BEDet\0dtbo-name-Sony-gpio-mute-disabled\0dtbo-name-Sony-gpio-mute-enabled\0dtbo-name-Sony-gpio-mute-trial-valid\0dtbo-name-Sony-gpio-mute-trial-invalid\0dtbo-name-Sony-pqu-EVDD_PWM_duty\0dtbo-name-Sony-pqu-tcon-od\0dtbo-name-Sony-pqu-bcm";
+			dtbo-name-Sony-default = "pqu_Sony_default.dtbo";
+			dtbo-name-Sony-gpio-mute-disabled = "pqu_Sony_gpio_mute_disabled.dtbo";
+			dtbo-name-Sony-gpio-mute-trial-valid = "pqu_Sony_gpio_mute_trial_valid.dtbo";
+		};
+	};
+
+	fragment@12 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_camera_driver {
+				compatible = "sony,sony_m6_camera";
+				status = "okay";
+				rpmsg-ept-name = "sony-camera-ept";
+				camera_power = <0x10d>;
+				phandle = <0x03>;
+			};
+		};
+	};
+
+	fragment@13 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+
+			sony_mmc_pwrseq {
+				compatible = "sony-mmc-pwrseq";
+				sony_mmc_vcc_gpio = <0x00>;
+				sony_mmc_vccq_gpio = <0x110>;
+				phandle = <0x01>;
+			};
+		};
+	};
+
+	fragment@14 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			mmc-pwrseq = <0x01>;
+			gpio-ctl-emmc-vccq = <0x00>;
+			drop_recovery;
+			enable_detect_pwr;
+		};
+	};
+
+	fragment@15 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			temperature = <0x1b968>;
+		};
+	};
+
+	fragment@16 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			temperature = <0x1b968>;
+		};
+	};
+
+	fragment@17 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			temperature = <0x1b968>;
+		};
+	};
+
+	fragment@18 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			PQ_THERMAL_CTRL = <0x01>;
+			PQ_THERMAL_CTRL_STEP = <0x02>;
+			PQ_THERMAL_OFF_PQ_TEMP = <0x1a5e0>;
+			PQ_THERMAL_ON_PQ_TEMP = <0x17ed0>;
+			PQ_THERMAL_IIR_TIME = <0x00>;
+		};
+	};
+
+	fragment@19 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			AISR_SUPPORT = <0x00>;
+		};
+	};
+
+	__symbols__ {
+		sony_led_driver = "/fragment@4/__overlay__/sony_led_driver";
+		sony_camera_driver = "/fragment@12/__overlay__/sony_camera_driver";
+		sony_mmc_pwrseq = "/fragment@13/__overlay__/sony_mmc_pwrseq";
+	};
+
+	__fixups__ {
+		dish_rt5047_bf = "/fragment@0:target:0";
+		dish_SGM41286 = "/fragment@1:target:0";
+		pm_i2c1 = "/fragment@2:target:0\0/fragment@7:target:0";
+		pwm0 = "/fragment@3:target:0\0/fragment@4/__overlay__/sony_led_driver:pwms:0\0/fragment@4/__overlay__/sony_led_driver:pwms:12\0/fragment@4/__overlay__/sony_led_driver:pwms:24\0/fragment@4/__overlay__/sony_led_driver:pwms:36\0/fragment@4/__overlay__/sony_led_driver:pwms:48";
+		odm = "/fragment@4:target:0\0/fragment@12:target:0\0/fragment@13:target:0";
+		i2c0 = "/fragment@5:target:0";
+		i2c3 = "/fragment@6:target:0";
+		saradc = "/fragment@8:target:0";
+		mtk_ci = "/fragment@9:target:0";
+		usb_host1 = "/fragment@10:target:0";
+		pm_gpio0 = "/fragment@10/__overlay__:vbus-gpios:0";
+		mtk_pqu = "/fragment@11:target:0";
+		mmc0 = "/fragment@14:target:0";
+		cold2normal_point = "/fragment@15:target:0";
+		normal2hot_point = "/fragment@16:target:0";
+		reset_point = "/fragment@17:target:0";
+		mtk_display = "/fragment@18:target:0";
+		mtk_capability = "/fragment@19:target:0";
+	};
+
+	__local_fixups__ {
+
+		fragment@14 {
+
+			__overlay__ {
+				mmc-pwrseq = <0x00>;
+			};
+		};
+	};
+};

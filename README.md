@@ -1,0 +1,14 @@
+# amaebi_ww-user 12 STT2.231117.001 633060 release-keys
+- manufacturer: sony
+- platform: merak
+- codename: BRAVIA_AE_M6L
+- flavor: amaebi_ww-user
+- release: 12
+- id: STT2.231117.001
+- incremental: 633060
+- tags: release-keys
+- fingerprint: Sony/BRAVIA_AE2_WW/BRAVIA_AE_M6L:12/STT2.231117.001/633060:user/release-keys
+- is_ab: true
+- brand: Sony
+- branch: amaebi_ww-user-12-STT2.231117.001-633060-release-keys
+- repo: sony_bravia_ae_m6l_dump

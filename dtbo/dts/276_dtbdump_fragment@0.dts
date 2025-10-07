@@ -1,0 +1,24 @@
+/dts-v1/;
+
+/ {
+
+	fragment@0 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			dtbo-name-Sony-pqu-PanelDet-PanelID = "pqu_Sony_panel_det_pid_oled.dtbo";
+		};
+	};
+
+	fragment@1 {
+		target = <0xffffffff>;
+
+		__overlay__ {
+			dtbo-name-Sony-pqu-EVDD_PWM_duty = "pqu_Sony_evdd_pwm_duty_80.dtbo";
+		};
+	};
+
+	__fixups__ {
+		mtk_pqu = "/fragment@0:target:0\0/fragment@1:target:0";
+	};
+};
