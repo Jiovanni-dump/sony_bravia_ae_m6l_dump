@@ -1,0 +1,2 @@
+on property:persist.vendor.extended_core.sony.dbg.loglevel=*
+    setprop persist.vendor.sony.dbg.loglevel ${persist.vendor.extended_core.sony.dbg.loglevel}

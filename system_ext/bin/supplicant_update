@@ -1,0 +1,323 @@
+#!/system/bin/sh
+#
+# Copyright 2022 Sony Corporation
+#
+# Arguments:
+#   $1 - <target_slot>
+#   $2 - <status_fd>
+#
+#
+# Argument details:
+# <target_slot>
+#   The slot where the new system was just copied.
+#   This is normally either 0 or 1.
+#   You can get the target suffix running `bootctl
+#   get-suffix ${target_slot}`
+#
+# <status_fd>
+#   File descriptor number where this script can
+#   write to toreport the progress of the process.
+#
+#
+# Returns:
+#   success case is return 0 and the failure case is return 1.
+#
+
+local TARGET_SLOT="$1"
+local STATUS_FD="$2"
+
+local TAG="supplicant_update"
+local sideloading=0
+local ZIP_FILE_PATH_SL=""
+local ZIP_FILE_PATH_AB="/data/ota_package/supplicant.zip"
+local ZIP_DIR_PATH_SL="/tmp/update/supplicant"
+local WORK_DIR_PATH_SL="/tmp/work"
+local WORK_DIR_PATH_AB_OLD="/data/system/tmp/sony/update/supplicant/work"
+local WORK_DIR_PATH_AB_NEW="/mnt/product/tmp/sony/update/supplicant/work"
+local CERT_FILE_PATH="/system/etc/security/"
+local BURN_TARGET_PATH="/dev/block/by-name/supplicant"
+local BURN_IMAGE_FILE="supplicant.img"
+local BURN_BLOCK_SIZE=1000000
+local PROPERTY_REGION="ro.boot.vendor.extended_core.sony.sw_sku"
+
+
+# Trap the end of the script
+trap exit_finally EXIT
+
+function LOG(){
+    echo "$1"
+}
+
+function set_sideload_file_path(){
+    if [ -e "${ZIP_DIR_PATH_SL}/supplicant.zip" ]; then
+        ZIP_FILE_PATH_SL="${ZIP_DIR_PATH_SL}/supplicant.zip"
+    else
+        echo "[$TAG] supplicant.zip not found, aborting update process."
+        return 1
+    fi
+
+    return 0
+}
+
+function setup(){
+    local result=0
+
+    # 1. Check target slot
+    # ------------------------------------------------
+    if [ "$TARGET_SLOT" != 0 ] && [ "$TARGET_SLOT" != 1 ]; then
+        LOG "[$TAG]TARGET_SLOT information is incorrect. TARGET_SLOT=$TARGET_SLOT"
+        return 1
+    fi
+
+    # 2. Set of paths
+    # ------------------------------------------------
+    if [ $sideloading = 1 ]; then
+        set_sideload_file_path
+
+        if [ -z "$ZIP_FILE_PATH_SL" ]; then
+            LOG "[$TAG]Aborting potinstall because no suitable supplicant.zip was found"
+            return 1
+        fi
+
+        ZIP_FILE_PATH=$ZIP_FILE_PATH_SL
+        WORK_DIR_PATH=$WORK_DIR_PATH_SL
+    else
+        ZIP_FILE_PATH=$ZIP_FILE_PATH_AB
+        if [ ! -d "/mnt/product/tmp/sony/update/supplicant" ]; then
+            WORK_DIR_PATH=${WORK_DIR_PATH_AB_OLD}
+        else
+            WORK_DIR_PATH=${WORK_DIR_PATH_AB_NEW}
+        fi
+    fi
+
+    SIGNED_FILE_PATH="$WORK_DIR_PATH/hash.txt"
+    SIGNATURE_FILE_PATH="$WORK_DIR_PATH/signature.dat"
+    BURN_IMAGE_PATH="$WORK_DIR_PATH/supplicant.img"
+
+    if [ "$TARGET_SLOT" = 0 ]; then
+        BURN_TARGET_PATH="${BURN_TARGET_PATH}_a"
+    else
+        BURN_TARGET_PATH="${BURN_TARGET_PATH}_b"
+    fi
+
+    # 3. Check necessary files
+    # ------------------------------------------------
+    if [ ! -f $ZIP_FILE_PATH ]; then
+        LOG "[$TAG]File does not exist $ZIP_FILE_PATH"
+        return 1
+    fi
+
+    if [ ! -b $BURN_TARGET_PATH ]; then
+        LOG "[$TAG]File does not exist $BURN_TARGET_PATH"
+        return 1
+    fi
+
+    # 4. Cleanup work directory
+    # ------------------------------------------------
+    if [ -d $WORK_DIR_PATH ]; then
+        rm -rf $WORK_DIR_PATH
+        LOG "[$TAG]Cleanup $WORK_DIR_PATH"
+    fi
+
+    # 5. Unzip the ZIP file in working directory
+    # ------------------------------------------------
+    /system/bin/unzip -o -d $WORK_DIR_PATH $ZIP_FILE_PATH -x $BURN_IMAGE_FILE || result=1
+    if [ $result = 1 ]; then
+        LOG "[$TAG]Failed unzip supplicant.zip file"
+        return 1
+    fi
+
+    return 0
+}
+
+function get_supplicant_info(){
+    local result=0
+
+    # 1. Get information from hash.txt and info.txt
+    # ------------------------------------------------
+    secure_info_txt_hash=$(cat $WORK_DIR_PATH/hash.txt | grep info.txt | cut -d ' ' -f1)
+    secure_supplicant_img_hash=$(cat $WORK_DIR_PATH/hash.txt | grep supplicant | cut -d ' ' -f1)
+    secure_regions_info=$(cat $WORK_DIR_PATH/info.txt | grep REGIONS | cut -d ' ' -f2)
+    secure_version_info=$(cat $WORK_DIR_PATH/info.txt | grep PKG_VERSION | cut -d ' ' -f2)
+
+    # 2. Verify info.txt
+    # ------------------------------------------------
+    hash=$(sha256sum -b $WORK_DIR_PATH/info.txt)
+    if [ "$hash" != "$secure_info_txt_hash" ] ; then
+        LOG "[$TAG]Incorrect info.txt"
+        return 1
+    fi
+
+    # 3. Check hash.txt by signature verification
+    # ------------------------------------------------
+    certs=`find $CERT_FILE_PATH -type f -name *.pem -maxdepth 2`
+    for cert in $certs; do
+        LOG "[$TAG]certs=$cert"
+        result=0
+        /postinstall/bin/supplicant_verifier \
+            -s $cert $SIGNED_FILE_PATH $SIGNATURE_FILE_PATH || result=1
+        if [ $result = 0 ]; then
+            break
+        fi
+    done
+
+    if [ $result = 1 ]; then
+        LOG "[$TAG]Failed signature verification"
+        return 1
+    fi
+
+    return 0
+}
+
+function validity_check(){
+    local result=0
+
+    # 1. Region check
+    # ------------------------------------------------
+    if [ $sideloading = 0 ]; then
+        local prop_region=$(getprop $PROPERTY_REGION)
+        regions=(${secure_regions_info//,/ })
+        region_matched=0
+        for region in "${regions[@]}"; do
+            if [ "$region" == "$prop_region" ]; then
+                region_matched=1
+            fi
+        done
+
+        if [ $region_matched != 1 ]; then
+            LOG "[$TAG]Failed region info is mismatched($prop_region : $secure_regions_info)"
+            return 1
+        fi
+    fi
+
+    # 2. PKG version check(rollback_index)
+    # ------------------------------------------------
+    info_txt_rollback_index="${secure_version_info: -14}"
+
+    /postinstall/bin/supplicant_verifier -r $TARGET_SLOT $info_txt_rollback_index || result=1
+    if [ $result = 1 ]; then
+        LOG "[$TAG]Failed pkg version(rollback_index) is mismatched"
+        return 1
+    fi
+
+    return 0
+}
+
+function burn_image(){
+    local result=0
+
+    /postinstall/bin/supplicant_writer $ZIP_FILE_PATH $BURN_IMAGE_FILE $BURN_TARGET_PATH 0 || result=1
+    if [ $result = 1 ]; then
+        LOG "[$TAG]Failed burn image"
+        return 1
+    fi
+
+    sync
+    sync
+    sync
+    LOG "[$TAG]Burn image ${ZIP_FILE_PATH}/${BURN_IMAGE_FILE} to ${BURN_TARGET_PATH}"
+
+    return 0
+}
+
+function verify_image(){
+    local hash_src=$secure_supplicant_img_hash
+    local hash_dst=$(sha256sum -b $BURN_TARGET_PATH)
+
+    LOG "[$TAG]src sha256sum is ${hash_src}"
+    LOG "[$TAG]dst sha256sum is ${hash_dst}"
+
+    if [ "$hash_src" == "$hash_dst" ] ; then
+        LOG "[$TAG]Successful burn image verification"
+    else
+        LOG "[$TAG]Failed burn image verification"
+        return 1
+    fi
+
+    return 0
+}
+
+# Cleanup runs in all script exit scenarios.
+function cleanup(){
+    if [ -d $WORK_DIR_PATH ]; then
+        rm -rf $WORK_DIR_PATH
+    fi
+
+    if [ $sideloading = 0 ] && [ -f $ZIP_FILE_PATH ]; then
+        unlink $ZIP_FILE_PATH
+    fi
+
+    LOG "[$TAG]Completed cleanup"
+
+    return 0
+}
+
+exit_finally(){
+    cleanup
+    return 0
+}
+
+function main(){
+    local result=0
+
+    if [ -f /system/bin/recovery ]; then
+        sideloading=1
+    fi
+
+    # 1. setup
+    #    - Check if the target slot is correct
+    #    - Check for the existence of the supplicant.zip file
+    #    - Unzip to the working directory if it exists
+    #    - Rename from supplicant-xx.img to supplicant.img
+    # ------------------------------------------------
+    setup || result=1
+    if [ $result != 0 ]; then
+        LOG "[$TAG]Failed setup phase"
+        return 1
+    fi
+
+    # 2. get_supplicant_info
+    #    - Get the hash value of info.txt from hash.txt
+    #    - Get the hash value of supplicant.img from hash.txt
+    #    - Get PKG version from info.txt
+    #    - Get region information from info.txt
+    #    - Verify hash of info.txt
+    #    - Verify hash of supplicant.img
+    #    - Perform signature verification on hash.txt
+    # ------------------------------------------------
+    get_supplicant_info || result=1
+    if [ $result != 0 ]; then
+        LOG "[$TAG]Failed get_supplicant_info phase"
+        return 1
+    fi
+
+    # 3. validity_check
+    #    - Check if the REGION information (skip when sideloading)
+    #    - Check for a match with the PKG version
+    # ------------------------------------------------
+    validity_check || result=1
+    if [ $result != 0 ]; then
+        LOG "[$TAG]Failed validity_check phase"
+        return 1
+    fi
+
+    # 4. burn_image
+    # ------------------------------------------------
+    burn_image || result=1
+    if [ $result != 0 ]; then
+        LOG "[$TAG]Failed burn_image phase"
+        return 1
+    fi
+
+    # 5. verify_image
+    # ------------------------------------------------
+    verify_image || result=1
+    if [ $result != 0 ]; then
+        LOG "[$TAG]Failed verify_image phase"
+        return 1
+    fi
+
+    return 0
+}
+
+main "$@"

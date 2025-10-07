@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!-- Copyright 2022,2024 Sony Corporation -->
+
+<!-- Background whitelist for the app installed under /system_ext. -->
+
+<config>
+    <!-- These are sony developed components that need to freely run in the background -->
+    <allow-in-power-save package="com.sony.dtv.seeds.auth" />
+    <allow-in-power-save-except-idle package="com.sony.dtv.seeds.iot" />
+    <allow-in-power-save-except-idle package="com.sony.dtv.seeds.mimamori" />
+    <allow-in-power-save package="com.sony.dtv.recapp" />
+</config>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021,2023 Sony Corporation -->
+<permissions>
+    <!-- Additional permissions on top of privapp-permissions-sonytv-m6_system_ext.xml -->
+    <privapp-permissions package="com.sony.dtv.provider.appcustomization">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+    <privapp-permissions package="com.sony.dtv.sonysystemservice">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.HDMI_CEC"/>
+        <permission name="android.permission.BLUETOOTH_PRIVILEGED"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.CHANGE_OVERLAY_PACKAGES"/>
+        <permission name="com.mediatek.tv.extservice.permission.USE_PQSERVICE"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.irbservice">
+        <permission name="android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.HDMI_CEC"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.demosystemsupport">
+        <permission name="android.permission.HDMI_CEC"/>
+        <permission name="android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.devicecontrolservice">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.GLOBAL_SEARCH"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.MEDIA_CONTENT_CONTROL"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.android.systemui">
+        <permission name="android.permission.HDMI_CEC"/>
+        <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="com.sony.dtv.powerrestriction.provider.permission.ACCESS_RESTRICTIONS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.seeds.iot">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.START_FOREGROUND_SERVICES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.seeds.mimamori">
+        <permission name="android.permission.PACKAGE_USAGE_STATS" />
+    </privapp-permissions>
+
+    <privapp-permissions package="com.uei.quicksetsdk">
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.voicesearch">
+        <permission name="android.permission.GLOBAL_SEARCH"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.smartmediaapp">
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+        <permission name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+        <permission name="android.permission.CHANGE_CONFIGURATION"/>
+        <permission name="android.permission.GLOBAL_SEARCH"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.fingerprinterserver">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.REAL_GET_TASKS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS_FULL"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.frame">
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+</permissions>
+

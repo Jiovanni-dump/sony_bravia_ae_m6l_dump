@@ -1,0 +1,2 @@
+on post-fs-data-odm
+    mkdir /data/vendor/sony/itvu 755 system system

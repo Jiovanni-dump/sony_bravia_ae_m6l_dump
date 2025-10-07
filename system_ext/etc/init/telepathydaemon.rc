@@ -1,0 +1,8 @@
+on post-fs-data-odm
+    chmod 777 /data/vendor/sony/telepathy
+    chmod 666 /data/vendor/sony/telepathy/TpDevBindID.bin
+    chmod 777 /data/vendor/sony/telepathy/00000000000000000000000000000000
+    chmod 666 /data/vendor/sony/telepathy/00000000000000000000000000000000/TpFlash0.bin
+    chmod 666 /data/vendor/sony/telepathy/00000000000000000000000000000000/TpFlash1.bin
+    chmod 666 /data/vendor/sony/telepathy/00000000000000000000000000000000/TpStorage000.bin
+    chmod 666 /data/vendor/sony/telepathy/00000000000000000000000000000000/TpStorage100.bin

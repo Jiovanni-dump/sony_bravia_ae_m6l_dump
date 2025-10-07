@@ -1,0 +1,7 @@
+on early-boot-system-sony
+    mkdir /data/system/tmp/sony/update 750 system root
+    mkdir /data/system/tmp/sony/update/allocate 750 system root
+    mkdir /data/system/tmp/sony/update/supplicant 750 root root
+    mkdir /mnt/product/tmp/sony/update 750 system root
+    mkdir /mnt/product/tmp/sony/update/allocate 750 system root
+    mkdir /mnt/product/tmp/sony/update/supplicant 750 root root

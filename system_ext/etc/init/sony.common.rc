@@ -1,0 +1,28 @@
+on early-boot-system-sony-restorecon
+    restorecon_recursive /data/system/sony
+    restorecon_recursive /mnt/product/tmp
+    restorecon_recursive /mnt/product/demo
+    # to be removed
+    restorecon_recursive /data/system/tmp
+
+on early-boot
+    mkdir /data/system/sony 755 system system
+    mkdir /mnt/product/tmp 755 system system
+    mount tmpfs tmpfs /mnt/product/tmp size=100M nr_inodes=1k mode=1771
+    mkdir /mnt/product/tmp/sony 755 system system
+    # to be removed
+    mkdir /data/system/tmp 755 system system
+    mount tmpfs tmpfs /data/system/tmp size=100M nr_inodes=1k mode=1771
+    mkdir /data/system/tmp/sony 755 system system
+    mkdir /mnt/product/demo 0775 root system
+    mount ext4 /dev/block/by-name/demo /mnt/product/demo rw noatime nosuid nodev noexec
+    trigger early-boot-system-sony
+    trigger early-boot-system-sony-restorecon
+
+on post-fs-data
+    chmod 0777 /data/ota_package
+    mkdir /data/ota_package/otb 0777 system cache
+    mkdir /data/ota_package/b2b 0777 system cache
+
+on late-fs
+    setprop ro.oem.key1 ATV00199923

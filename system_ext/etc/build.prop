@@ -1,0 +1,26 @@
+####################################
+# from generate-common-build-props
+# These properties identify this partition image.
+####################################
+ro.product.system_ext.brand=Sony
+ro.product.system_ext.device=BRAVIA_AE_M6L
+ro.product.system_ext.manufacturer=Sony
+ro.product.system_ext.model=BRAVIA 4K AE2
+ro.product.system_ext.name=BRAVIA_AE2_WW
+ro.system_ext.build.date=Thu Jul 10 19:31:32 JST 2025
+ro.system_ext.build.date.utc=1752143492
+ro.system_ext.build.fingerprint=Sony/BRAVIA_AE2_WW/BRAVIA_AE_M6L:12/STT2.231117.001/633060:user/release-keys
+ro.system_ext.build.id=STT2.231117.001
+ro.system_ext.build.tags=release-keys
+ro.system_ext.build.type=user
+ro.system_ext.build.version.incremental=633060
+ro.system_ext.build.version.release=12
+ro.system_ext.build.version.release_or_codename=12
+ro.system_ext.build.version.sdk=31
+####################################
+# from variable PRODUCT_SYSTEM_EXT_PROPERTIES
+####################################
+# Auto-added by post_process_props.py
+persist.sys.usb.config=none
+# end of file
+

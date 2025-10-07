@@ -1,0 +1,22 @@
+# Copyright 2024-2025 Sony Corporation
+# reverseproxy service
+
+on early-boot-system-sony
+    mkdir /mnt/product/tmp/sony/nginx 775 system system
+    mkdir /mnt/product/tmp/sony/nginx/conf.d 777 system system
+    mkdir /mnt/product/tmp/sony/nginx/data 775 system system
+    mkdir /mnt/product/tmp/sony/nginx/data/upstreams 777 system system
+    mkdir /mnt/product/tmp/sony/nginx/data/sites-enabled 777 system system
+    mkdir /mnt/product/tmp/sony/nginx/data/forwarding 777 system system
+    mkdir /mnt/product/tmp/sony/nginx/data/user 770 oem_2900 oem_2900
+    mkdir /mnt/product/tmp/sony/nginx/data/client_body_temp 770 oem_2900 oem_2900
+    mkdir /mnt/product/tmp/sony/nginx/data/proxy_temp 770 oem_2900 oem_2900
+    mkdir /mnt/product/tmp/sony/nginx/socket 777 system system
+
+service reverseproxy /system_ext/bin/nginx
+    class main
+    capabilities NET_BIND_SERVICE
+    user oem_2900
+    group oem_2900
+    disabled
+

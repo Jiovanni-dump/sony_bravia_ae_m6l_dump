@@ -1,0 +1,51 @@
+#!/system/bin/sh
+#
+# Copyright 2022 Sony Corporation
+#
+# Arguments:
+#   $1 - <target_slot>
+#   $2 - <status_fd>
+#
+#
+# Argument details:
+# <target_slot>
+#   The slot where the new system was just copied.
+#   This is normally either 0 or 1.
+#   You can get the target suffix running `bootctl
+#   get-suffix ${target_slot}`
+#
+# <status_fd>
+#   File descriptor number where this script can
+#   write to toreport the progress of the process.
+#
+#
+# Returns:
+#   success case is exit 0 and the failure case is exit 1.
+#
+
+local TARGET_SLOT="$1"
+local STATUS_FD="$2"
+
+local TAG="postinst_sony_system_ext"
+
+function LOG(){
+  echo "$1"
+}
+
+function main(){
+    local result=0
+
+    # 1. execute supplicant_update
+    # ------------------------------------------------
+    source /postinstall/bin/supplicant_update $TARGET_SLOT $STATUS_FD || result=1
+    if [ $result = 0 ]; then
+        LOG "[$TAG]Successful supplicant_update"
+    else
+        LOG "[$TAG]Failed supplicant_update"
+        exit 1
+    fi
+
+    exit 0
+}
+
+main "$@"

@@ -1,0 +1,45 @@
+# Copyright 2022,2023 Sony Corporation
+
+on early-boot-sony
+    # Data directory for debug
+    mkdir /data/vendor/tmp/sony/sonybugreport 777 root root
+    mkdir /mnt/vendor/tmp/sony/sonybugreport 777 root root
+
+service vendor.sonydumpstate_parent /system_ext/bin/sonybugreport -u
+    class main
+    user shell
+    group shell log readproc
+    disabled
+    oneshot
+
+service vendor.sonydumpstate_pre /system_ext/bin/sony_dumpstate
+    class main
+    socket dumpstate stream 0660 shell log
+    disabled
+    oneshot
+
+service vendor.sonydumpstate_main /system_ext/bin/sony_dumpstate
+    class main
+    socket dumpstate stream 0660 shell log
+    disabled
+    oneshot
+
+# To display the eMMC data.
+service vendor.sonydumpstate_d01 /system_ext/bin/sony_dumpstate -e
+    class main
+    socket dumpstate stream 0660 shell log
+    disabled
+    oneshot
+
+# To display the System Property loglevel.
+service vendor.sonydumpstate_d11 /system_ext/bin/sony_dumpstate -l
+    class main
+    socket dumpstate stream 0660 shell log
+    disabled
+    oneshot
+
+on property:init.svc.vendor.sonydumpstate_pre=stopped
+    stop vendor.bugreportretriever-1-0
+
+on property:init.svc.vendor.sonydumpstate_main=stopped
+    stop vendor.bugreportretriever-1-0

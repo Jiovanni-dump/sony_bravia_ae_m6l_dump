@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <library name="com.sony.dtv.sonysystemservice.picturecontrol.pqawareapphelper"
+             file="/system_ext/framework/com.sony.dtv.sonysystemservice.picturecontrol.pqawareapphelper.jar"/>
+</permissions>
+
