@@ -1,0 +1,4 @@
+(typeattributeset dummy_31_0 (dummy))
+(expandtypeattribute (dummy_31_0) true)
+(typeattribute dummy_31_0)
+

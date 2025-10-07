@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021, 2023 Sony Corporation -->
+<permissions>
+    <privapp-permissions package="com.sony.dtv.tvinput.atsc3tuner">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MODIFY_PARENTAL_CONTROLS"/>
+        <permission name="android.permission.TV_INPUT_HARDWARE"/>
+        <permission name="android.permission.TUNER_RESOURCE_ACCESS"/>
+        <permission name="android.permission.ACCESS_TV_TUNER"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="com.sony.dtv.permission.READ_APP_CUSTOMIZATION_PRODUCT_CONFIG"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.promos">
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE" />
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.atscbrowserservice">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="com.sony.dtv.permission.READ_APP_CUSTOMIZATION_PRODUCT_CONFIG"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.assistantadapter">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+</permissions>

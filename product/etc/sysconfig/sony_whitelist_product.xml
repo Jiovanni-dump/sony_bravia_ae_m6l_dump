@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!-- Copyright 2022 Sony Corporation -->
+
+<!-- Background whitelist for the app installed under /product. -->
+
+<config>
+    <!-- These are sony developed components that need to freely run in the background -->
+    <allow-in-power-save package="com.sony.dtv.tvinput.dvbtuner" />
+    <allow-in-power-save package="com.sony.dtv.tvinput.jptuner" />
+    <allow-in-power-save package="com.sony.dtv.tvinput.atsc3tuner" />
+</config>
+

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright 2021 Sony Corporation -->
+
+<permissions>
+    <!-- Additional permissions on top of privapp-permissions-sonytv-common_product.xml -->
+
+   <privapp-permissions package="com.sony.dtv.broadcastsettings">
+    <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    <permission name="android.permission.BIND_TV_INPUT"/>
+    <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    <permission name="android.permission.MODIFY_PARENTAL_CONTROLS"/>
+    <permission name="android.permission.READ_CONTENT_RATING_SYSTEMS"/>
+    <permission name="android.permission.MANAGE_USERS"/>
+    <permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+    <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    <permission name="android.permission.QUERY_ALL_PACKAGES"/>
+    <permission name="com.sony.dtv.broadcastsettings.settings.permission.READ_DATA"/>
+    <permission name="com.sony.dtv.broadcastsettings.settings.permission.WRITE_DATA"/>
+   </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.tvlin">
+        <permission name="android.permission.MODIFY_PARENTAL_CONTROLS"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="com.sony.dtv.permission.MANAGE_RECORD" />
+        <permission name="android.permission.CHANGE_HDMI_CEC_ACTIVE_SOURCE" />
+        <permission name="com.sony.dtv.permission.START_MULTI_VIEW" />
+        <permission name="com.sony.dtv.irb.irbcsxaccessor.permission.READ_PROVIDER_DATA" />
+        <permission name="com.sony.dtv.scope.permission.ACCESS_SENTENCE_ANALYZER" />
+        <permission name="com.sony.dtv.broadcastsettings.settings.permission.READ_DATA"/>
+        <permission name="com.sony.dtv.broadcastsettings.settings.permission.WRITE_DATA"/>
+        <permission name="android.permission.HDMI_CEC"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+    <privapp-permissions package="com.sony.dtv.livingfit">
+        <permission name="android.permission.MEDIA_CONTENT_CONTROL"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+    <privapp-permissions package="com.sony.dtv.usercontext">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.parentalcontrolsettings">
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.quicksetup">
+        <permission name="android.permission.CHANGE_COMPONENT_ENABLED_STATE"/>
+        <permission name="android.permission.CHANGE_CONFIGURATION"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.SET_TIME"/>
+        <permission name="android.permission.SET_TIME_ZONE"/>
+        <permission name="android.permission.SET_WALLPAPER_COMPONENT"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.timers">
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.sensingcamera.settings">
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.sensingcamera.fwupdate">
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.ecodashboard">
+        <permission name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="com.sony.dtv.permission.READ_APP_CUSTOMIZATION_PRODUCT_CONFIG"/>
+        <permission name="com.sony.dtv.powerrestriction.provider.permission.ACCESS_RESTRICTIONS"/>
+        <permission name="com.sony.dtv.sonysystemservice.permission.BIND_SERVICE"/>
+        <permission name="com.sony.dtv.sonyvendorservice.permission.BIND_SERVICE"/>
+        <permission name="com.sony.dtv.settingsprovider.permission.READ_SETTINGS"/>
+        <permission name="com.sony.dtv.settingsprovider.permission.WRITE_SETTINGS"/>
+        <permission name="com.sony.dtv.broadcastsettings.settings.permission.READ_DATA"/>
+        <permission name="com.sony.dtv.broadcastsettings.settings.permission.WRITE_DATA"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.smarthelp">
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.seconddispsetting">
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+        <permission name="com.sony.dtv.permission.READ_MODEL_VARIATION_INFO" />
+        <permission name="com.sony.dtv.settingsprovider.permission.READ_SETTINGS" />
+        <permission name="com.sony.dtv.settingsprovider.permission.WRITE_SETTINGS" />
+        <permission name="com.sony.dtv.sonyvendorservice.permission.BIND_SERVICE" />
+        <permission name="com.sony.dtv.webapi.permission.AUTH_SERVICE" />
+        <permission name="com.sony.dtv.webapi.permission.SESSION_STORAGE.read" />
+        <permission name="com.sony.dtv.webapi.permission.SESSION_STORAGE.write" />
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.lastaccess">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.multiscreendemo">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS" />
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND" />
+        <permission name="android.permission.MANAGE_USB" />
+        <permission name="android.permission.MANAGE_USERS" />
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.demosupport">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.accessibilitysettings">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.sony.dtv.sonyprofilelock">
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+
+</permissions>
+

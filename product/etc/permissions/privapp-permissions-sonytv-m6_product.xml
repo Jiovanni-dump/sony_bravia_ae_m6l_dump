@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2021, 2023 Sony Corporation -->
+<permissions>
+    <!-- Additional permissions on top of privapp-permissions-sonytv-m6_product.xml -->
+        <privapp-permissions package="com.sony.dtv.tvinput.atsc3tuner">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.MODIFY_PARENTAL_CONTROLS"/>
+        <permission name="android.permission.TV_INPUT_HARDWARE"/>
+        <permission name="android.permission.TUNER_RESOURCE_ACCESS"/>
+        <permission name="android.permission.ACCESS_TV_TUNER"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>        
+        <permission name="com.sony.dtv.permission.READ_APP_CUSTOMIZATION_PRODUCT_CONFIG"/>
+    </privapp-permissions>
+    <privapp-permissions package="com.sony.dtv.iswaccessibility">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+    <privapp-permissions package="com.sony.dtv.common.base.AccessibilityText">
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+    <privapp-permissions package="tv.samba.ssm">
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+    <privapp-permissions package="com.youview.poa">
+        <permission name="android.permission.MODIFY_PARENTAL_CONTROLS"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    </privapp-permissions>
+    <privapp-permissions package="de.hdplus.tvapp.androidtv">
+        <permission name="android.permission.MODIFY_PARENTAL_CONTROLS"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+    </privapp-permissions>
+    <privapp-permissions package="com.sony.dtv.servicemode.tuner">
+        <permission name="com.sony.dtv.permission.manage_record"/>
+    </privapp-permissions>
+    <privapp-permissions package="com.sony.dtv.atscbrowserservice">
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="com.sony.dtv.permission.READ_APP_CUSTOMIZATION_PRODUCT_CONFIG"/>
+    </privapp-permissions>
+    <privapp-permissions package="com.sony.dtv.multiscreendemo">
+        <permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
+    </privapp-permissions>
+</permissions>
+

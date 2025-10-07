@@ -1,0 +1,20 @@
+<!--
+    Input:
+        dolby_device_framework_matrix.xml
+-->
+<compatibility-matrix version="4.0" type="framework">
+    <hal format="aidl" optional="true">
+        <name>vendor.dolby.audio.measurement</name>
+        <interface>
+            <name>ILatencyReporter</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.dolby.audio.ms12</name>
+        <interface>
+            <name>IMs12</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>

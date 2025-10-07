@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2022 Sony Corporation -->
+
+<permissions>
+    <feature name="com.sony.dtv.software.livingdecor" />
+</permissions>
+

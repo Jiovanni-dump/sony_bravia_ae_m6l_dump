@@ -1,0 +1,2 @@
+#line 1 "vendor/mediatek/tv/system/sepolicy/product/private/property_contexts"
+persist.bluetooth.btsnooplogmode        u:object_r:exported_bluetooth_prop:s0 exact string

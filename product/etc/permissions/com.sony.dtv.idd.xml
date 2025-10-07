@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Copyright 2010,2023 Sony Corporation
+-->
+<permissions>
+    <library name="com.sony.dtv.idd"
+            file="/product/framework/com.sony.dtv.idd_impl.jar"/>
+    <library name="com.sony.dtv.idd_2"
+            file="/product/framework/com.sony.dtv.idd_impl.jar"/>
+    <library name="com.sony.dtv.idd_3"
+            file="/product/framework/com.sony.dtv.idd_impl.jar"/>
+</permissions>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2023 Sony Corporation -->
+
+<permissions>
+    <!-- non-standard features that are unque to Sony TV. -->
+    <feature name="com.sony.devices" />
+    <feature name="com.sony.dtv" />
+</permissions>
+

@@ -1,0 +1,6 @@
+service sony_resize2fs /product/bin/sony_resize2fs
+    class core
+    user root
+    group system
+    oneshot
+    seclabel u:r:sony_resize2fs:s0

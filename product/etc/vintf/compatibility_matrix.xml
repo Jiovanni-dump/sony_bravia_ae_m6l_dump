@@ -1,0 +1,384 @@
+<!--
+    Input:
+        product_compatibility_matrix.xml
+        product_tpc_compatibility_matrix.xml
+-->
+<compatibility-matrix version="4.0" type="framework">
+    <hal format="hidl" optional="true">
+        <name>android.hardware.audio</name>
+        <version>7.0</version>
+        <interface>
+            <name>IDevicesFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.audio.effect</name>
+        <version>7.0</version>
+        <interface>
+            <name>IEffectsFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.drm</name>
+        <version>1.4</version>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.tv.tuner</name>
+        <version>1.1</version>
+        <interface>
+            <name>ITuner</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.wifi</name>
+        <version>1.5</version>
+        <interface>
+            <name>IWifi</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.wifi.hostapd</name>
+        <version>1.3</version>
+        <interface>
+            <name>IHostapd</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.wifi.supplicant</name>
+        <version>1.4</version>
+        <interface>
+            <name>ISupplicant</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>mtk.qda</name>
+        <interface>
+            <name>IQDAInterface</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.dolby.ms12</name>
+        <version>1.3</version>
+        <interface>
+            <name>IMs12</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.hardware.tv.earc</name>
+        <interface>
+            <name>IHdmiEarc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.ExternIn</name>
+        <version>1.0</version>
+        <interface>
+            <name>IExternIn</name>
+            <instance>ExternIn</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="false">
+        <name>vendor.mediatek.hardware.adecode</name>
+        <version>1.0</version>
+        <interface>
+            <name>IADecode</name>
+            <instance>adecode</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.mediatek.hardware.airplay_proxy</name>
+        <interface>
+            <name>IProxy</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.astream</name>
+        <version>1.0</version>
+        <interface>
+            <name>IAStream</name>
+            <instance>astream</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.audioext</name>
+        <version>1.0</version>
+        <interface>
+            <name>IAudioExt</name>
+            <instance>audioext</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.c2.info</name>
+        <version>1.0</version>
+        <interface>
+            <name>ICodec2InfoService</name>
+            <instance>c2.info</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.camera.provider</name>
+        <version>2.4</version>
+        <interface>
+            <name>ICameraLensShutter</name>
+            <instance>external/0</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.capture</name>
+        <version>1.0</version>
+        <interface>
+            <name>ICapture</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.cecext</name>
+        <version>1.0</version>
+        <interface>
+            <name>ICecExt</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.demuxext</name>
+        <version>1.0</version>
+        <interface>
+            <name>IDemuxExt</name>
+            <instance>demuxext</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.dispservice</name>
+        <version>1.0</version>
+        <interface>
+            <name>IDispService</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IHwcCmtInfo</name>
+            <instance>HwcCmtInfoService</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.mediatek.hardware.dvrcasfactory</name>
+        <version>1-2</version>
+        <interface>
+            <name>IHddRereg</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.filterext</name>
+        <version>1.1</version>
+        <interface>
+            <name>IFilterExt</name>
+            <instance>filterext</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.graphics.externalbuffer</name>
+        <version>1.0</version>
+        <interface>
+            <name>IExternalbuffer</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.halconnect</name>
+        <version>1.0</version>
+        <interface>
+            <name>IHalConnection</name>
+            <instance>tvinput</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.hdmi_earc</name>
+        <version>1.0</version>
+        <interface>
+            <name>IHdmiEarc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.hwcomposer.composer</name>
+        <version>2.5</version>
+        <interface>
+            <name>IComposer</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.iommupool</name>
+        <version>1.0</version>
+        <interface>
+            <name>IIommuPool</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.mediator</name>
+        <version>1.0</version>
+        <interface>
+            <name>IMediator</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.mmdisp</name>
+        <version>1.0</version>
+        <interface>
+            <name>IMmDisp</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.mediatek.hardware.mtk_hw_sys</name>
+        <interface>
+            <name>IQhbControl</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IUsbControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.mediatek.hardware.mtk_netflix</name>
+        <interface>
+            <name>INetflixControl</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>INetflixdrmControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.osd</name>
+        <version>1.0</version>
+        <interface>
+            <name>IOsd</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.pq</name>
+        <version>1.0</version>
+        <interface>
+            <name>IPq</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.render</name>
+        <version>1.0</version>
+        <interface>
+            <name>IRender</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.startdelegate</name>
+        <version>1.0</version>
+        <interface>
+            <name>IStartDelegate</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.stc</name>
+        <version>1.0</version>
+        <interface>
+            <name>IStc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="false">
+        <name>vendor.mediatek.hardware.tpc</name>
+        <version>1.0</version>
+        <interface>
+            <name>ITpcCmtInfo</name>
+            <instance>TpcCmtInfoService</instance>
+        </interface>
+        <interface>
+            <name>ITpcConnection</name>
+            <instance>Codec2</instance>
+            <instance>audio</instance>
+            <instance>hwc</instance>
+            <instance>tuner</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.tpc</name>
+        <version>1.0</version>
+        <interface>
+            <name>ITpcCmtInfo</name>
+            <instance>TpcCmtInfoService</instance>
+        </interface>
+        <interface>
+            <name>ITpcConnection</name>
+            <instance>Codec2</instance>
+            <instance>audio</instance>
+            <instance>hwc</instance>
+            <instance>tuner</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.tunercmt</name>
+        <version>1.0</version>
+        <interface>
+            <name>ITunerCmtInfoService</name>
+            <instance>tunerCmtInfoService</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.tunerext</name>
+        <version>1.5</version>
+        <interface>
+            <name>ITunerExt</name>
+            <instance>tunerext</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.hardware.utility</name>
+        <version>1.0</version>
+        <interface>
+            <name>IUtility</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.system.metrics</name>
+        <version>1.0</version>
+        <interface>
+            <name>IMetrics</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.tv.aiexecutor</name>
+        <version>1.0</version>
+        <interface>
+            <name>IAiexecutor</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.mediatek.tv.mtkmediaservice</name>
+        <version>1.0</version>
+        <interface>
+            <name>IMtkMediaService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>

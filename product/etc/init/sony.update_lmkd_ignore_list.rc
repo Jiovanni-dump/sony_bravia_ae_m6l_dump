@@ -1,0 +1,5 @@
+on property:vendor.extended_core.sony.lmkd.add_enabled=1
+    exec /product/bin/update_lmkd_ignore_list
+
+on property:vendor.extended_core.sony.lmkd.remove_enabled=1
+    exec /product/bin/update_lmkd_ignore_list

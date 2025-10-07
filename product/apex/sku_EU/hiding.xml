@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2022 Sony Corporation -->
+<!-- Definition of hiding.xml
+     Defines the package name of the app to deactivate it in the common folder when SW Sku of
+     ProductConfig is EU.
+
+     Definition example
+     <resource>
+         <hiding-apex>
+             <package name="com.sony.dtv.xxx"/>
+             <package name="com.sony.dtv.yyy"/>
+         </hiding-apex>
+     </resource>
+-->
+<resource>
+    <hiding-apex>
+    </hiding-apex>
+</resource>
+

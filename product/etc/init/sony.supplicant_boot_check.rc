@@ -1,0 +1,10 @@
+on late-fs
+    start supplicant_boot_check
+
+service supplicant_boot_check /product/bin/supplicant_boot_check /oem/info.txt
+    class main
+    user root
+    group root
+    console
+    oneshot
+    reboot_on_failure reboot,supplicant_boot_check_failed

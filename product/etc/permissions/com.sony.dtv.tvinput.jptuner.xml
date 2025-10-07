@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2022 Sony Corporation -->
+
+<permissions>
+    <privapp-permissions package="com.sony.dtv.tvinput.jptuner">
+        <permission name="android.permission.ACCESS_TV_TUNER"/>
+        <permission name="android.permission.TUNER_RESOURCE_ACCESS"/>
+        <permission name="android.permission.TV_INPUT_HARDWARE"/>
+        <permission name="android.permission.MANAGE_USERS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+        <permission name="android.permission.ACCESS_TV_DESCRAMBLER"/>
+        <permission name="android.permission.MODIFY_AUDIO_ROUTING"/>
+        <permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
+        <permission name="com.mediatek.extservice.RenderService.permission.CONTROL_VIDEO_MUTE"/>
+        <permission name="com.mediatek.tv.extservice.permission.USE_TUNERSERVICE"/>
+    </privapp-permissions>
+</permissions>
