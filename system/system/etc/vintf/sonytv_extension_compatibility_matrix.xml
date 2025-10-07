@@ -1,0 +1,357 @@
+<!--
+    Input:
+        system_sonytv_extension_compatibility_matrix.xml
+-->
+<compatibility-matrix version="4.0" type="framework">
+    <hal format="hidl" optional="true">
+        <name>android.hardware.sensors</name>
+        <version>1.0</version>
+        <interface>
+            <name>ISensors</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.acas</name>
+        <version>1.0</version>
+        <interface>
+            <name>IAcas</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.audio</name>
+        <version>1.0</version>
+        <interface>
+            <name>ICodec</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IMicControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.audio.IOutput</name>
+        <version>1.0</version>
+        <interface>
+            <name>IDelay</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IDigitalOutput</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ISpeaker</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IVirtualizer</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.audio.IOutput</name>
+        <version>2.0</version>
+        <interface>
+            <name>IVoiceZoom</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.audio.IOutput.ISpeaker</name>
+        <version>1.0</version>
+        <interface>
+            <name>IAutoVolume</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IEqualizer</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ILocationFilter</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.audio.IOutput.ISpeaker</name>
+        <version>2.1</version>
+        <interface>
+            <name>IAcousticOptimization</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IAutoVolume</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IDampPowerSaving</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IEqualizer</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ILocationFilter</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.audio.IOutput.IVirtualizer</name>
+        <version>1.0</version>
+        <interface>
+            <name>ISonyHrtf</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.camera</name>
+        <version>1.1</version>
+        <interface>
+            <name>IAmbientRecognitionCamera</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ICameraLensShutter</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.camera.provider</name>
+        <version>2.4</version>
+        <interface>
+            <name>IMtkCameraProvider</name>
+            <instance>external/0</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.sony.hardware.camerapqbridge</name>
+        <version>1-2</version>
+        <interface>
+            <name>ICameraPqBridge</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.display</name>
+        <version>1.0</version>
+        <interface>
+            <name>IDisplay</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IOled</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.sony.hardware.ethernet</name>
+        <interface>
+            <name>IEthernet</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.fingerprinter</name>
+        <version>1.0</version>
+        <interface>
+            <name>IFingerprinter</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IStreamInfo</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.hardwareCredential</name>
+        <version>1.0</version>
+        <interface>
+            <name>IHardwareCredential</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.hardwareDiagnosis</name>
+        <version>1.0</version>
+        <interface>
+            <name>IHardwareDiagnosis</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.hdmi</name>
+        <version>1.0</version>
+        <interface>
+            <name>IHdmi</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.hdmi</name>
+        <version>1.1</version>
+        <interface>
+            <name>IHdmi</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.hdmi</name>
+        <version>1.2</version>
+        <interface>
+            <name>IHdmi</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.idd</name>
+        <version>1.0</version>
+        <interface>
+            <name>IIdd</name>
+            <instance>default</instance>
+            <instance>logreader</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.infraredRemote</name>
+        <version>1.0</version>
+        <interface>
+            <name>IInfraredRemote</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.kyildm</name>
+        <version>1.1</version>
+        <interface>
+            <name>IKyildmService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.led</name>
+        <version>1.0</version>
+        <interface>
+            <name>ILed</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.pq</name>
+        <version>1.0</version>
+        <interface>
+            <name>IPqAmbientCameraReflectionCorrection</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.pq</name>
+        <version>2.0</version>
+        <interface>
+            <name>IPanelPowerConsumption</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.productConfig</name>
+        <version>1.0</version>
+        <interface>
+            <name>IProductConfig</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.productConfig</name>
+        <version>2.0</version>
+        <interface>
+            <name>IProductConfigPrivilege</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.sensingFusion</name>
+        <version>1.0</version>
+        <interface>
+            <name>IFirmwareUpdate</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ILed</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ILensShutter</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ISensingDeviceManager</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>ISensingManager</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.sony.hardware.serialport</name>
+        <version>1-2</version>
+        <interface>
+            <name>ISerialPort</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.hardware.storage</name>
+        <version>1.0</version>
+        <interface>
+            <name>IStorageInfo</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.sony.hardware.usb</name>
+        <version>1-2</version>
+        <interface>
+            <name>IUsbDevice</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IVbusControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.sony.hardware.wifi</name>
+        <interface>
+            <name>IWifiRegulatoryDomain</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.system.bugreportretriever</name>
+        <version>1.0</version>
+        <interface>
+            <name>IBugreportRetriever</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.system.crashlog</name>
+        <version>1.0</version>
+        <interface>
+            <name>ICrashLog</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.sony.system.precisiontime</name>
+        <version>1.0</version>
+        <interface>
+            <name>IPtpManager</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>

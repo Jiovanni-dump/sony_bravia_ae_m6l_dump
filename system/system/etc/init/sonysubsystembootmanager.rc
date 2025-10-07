@@ -1,0 +1,2 @@
+on property:vendor.sony.bootlock=*
+    setprop vendor.extended_core.sony.bootlock ${vendor.sony.bootlock}

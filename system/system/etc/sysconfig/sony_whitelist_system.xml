@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<!-- Copyright 2022 Sony Corporation -->
+
+<!-- Background whitelist for the app installed under /system. -->
+
+<config>
+    <!-- These are sony developed components that need to freely run in the background -->
+</config>
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2022 Sony Corporation -->
+<!-- Condition definition of DynamicFeatureDefinition -->
+<permissions>
+    <dynamic-feature name="com.google.android.feature.HOTWORD">
+        <enableConditions>
+            <ifConfig name="MIC (Integrated)" value="Yes"/>
+        </enableConditions>
+    </dynamic-feature>
+    <dynamic-feature name="com.netflix.ncm">
+        <enableConditions>
+            <ifConfig name="Netflix Calibrated mode" value="Yes"/>
+            <ifConfig name="Calibrated mode" value="Yes"/>
+        </enableConditions>
+    </dynamic-feature>
+    <dynamic-feature name="com.sony.dtv.software.picture_quality_control">
+        <enableConditions>
+            <ifConfig name="Netflix Calibrated mode" value="Yes"/>
+            <ifConfig name="Calibrated mode" value="Yes"/>
+        </enableConditions>
+    </dynamic-feature>
+    <dynamic-feature name="com.youview.software.temporary_apps">
+        <enableConditions>
+            <ifConfig name="SW Sku" value="EU"/>
+        </enableConditions>
+    </dynamic-feature>
+    <dynamic-feature name="com.youview.software.youview">
+        <enableConditions>
+            <ifConfig name="SW Sku" value="EU"/>
+        </enableConditions>
+    </dynamic-feature>
+</permissions>

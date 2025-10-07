@@ -1,0 +1,13 @@
+# Copyright 2022 Sony Corporation
+
+service bootanim /system/bin/bootanimation
+    class core animation
+    user graphics
+    group graphics audio
+    disabled
+    oneshot
+    ioprio rt 0
+    task_profiles MaxPerformance
+
+on early-boot-system-sony
+    mkdir /data/system/sony/bootanim 0770 graphics system
